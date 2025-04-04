@@ -1,0 +1,200 @@
+# Example for add x0, x1, x2
+print(riscV_to_bitty(0b0000000_00010_00001_000_00000_0110011))  # add x0, x1, x2
+print(*bitty_to_binary(0b0000000_00010_00001_000_00000_0110011), sep="\n")  # add x0, x1, x2
+
+# Example for sub x1, x2, x3
+print(riscV_to_bitty(0b0100000_00011_00010_000_00001_0110011))  # sub x1, x2, x3
+print(*bitty_to_binary(0b0100000_00011_00010_000_00001_0110011), sep="\n")  # sub x1, x2, x3
+
+# Example for srl x2, x3, x4
+print(riscV_to_bitty(0b0000000_00100_00011_101_00010_0110011))  # srl x2, x3, x4
+print(*bitty_to_binary(0b0000000_00100_00011_101_00010_0110011), sep="\n")  # srl x2, x3, x4
+
+# Example for sll x3, x4, x5
+print(riscV_to_bitty(0b0000000_00101_00100_001_00011_0110011))  # sll x3, x4, x5
+print(*bitty_to_binary(0b0000000_00101_00100_001_00011_0110011), sep="\n")  # sll x3, x4, x5
+
+# Example for add x4, x5, x6
+print(riscV_to_bitty(0b0000000_00110_00101_000_00100_0110011))  # add x4, x5, x6
+print(*bitty_to_binary(0b0000000_00110_00101_000_00100_0110011), sep="\n")  # add x4, x5, x6
+
+# Example for sub x5, x6, x7
+print(riscV_to_bitty(0b0100000_00111_00110_000_00101_0110011))  # sub x5, x6, x7
+print(*bitty_to_binary(0b0100000_00111_00110_000_00101_0110011), sep="\n")  # sub x5, x6, x7
+
+# Example for srl x6, x7, x8
+print(riscV_to_bitty(0b0000000_01000_00111_101_00110_0110011))  # srl x6, x7, x8
+print(*bitty_to_binary(0b0000000_01000_00111_101_00110_0110011), sep="\n")  # srl x6, x7, x8
+
+# Example for sll x7, x8, x9
+print(riscV_to_bitty(0b0000000_01001_01000_001_00111_0110011))  # sll x7, x8, x9
+print(*bitty_to_binary(0b0000000_01001_01000_001_00111_0110011), sep="\n")  # sll x7, x8, x9
+
+# Example for add x8, x9, x10
+print(riscV_to_bitty(0b0000000_01010_01001_000_01000_0110011))  # add x8, x9, x10
+print(*bitty_to_binary(0b0000000_01010_01001_000_01000_0110011), sep="\n")  # add x8, x9, x10
+
+# Example for sub x9, x10, x11
+print(riscV_to_bitty(0b0100000_01011_01010_000_01001_0110011))  # sub x9, x10, x11
+print(*bitty_to_binary(0b0100000_01011_01010_000_01001_0110011), sep="\n")  # sub x9, x10, x11
+
+# Example for srl x10, x11, x12
+print(riscV_to_bitty(0b0000000_01100_01011_101_01010_0110011))  # srl x10, x11, x12
+print(*bitty_to_binary(0b0000000_01100_01011_101_01010_0110011), sep="\n")  # srl x10, x11, x12
+
+# Example for sll x11, x12, x13
+print(riscV_to_bitty(0b0000000_01101_01100_001_01011_0110011))  # sll x11, x12, x13
+print(*bitty_to_binary(0b0000000_01101_01100_001_01011_0110011), sep="\n")  # sll x11, x12, x13
+
+# Example for add x12, x13, x14
+print(riscV_to_bitty(0b0000000_01110_01101_000_01100_0110011))  # add x12, x13, x14
+print(*bitty_to_binary(0b0000000_01110_01101_000_01100_0110011), sep="\n")  # add x12, x13, x14
+
+# Example for sub x13, x14, x15
+print(riscV_to_bitty(0b0100000_01111_01110_000_01101_0110011))  # sub x13, x14, x15
+print(*bitty_to_binary(0b0100000_01111_01110_000_01101_0110011), sep="\n")  # sub x13, x14, x15
+
+# Example for srl x14, x15, x0
+print(riscV_to_bitty(0b0000000_00000_01111_101_01110_0110011))  # srl x14, x15, x0
+print(*bitty_to_binary(0b0000000_00000_01111_101_01110_0110011), sep="\n")  # srl x14, x15, x0
+
+# Example for sll x15, x0, x1
+print(riscV_to_bitty(0b0000000_00001_00000_001_01111_0110011))  # sll x15, x0, x1
+print(*bitty_to_binary(0b0000000_00001_00000_001_01111_0110011), sep="\n")  # sll x15, x0, x1
+
+# Example for add x0, x1, x2
+print(riscV_to_bitty(0b0000000_00010_00001_000_00000_0110011))  # add x0, x1, x2
+print(*bitty_to_binary(0b0000000_00010_00001_000_00000_0110011), sep="\n")  # add x0, x1, x2
+
+# Example for sub x1, x2, x3
+print(riscV_to_bitty(0b0100000_00011_00010_000_00001_0110011))  # sub x1, x2, x3
+print(*bitty_to_binary(0b0100000_00011_00010_000_00001_0110011), sep="\n")  # sub x1, x2, x3
+
+# Example for srl x2, x3, x4
+print(riscV_to_bitty(0b0000000_00100_00011_101_00010_0110011))  # srl x2, x3, x4
+print(*bitty_to_binary(0b0000000_00100_00011_101_00010_0110011), sep="\n")  # srl x2, x3, x4
+
+# Example for sll x3, x4, x5
+print(riscV_to_bitty(0b0000000_00101_00100_001_00011_0110011))  # sll x3, x4, x5
+print(*bitty_to_binary(0b0000000_00101_00100_001_00011_0110011), sep="\n")  # sll x3, x4, x5
+
+# Example for add x4, x5, x6
+print(riscV_to_bitty(0b0000000_00110_00101_000_00100_0110011))  # add x4, x5, x6
+print(*bitty_to_binary(0b0000000_00110_00101_000_00100_0110011), sep="\n")  # add x4, x5, x6
+
+# Example for sub x5, x6, x7
+print(riscV_to_bitty(0b0100000_00111_00110_000_00101_0110011))  # sub x5, x6, x7
+print(*bitty_to_binary(0b0100000_00111_00110_000_00101_0110011), sep="\n")  # sub x5, x6, x7
+
+# Example for srl x6, x7, x8
+print(riscV_to_bitty(0b0000000_01000_00111_101_00110_0110011))  # srl x6, x7, x8
+print(*bitty_to_binary(0b0000000_01000_00111_101_00110_0110011), sep="\n")  # srl x6, x7, x8
+
+# Example for sll x7, x8, x9
+print(riscV_to_bitty(0b0000000_01001_01000_001_00111_0110011))  # sll x7, x8, x9
+print(*bitty_to_binary(0b0000000_01001_01000_001_00111_0110011), sep="\n")  # sll x7, x8, x9
+
+# Example for add x8, x9, x10
+print(riscV_to_bitty(0b0000000_01010_01001_000_01000_0110011))  # add x8, x9, x10
+print(*bitty_to_binary(0b0000000_01010_01001_000_01000_0110011), sep="\n")  # add x8, x9, x10
+
+# Example for sub x9, x10, x11
+print(riscV_to_bitty(0b0100000_01011_01010_000_01001_0110011))  # sub x9, x10, x11
+print(*bitty_to_binary(0b0100000_01011_01010_000_01001_0110011), sep="\n")  # sub x9, x10, x11
+
+# Example for srl x10, x11, x12
+print(riscV_to_bitty(0b0000000_01100_01011_101_01010_0110011))  # srl x10, x11, x12
+print(*bitty_to_binary(0b0000000_01100_01011_101_01010_0110011), sep="\n")  # srl x10, x11, x12
+
+# Example for sll x11, x12, x13
+print(riscV_to_bitty(0b0000000_01101_01100_001_01011_0110011))  # sll x11, x12, x13
+print(*bitty_to_binary(0b0000000_01101_01100_001_01011_0110011), sep="\n")  # sll x11, x12, x13
+
+# Example for add x12, x13, x14
+print(riscV_to_bitty(0b0000000_01110_01101_000_01100_0110011))  # add x12, x13, x14
+print(*bitty_to_binary(0b0000000_01110_01101_000_01100_0110011), sep="\n")  # add x12, x13, x14
+
+# Example for sub x13, x14, x15
+print(riscV_to_bitty(0b0100000_01111_01110_000_01101_0110011))  # sub x13, x14, x15
+print(*bitty_to_binary(0b0100000_01111_01110_000_01101_0110011), sep="\n")  # sub x13, x14, x15
+
+# Example for srl x14, x15, x0
+print(riscV_to_bitty(0b0000000_00000_01111_101_01110_0110011))  # srl x14, x15, x0
+print(*bitty_to_binary(0b0000000_00000_01111_101_01110_0110011), sep="\n")  # srl x14, x15, x0
+
+# Example for sll x15, x0, x1
+print(riscV_to_bitty(0b0000000_00001_00000_001_01111_0110011))  # sll x15, x0, x1
+print(*bitty_to_binary(0b0000000_00001_00000_001_01111_0110011), sep="\n")  # sll x15, x0, x1
+
+# Example for add x0, x1, x2
+print(riscV_to_bitty(0b0000000_00010_00001_000_00000_0110011))  # add x0, x1, x2
+print(*bitty_to_binary(0b0000000_00010_00001_000_00000_0110011), sep="\n")  # add x0, x1, x2
+
+# Example for sub x1, x2, x3
+print(riscV_to_bitty(0b0100000_00011_00010_000_00001_0110011))  # sub x1, x2, x3
+print(*bitty_to_binary(0b0100000_00011_00010_000_00001_0110011), sep="\n")  # sub x1, x2, x3
+
+# Example for srl x2, x3, x4
+print(riscV_to_bitty(0b0000000_00100_00011_101_00010_0110011))  # srl x2, x3, x4
+print(*bitty_to_binary(0b0000000_00100_00011_101_00010_0110011), sep="\n")  # srl x2, x3, x4
+
+# Example for sll x3, x4, x5
+print(riscV_to_bitty(0b0000000_00101_00100_001_00011_0110011))  # sll x3, x4, x5
+print(*bitty_to_binary(0b0000000_00101_00100_001_00011_0110011), sep="\n")  # sll x3, x4, x5
+
+# Example for add x4, x5, x6
+print(riscV_to_bitty(0b0000000_00110_00101_000_00100_0110011))  # add x4, x5, x6
+print(*bitty_to_binary(0b0000000_00110_00101_000_00100_0110011), sep="\n")  # add x4, x5, x6
+
+# Example for sub x5, x6, x7
+print(riscV_to_bitty(0b0100000_00111_00110_000_00101_0110011))  # sub x5, x6, x7
+print(*bitty_to_binary(0b0100000_00111_00110_000_00101_0110011), sep="\n")  # sub x5, x6, x7
+
+# Example for srl x6, x7, x8
+print(riscV_to_bitty(0b0000000_01000_00111_101_00110_0110011))  # srl x6, x7, x8
+print(*bitty_to_binary(0b0000000_01000_00111_101_00110_0110011), sep="\n")  # srl x6, x7, x8
+
+# Example for sll x7, x8, x9
+print(riscV_to_bitty(0b0000000_01001_01000_001_00111_0110011))  # sll x7, x8, x9
+print(*bitty_to_binary(0b0000000_01001_01000_001_00111_0110011), sep="\n")  # sll x7, x8, x9
+
+# Example for add x8, x9, x10
+print(riscV_to_bitty(0b0000000_01010_01001_000_01000_0110011))  # add x8, x9, x10
+print(*bitty_to_binary(0b0000000_01010_01001_000_01000_0110011), sep="\n")  # add x8, x9, x10
+
+# Example for sub x9, x10, x11
+print(riscV_to_bitty(0b0100000_01011_01010_000_01001_0110011))  # sub x9, x10, x11
+print(*bitty_to_binary(0b0100000_01011_01010_000_01001_0110011), sep="\n")  # sub x9, x10, x11
+
+# Example for srl x10, x11, x12
+print(riscV_to_bitty(0b0000000_01100_01011_101_01010_0110011))  # srl x10, x11, x12
+print(*bitty_to_binary(0b0000000_01100_01011_101_01010_0110011), sep="\n")  # srl x10, x11, x12
+
+# Example for sll x11, x12, x13
+print(riscV_to_bitty(0b0000000_01101_01100_001_01011_0110011))  # sll x11, x12, x13
+print(*bitty_to_binary(0b0000000_01101_01100_001_01011_0110011), sep="\n")  # sll x11, x12, x13
+
+# Example for add x12, x13, x14
+print(riscV_to_bitty(0b0000000_01110_01101_000_01100_0110011))  # add x12, x13, x14
+print(*bitty_to_binary(0b0000000_01110_01101_000_01100_0110011), sep="\n")  # add x12, x13, x14
+
+# Example for sub x13, x14, x15
+print(riscV_to_bitty(0b0100000_01111_01110_000_01101_0110011))  # sub x13, x14, x15
+print(*bitty_to_binary(0b0100000_01111_01110_000_01101_0110011), sep="\n")  # sub x13, x14, x15
+
+# Example for srl x14, x15, x0
+print(riscV_to_bitty(0b0000000_00000_01111_101_01110_0110011))  # srl x14, x15, x0
+print(*bitty_to_binary(0b0000000_00000_01111_101_01110_0110011), sep="\n")  # srl x14, x15, x0
+
+# Example for sll x15, x0, x1
+print(riscV_to_bitty(0b0000000_00001_00000_001_01111_0110011))  # sll x15, x0, x1
+print(*bitty_to_binary(0b0000000_00001_00000_001_01111_0110011), sep="\n")  # sll x15, x0, x1
+
+# Example for add x0, x1, x2
+print(riscV_to_bitty(0b0000000_00010_00001_000_00000_0110011))  # add x0, x1, x2
+print(*bitty_to_binary(0b0000000_00010_00001_000_00000_0110011), sep="\n")  # add x0, x1, x2
+
+# Example for sub x1, x2, x3
+print(riscV_to_bitty(0b0100000_00011_00010_000_00001_0110011))  # sub x1, x2, x3
+print(*bitty_to_binary(0b0100000_00011_00010_000_00001_0110011), sep="\n")  # sub x1, x2, x3
+

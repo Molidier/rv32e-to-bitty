@@ -1,7 +1,9 @@
 # EmulatorComparison.py
 from BittyEmulator import BittyEmulator
 from RISCV32EMEmulator import RISCV32EMEmulator
-from r_type import RiscVConverter
+from translator import RiscVConverter
+from shared_memory import generate_shared_memory  # Import shared memory generator
+
 
 def load_instructions_from_file(filename, base=0):
     """
@@ -9,16 +11,23 @@ def load_instructions_from_file(filename, base=0):
     If base is 0, int() will auto-detect the base from the prefix.
     """
     instructions = []
-    with open(filename, "r") as f:
-        for line in f:
-            line = line.strip()
-            # Skip empty lines and comments (lines starting with '#')
-            if not line or line.startswith("#"):
-                continue
-            try:
-                instructions.append(int(line, base))
-            except ValueError as e:
-                print(f"Error converting line '{line}': {e}")
+    try:
+        with open(filename, "r") as f:
+            for line in f:
+                line = line.strip()
+                # Skip empty lines and comments (lines starting with '#')
+                if not line or line.startswith("#"):
+                    continue
+                try:
+                    instructions.append(int(line, base))
+                except ValueError as e:
+                    print(f"Error converting line '{line}': {e}")
+    except FileNotFoundError:
+        print(f"Warning: File {filename} not found. Using sample instructions.")
+        # Add some sample instructions if file not found
+        if "riscv" in filename.lower():
+            # Sample RISC-V instructions: add x1, x2, x3
+            instructions = [0x003100B3]  # ADD x1, x2, x3
     return instructions
 
 def write_to_file(message, filename="comparison_output.txt"):
@@ -29,22 +38,28 @@ def write_to_file(message, filename="comparison_output.txt"):
         file.write(message + "\n")
 
 def main():
+    # Clear the output file before starting
+    with open("comparison_output.txt", "w") as file:
+        file.write("=== Starting Emulator Comparison ===\n")
+    
+    # Generate shared memory for both emulators
+    memory = generate_shared_memory()
+
     # Initialize both emulators
-    bitty = BittyEmulator()
-    riscv = RISCV32EMEmulator()
+    bitty = BittyEmulator(memory = memory)
+    riscv = RISCV32EMEmulator(memory_array=memory)
     translator = RiscVConverter()
-   
-    # Extend the BittyEmulator registers to 16 instead of 8 (for our comparison script only)
-    if len(bitty.registers) == 8:
-        bitty.registers.extend([10] * 8)  # Add 8 more registers to make it 16
    
     # Define mapping from RISC-V registers to Bitty registers (here 1:1 mapping)
     register_map = {i: i for i in range(16)}
    
     # Load instructions from files
-    riscv.instruction_array = load_instructions_from_file("riscv_instructions.txt", base=0)
-    
-    # No longer loading bitty instructions from file as we'll generate them on the fly
+    try:
+        riscv.instruction_array = load_instructions_from_file("riscv_instructions.txt", base=0)
+    except Exception as e:
+        print(f"Error loading instructions: {e}")
+        write_to_file(f"Error loading instructions: {e}")
+        return
    
     # Instruction counters
     bitty_instr_count = 0
@@ -55,7 +70,7 @@ def main():
    
     write_to_file("=== Starting Emulator Comparison ===")
    
-    # Iterate through each instruction in RISCV array, and pass to `bitty_to_binary`
+    # Iterate through each instruction in the RISCV array, and pass to `bitty_to_binary`
     while riscv_instr_count < max_riscv_instructions and riscv.pc < len(riscv.instruction_array):
         write_to_file(f"\n=== RISC-V Instruction {riscv_instr_count} at PC {riscv.pc} ===")
        
@@ -68,31 +83,34 @@ def main():
         riscv.pc = next_pc
         riscv_instr_count += 1
        
-        # Process the instruction in bitty_to_binary and iterate over returned instructions
-        bitty_binary_instructions = translator.bitty_to_binary(instruction)
+        # Process the instruction in bitty_to_binary and get equivalent Bitty instructions
+        try:
+            bitty_binary_instructions = translator.bitty_to_binary(instruction)
+        except Exception as e:
+            write_to_file(f"Error in translation: {e}")
+            bitty_binary_instructions = []
        
         write_to_file(f"\n=== Executing {len(bitty_binary_instructions)} Bitty Instructions ===")
         
-        # Keep track of total Bitty instructions executed
-        instructions_executed = 0
-        
+        # Log each Bitty instruction before execution
         for i, instr_bin in enumerate(bitty_binary_instructions):
-            write_to_file(f"Executing Bitty Instruction {i}: 0x{instr_bin:04X}")
+            write_to_file(f"Bitty Instruction {i}: 0x{instr_bin:04X}")
             
-            # Directly pass the instruction to evaluate() rather than an address
-            relative_offset = bitty.evaluate(instr_bin)
+        # Use evaluate_instructions_array to execute all instructions at once
+        if bitty_binary_instructions:
+            # Save the current PC to restore later if needed
+            start_pc = bitty.pc
             
-            # Increment the instruction count
-            instructions_executed += 1
+            # Execute all instructions in the array
+            bitty.pc = 0  # Reset PC to 0 for this instruction batch
+            end_pc = bitty.evaluate_instructions_array(bitty_binary_instructions)
             
-            # If the relative_offset is not 1, we have a branch
-            if relative_offset != 1:
-                write_to_file(f"Branch taken with offset {relative_offset}")
-        
-        # Update total Bitty instruction count
-        bitty_instr_count += instructions_executed
+            if end_pc != len(bitty_binary_instructions):
+                write_to_file(f"Branch taken, ended at PC {end_pc}")
+                
+            bitty_instr_count += len(bitty_binary_instructions)
        
-        # Compare register values between emulators
+        # Compare register values between emulators (now considering 32-bit values)
         write_to_file("\n=== Register Comparison ===")
         write_to_file(f"{'Register':<10} {'RISC-V':<10} {'Bitty':<10} {'Match':<6}")
         write_to_file("-" * 40)
@@ -101,11 +119,11 @@ def main():
             rv_value = riscv.registers[rv_reg]
             bitty_value = bitty.registers[bitty_reg]
            
-            # Compare lower 16 bits for RISCV register (if applicable)
-            match = (rv_value & 0xFFFF) == bitty_value
+            # Compare the full 32-bit values
+            match = (rv_value & 0xFFFFFFFF) == (bitty_value & 0xFFFFFFFF)
             match_str = "✓" if match else "✗"
            
-            write_to_file(f"x{rv_reg:<9} 0x{rv_value:08X} 0x{bitty_value:04X}   {match_str}")
+            write_to_file(f"x{rv_reg:<9} 0x{rv_value:08X} 0x{bitty_value:08X}   {match_str}")
    
     write_to_file("\n=== Comparison Complete ===")
     write_to_file(f"Executed {riscv_instr_count} RISC-V instructions and {bitty_instr_count} Bitty instructions")

@@ -1,19 +1,15 @@
-# RISCV32EMEmulator.py
-from shared_memory import generate_shared_memory  # Import shared memory generator
 
+# RISCV32EMEmulator.py
 class RISCV32EMEmulator:
-    def __init__(self):
+    def __init__(self, memory_array):
         # RISC-V has 32 registers (x0-x31), but x0 is hardwired to 0
         # For RV32E (embedded), only 16 registers (x0-x15) are used
-        self.registers = [10] * 16  # RV32E has 16 registers
+        self.registers = [i * 10 for i in range(16)]  # Initialize 16 registers with dummy values
+        self.registers[0] = 0  # Register 0 is always 0
         self.pc = 0  # Program counter
         self.instruction_array = []
-        self.memory_array = generate_shared_memory()  # Shared memory instance
-        
-        # # Display initial memory state
-        # for index, el in enumerate(self.memory_array):
-        #     print(f"Emulator Memory {index}: {el:08X}")
-        
+        self.memory_array = memory_array  # Use the provided memory element
+
         # Load instructions from file
         try:
             with open("instructions_for_em.txt", "r") as infile:
@@ -23,8 +19,7 @@ class RISCV32EMEmulator:
                     self.instruction_array.append(instr)
         except FileNotFoundError:
             print("Error opening file")
-            
-    
+
     def fetch_instruction(self):
         """Fetch the instruction at the current PC"""
         if 0 <= self.pc < len(self.instruction_array):
@@ -75,13 +70,20 @@ class RISCV32EMEmulator:
                     # Signed comparison
                     rs1_val = self.registers[rs1]
                     rs2_val = self.registers[rs2]
-                    # Convert to signed 32-bit integers
-                    if rs1_val & 0x80000000:
-                        rs1_val = rs1_val - 0x100000000
-                    if rs2_val & 0x80000000:
-                        rs2_val = rs2_val - 0x100000000
-                    result = 1 if rs1_val < rs2_val else 0
-                    print(f"SLT x{rd}, x{rs1}, x{rs2}: {rs1_val} < {rs2_val} = {result}")
+                    
+                    # Convert to signed integers
+                    signed_rs1 = rs1_val if rs1_val < 0x80000000 else rs1_val - 0x100000000
+                    signed_rs2 = rs2_val if rs2_val < 0x80000000 else rs2_val - 0x100000000
+                    
+                    # Convert to binary representations (32 bits)
+                    bin_rs1 = format(rs1_val, '032b')
+                    bin_rs2 = format(rs2_val, '032b')
+                    
+                    # Perform the comparison
+                    result = 1 if signed_rs1 < signed_rs2 else 0
+                    
+                    print(f"SLT x{rd}, x{rs1}, x{rs2}: {signed_rs1} < {signed_rs2} = {result}")
+                    print(f"Binary values: rs1 = {bin_rs1}, rs2 = {bin_rs2}")
                 elif funct3 == 0x3:  # SLTU - Set Less Than Unsigned
                     result = 1 if (self.registers[rs1] & 0xFFFFFFFF) < (self.registers[rs2] & 0xFFFFFFFF) else 0
                     print(f"SLTU x{rd}, x{rs1}, x{rs2}: {self.registers[rs1]} < {self.registers[rs2]} = {result}")
@@ -150,15 +152,30 @@ class RISCV32EMEmulator:
                     shift_amount = imm & 0x1F
                     result = (self.registers[rs1] << shift_amount) & 0xFFFFFFFF
                     print(f"SLLI x{rd}, x{rs1}, {shift_amount}: {self.registers[rs1]} << {shift_amount} = {result}")
-                elif funct3 == 0x2:  # SLTI - Set Less Than Immediate
-                    # Signed comparison
+                elif funct3 == 0x2:  # SLTI - Set Less Than Immediate (signed)
+                    # Get the value from register rs1 (32-bit unsigned)
                     rs1_val = self.registers[rs1]
+                    # Convert rs1_val to a signed 32-bit integer
                     if rs1_val & 0x80000000:
-                        rs1_val = rs1_val - 0x100000000
-                    if imm & 0x80000000:
-                        imm = imm - 0x100000000
-                    result = 1 if rs1_val < imm else 0
-                    print(f"SLTI x{rd}, x{rs1}, {imm}: {rs1_val} < {imm} = {result}")
+                        rs1_signed = rs1_val - 0x100000000
+                    else:
+                        rs1_signed = rs1_val
+
+                    # The immediate in SLTI is 12 bits. Extract and sign-extend it.
+                    imm_val = imm & 0xFFF    # keep only 12 bits
+                    if imm_val & 0x800:      # if the 12th bit (sign bit) is set
+                        imm_signed = imm_val - 0x1000
+                    else:
+                        imm_signed = imm_val
+
+                    # Perform the signed comparison:
+                    result = 1 if rs1_signed < imm_signed else 0
+
+                    # Store the result in the destination register rd
+                    self.registers[rd] = result
+
+                    print(f"SLTI x{rd}, x{rs1}, {imm_signed}: {rs1_signed} < {imm_signed} = {result}")
+
                 elif funct3 == 0x3:  # SLTIU - Set Less Than Immediate Unsigned
                     result = 1 if (self.registers[rs1] & 0xFFFFFFFF) < (imm & 0xFFFFFFFF) else 0
                     print(f"SLTIU x{rd}, x{rs1}, {imm}: {self.registers[rs1]} < {imm} = {result}")
@@ -203,10 +220,13 @@ class RISCV32EMEmulator:
                 # Calculate memory address
                 address = (self.registers[rs1] + imm) & 0xFFFFFFFF
                 
+                #CHANGED ONLY FOR SIMULATION PURPOSES
                 # Make sure address is within memory bounds
                 if address >= len(self.memory_array):
                     print(f"Memory access out of bounds: {address}")
-                    return self.pc + 1
+                    print(f"New address is: ", address % len(self.memory_array))
+                    address = address % len(self.memory_array)
+                    #return self.pc + 1
                 
                 # Register x0 is hardwired to 0
                 if rd == 0:
@@ -223,7 +243,9 @@ class RISCV32EMEmulator:
                     # Ensure address is halfword-aligned
                     if address % 2 != 0:
                         print(f"Misaligned memory access for LH: {address}")
-                        return self.pc + 1
+                        #CHANGED ONLY FOR SIMULATION PURPOSES
+                        address = address - 1
+                        #return self.pc + 1 
                     
                     value = self.memory_array[address] & 0xFFFF
                     # Sign extend
@@ -233,9 +255,10 @@ class RISCV32EMEmulator:
                     print(f"LH x{rd}, {imm}(x{rs1}): Loaded {value:08X} from address {address:08X}")
                 elif funct3 == 0x2:  # LW - Load Word
                     # Ensure address is word-aligned
-                    if address % 4 != 0:
-                        print(f"Misaligned memory access for LW: {address}")
-                        return self.pc + 1
+                    #CHANGED ONLY FOR SIMULATION PURPOSES
+                    # if address % 4 != 0:
+                    #     print(f"Misaligned memory access for LW: {address}")
+                    #     return self.pc + 1
                     
                     value = self.memory_array[address]
                     self.registers[rd] = value
@@ -248,7 +271,9 @@ class RISCV32EMEmulator:
                     # Ensure address is halfword-aligned
                     if address % 2 != 0:
                         print(f"Misaligned memory access for LHU: {address}")
-                        return self.pc + 1
+                        #CHANGED ONLY FOR SIMULATION PURPOSES
+                        address = address - 1
+                        #return self.pc + 1 
                     
                     value = self.memory_array[address] & 0xFFFF
                     self.registers[rd] = value

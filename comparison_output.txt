@@ -1,2808 +1,3405 @@
 === Starting Emulator Comparison ===
-
-=== RISC-V Instruction 0 at PC 0 ===
-Instruction: 0x002080B3
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x1104
-Executing Bitty Instruction 1: 0x1100
-Executing Bitty Instruction 2: 0x1200
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000014 0x000A   ✗
-x2         0x0000000A 0x000A   ✓
-x3         0x0000000A 0x000A   ✓
-x4         0x0000000A 0x000A   ✓
-x5         0x0000000A 0x000A   ✓
-x6         0x0000000A 0x000A   ✓
-x7         0x0000000A 0x000A   ✓
-x8         0x0000000A 0x000A   ✓
-x9         0x0000000A 0x000A   ✓
-x10        0x0000000A 0x000A   ✓
-x11        0x0000000A 0x000A   ✓
-x12        0x0000000A 0x000A   ✓
-x13        0x0000000A 0x000A   ✓
-x14        0x0000000A 0x000A   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 1 at PC 1 ===
-Instruction: 0x403100B3
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x1104
-Executing Bitty Instruction 1: 0x1200
-Executing Bitty Instruction 2: 0x1304
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0000   ✓
-x2         0x0000000A 0x000A   ✓
-x3         0x0000000A 0x000A   ✓
-x4         0x0000000A 0x000A   ✓
-x5         0x0000000A 0x000A   ✓
-x6         0x0000000A 0x000A   ✓
-x7         0x0000000A 0x000A   ✓
-x8         0x0000000A 0x000A   ✓
-x9         0x0000000A 0x000A   ✓
-x10        0x0000000A 0x000A   ✓
-x11        0x0000000A 0x000A   ✓
-x12        0x0000000A 0x000A   ✓
-x13        0x0000000A 0x000A   ✓
-x14        0x0000000A 0x000A   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 2 at PC 2 ===
-Instruction: 0x0041D133
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x2204
-Executing Bitty Instruction 1: 0x2300
-Executing Bitty Instruction 2: 0x2418
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0000   ✓
-x2         0x00000000 0x0000   ✓
-x3         0x0000000A 0x000A   ✓
-x4         0x0000000A 0x000A   ✓
-x5         0x0000000A 0x000A   ✓
-x6         0x0000000A 0x000A   ✓
-x7         0x0000000A 0x000A   ✓
-x8         0x0000000A 0x000A   ✓
-x9         0x0000000A 0x000A   ✓
-x10        0x0000000A 0x000A   ✓
-x11        0x0000000A 0x000A   ✓
-x12        0x0000000A 0x000A   ✓
-x13        0x0000000A 0x000A   ✓
-x14        0x0000000A 0x000A   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 3 at PC 3 ===
-Instruction: 0x005211B3
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x3304
-Executing Bitty Instruction 1: 0x3400
-Executing Bitty Instruction 2: 0x3514
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0000   ✓
-x2         0x00000000 0x0000   ✓
-x3         0x00002800 0x2800   ✓
-x4         0x0000000A 0x000A   ✓
-x5         0x0000000A 0x000A   ✓
-x6         0x0000000A 0x000A   ✓
-x7         0x0000000A 0x000A   ✓
-x8         0x0000000A 0x000A   ✓
-x9         0x0000000A 0x000A   ✓
-x10        0x0000000A 0x000A   ✓
-x11        0x0000000A 0x000A   ✓
-x12        0x0000000A 0x000A   ✓
-x13        0x0000000A 0x000A   ✓
-x14        0x0000000A 0x000A   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 4 at PC 4 ===
-Instruction: 0x00628233
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x4404
-Executing Bitty Instruction 1: 0x4500
-Executing Bitty Instruction 2: 0x4600
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0000   ✓
-x2         0x00000000 0x0000   ✓
-x3         0x00002800 0x2800   ✓
-x4         0x00000014 0x0014   ✓
-x5         0x0000000A 0x000A   ✓
-x6         0x0000000A 0x000A   ✓
-x7         0x0000000A 0x000A   ✓
-x8         0x0000000A 0x000A   ✓
-x9         0x0000000A 0x000A   ✓
-x10        0x0000000A 0x000A   ✓
-x11        0x0000000A 0x000A   ✓
-x12        0x0000000A 0x000A   ✓
-x13        0x0000000A 0x000A   ✓
-x14        0x0000000A 0x000A   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 5 at PC 5 ===
-Instruction: 0x407302B3
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x5504
-Executing Bitty Instruction 1: 0x5600
-Executing Bitty Instruction 2: 0x5704
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0000   ✓
-x2         0x00000000 0x0000   ✓
-x3         0x00002800 0x2800   ✓
-x4         0x00000014 0x0014   ✓
-x5         0x00000000 0x0000   ✓
-x6         0x0000000A 0x000A   ✓
-x7         0x0000000A 0x000A   ✓
-x8         0x0000000A 0x000A   ✓
-x9         0x0000000A 0x000A   ✓
-x10        0x0000000A 0x000A   ✓
-x11        0x0000000A 0x000A   ✓
-x12        0x0000000A 0x000A   ✓
-x13        0x0000000A 0x000A   ✓
-x14        0x0000000A 0x000A   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 6 at PC 6 ===
-Instruction: 0x0083D333
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x6604
-Executing Bitty Instruction 1: 0x6700
-Executing Bitty Instruction 2: 0x6818
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0000   ✓
-x2         0x00000000 0x0000   ✓
-x3         0x00002800 0x2800   ✓
-x4         0x00000014 0x0014   ✓
-x5         0x00000000 0x0000   ✓
-x6         0x00000000 0x0000   ✓
-x7         0x0000000A 0x000A   ✓
-x8         0x0000000A 0x000A   ✓
-x9         0x0000000A 0x000A   ✓
-x10        0x0000000A 0x000A   ✓
-x11        0x0000000A 0x000A   ✓
-x12        0x0000000A 0x000A   ✓
-x13        0x0000000A 0x000A   ✓
-x14        0x0000000A 0x000A   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 7 at PC 7 ===
-Instruction: 0x009413B3
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x7704
-Executing Bitty Instruction 1: 0x7800
-Executing Bitty Instruction 2: 0x7914
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0000   ✓
-x2         0x00000000 0x0000   ✓
-x3         0x00002800 0x2800   ✓
-x4         0x00000014 0x0014   ✓
-x5         0x00000000 0x0000   ✓
-x6         0x00000000 0x0000   ✓
-x7         0x00002800 0x2800   ✓
-x8         0x0000000A 0x000A   ✓
-x9         0x0000000A 0x000A   ✓
-x10        0x0000000A 0x000A   ✓
-x11        0x0000000A 0x000A   ✓
-x12        0x0000000A 0x000A   ✓
-x13        0x0000000A 0x000A   ✓
-x14        0x0000000A 0x000A   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 8 at PC 8 ===
-Instruction: 0x00A48433
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x8804
-Executing Bitty Instruction 1: 0x8900
-Executing Bitty Instruction 2: 0x8A00
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0000   ✓
-x2         0x00000000 0x0000   ✓
-x3         0x00002800 0x2800   ✓
-x4         0x00000014 0x0014   ✓
-x5         0x00000000 0x0000   ✓
-x6         0x00000000 0x0000   ✓
-x7         0x00002800 0x2800   ✓
-x8         0x00000014 0x0014   ✓
-x9         0x0000000A 0x000A   ✓
-x10        0x0000000A 0x000A   ✓
-x11        0x0000000A 0x000A   ✓
-x12        0x0000000A 0x000A   ✓
-x13        0x0000000A 0x000A   ✓
-x14        0x0000000A 0x000A   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 9 at PC 9 ===
-Instruction: 0x40B504B3
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x9904
-Executing Bitty Instruction 1: 0x9A00
-Executing Bitty Instruction 2: 0x9B04
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0000   ✓
-x2         0x00000000 0x0000   ✓
-x3         0x00002800 0x2800   ✓
-x4         0x00000014 0x0014   ✓
-x5         0x00000000 0x0000   ✓
-x6         0x00000000 0x0000   ✓
-x7         0x00002800 0x2800   ✓
-x8         0x00000014 0x0014   ✓
-x9         0x00000000 0x0000   ✓
-x10        0x0000000A 0x000A   ✓
-x11        0x0000000A 0x000A   ✓
-x12        0x0000000A 0x000A   ✓
-x13        0x0000000A 0x000A   ✓
-x14        0x0000000A 0x000A   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 10 at PC 10 ===
-Instruction: 0x00C5D533
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xAA04
-Executing Bitty Instruction 1: 0xAB00
-Executing Bitty Instruction 2: 0xAC18
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0000   ✓
-x2         0x00000000 0x0000   ✓
-x3         0x00002800 0x2800   ✓
-x4         0x00000014 0x0014   ✓
-x5         0x00000000 0x0000   ✓
-x6         0x00000000 0x0000   ✓
-x7         0x00002800 0x2800   ✓
-x8         0x00000014 0x0014   ✓
-x9         0x00000000 0x0000   ✓
-x10        0x00000000 0x0000   ✓
-x11        0x0000000A 0x000A   ✓
-x12        0x0000000A 0x000A   ✓
-x13        0x0000000A 0x000A   ✓
-x14        0x0000000A 0x000A   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 11 at PC 11 ===
-Instruction: 0x00D615B3
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xBB04
-Executing Bitty Instruction 1: 0xBC00
-Executing Bitty Instruction 2: 0xBD14
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0000   ✓
-x2         0x00000000 0x0000   ✓
-x3         0x00002800 0x2800   ✓
-x4         0x00000014 0x0014   ✓
-x5         0x00000000 0x0000   ✓
-x6         0x00000000 0x0000   ✓
-x7         0x00002800 0x2800   ✓
-x8         0x00000014 0x0014   ✓
-x9         0x00000000 0x0000   ✓
-x10        0x00000000 0x0000   ✓
-x11        0x00002800 0x2800   ✓
-x12        0x0000000A 0x000A   ✓
-x13        0x0000000A 0x000A   ✓
-x14        0x0000000A 0x000A   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 12 at PC 12 ===
-Instruction: 0x00E68633
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xCC04
-Executing Bitty Instruction 1: 0xCD00
-Executing Bitty Instruction 2: 0xCE00
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0000   ✓
-x2         0x00000000 0x0000   ✓
-x3         0x00002800 0x2800   ✓
-x4         0x00000014 0x0014   ✓
-x5         0x00000000 0x0000   ✓
-x6         0x00000000 0x0000   ✓
-x7         0x00002800 0x2800   ✓
-x8         0x00000014 0x0014   ✓
-x9         0x00000000 0x0000   ✓
-x10        0x00000000 0x0000   ✓
-x11        0x00002800 0x2800   ✓
-x12        0x00000014 0x0014   ✓
-x13        0x0000000A 0x000A   ✓
-x14        0x0000000A 0x000A   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 13 at PC 13 ===
-Instruction: 0x40F706B3
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xDD04
-Executing Bitty Instruction 1: 0xDE00
-Executing Bitty Instruction 2: 0xDF04
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0000   ✓
-x2         0x00000000 0x0000   ✓
-x3         0x00002800 0x2800   ✓
-x4         0x00000014 0x0014   ✓
-x5         0x00000000 0x0000   ✓
-x6         0x00000000 0x0000   ✓
-x7         0x00002800 0x2800   ✓
-x8         0x00000014 0x0014   ✓
-x9         0x00000000 0x0000   ✓
-x10        0x00000000 0x0000   ✓
-x11        0x00002800 0x2800   ✓
-x12        0x00000014 0x0014   ✓
-x13        0x00000000 0x0000   ✓
-x14        0x0000000A 0x000A   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 14 at PC 14 ===
-Instruction: 0x0007D733
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xEE04
-Executing Bitty Instruction 1: 0xEF00
-Executing Bitty Instruction 2: 0xE018
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0000   ✓
-x2         0x00000000 0x0000   ✓
-x3         0x00002800 0x2800   ✓
-x4         0x00000014 0x0014   ✓
-x5         0x00000000 0x0000   ✓
-x6         0x00000000 0x0000   ✓
-x7         0x00002800 0x2800   ✓
-x8         0x00000014 0x0014   ✓
-x9         0x00000000 0x0000   ✓
-x10        0x00000000 0x0000   ✓
-x11        0x00002800 0x2800   ✓
-x12        0x00000014 0x0014   ✓
-x13        0x00000000 0x0000   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 15 at PC 15 ===
-Instruction: 0x001017B3
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xFF04
-Executing Bitty Instruction 1: 0xF000
-Executing Bitty Instruction 2: 0xF114
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0000   ✓
-x2         0x00000000 0x0000   ✓
-x3         0x00002800 0x2800   ✓
-x4         0x00000014 0x0014   ✓
-x5         0x00000000 0x0000   ✓
-x6         0x00000000 0x0000   ✓
-x7         0x00002800 0x2800   ✓
-x8         0x00000014 0x0014   ✓
-x9         0x00000000 0x0000   ✓
-x10        0x00000000 0x0000   ✓
-x11        0x00002800 0x2800   ✓
-x12        0x00000014 0x0014   ✓
-x13        0x00000000 0x0000   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 16 at PC 16 ===
-Instruction: 0x002080B3
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x1104
-Executing Bitty Instruction 1: 0x1100
-Executing Bitty Instruction 2: 0x1200
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0000   ✓
-x2         0x00000000 0x0000   ✓
-x3         0x00002800 0x2800   ✓
-x4         0x00000014 0x0014   ✓
-x5         0x00000000 0x0000   ✓
-x6         0x00000000 0x0000   ✓
-x7         0x00002800 0x2800   ✓
-x8         0x00000014 0x0014   ✓
-x9         0x00000000 0x0000   ✓
-x10        0x00000000 0x0000   ✓
-x11        0x00002800 0x2800   ✓
-x12        0x00000014 0x0014   ✓
-x13        0x00000000 0x0000   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 17 at PC 17 ===
-Instruction: 0x403100B3
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x1104
-Executing Bitty Instruction 1: 0x1200
-Executing Bitty Instruction 2: 0x1304
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFD800 0xD800   ✓
-x2         0x00000000 0x0000   ✓
-x3         0x00002800 0x2800   ✓
-x4         0x00000014 0x0014   ✓
-x5         0x00000000 0x0000   ✓
-x6         0x00000000 0x0000   ✓
-x7         0x00002800 0x2800   ✓
-x8         0x00000014 0x0014   ✓
-x9         0x00000000 0x0000   ✓
-x10        0x00000000 0x0000   ✓
-x11        0x00002800 0x2800   ✓
-x12        0x00000014 0x0014   ✓
-x13        0x00000000 0x0000   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 18 at PC 18 ===
-Instruction: 0x0041D133
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x2204
-Executing Bitty Instruction 1: 0x2300
-Executing Bitty Instruction 2: 0x2418
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFD800 0xD800   ✓
-x2         0x00000000 0x0280   ✗
-x3         0x00002800 0x2800   ✓
-x4         0x00000014 0x0014   ✓
-x5         0x00000000 0x0000   ✓
-x6         0x00000000 0x0000   ✓
-x7         0x00002800 0x2800   ✓
-x8         0x00000014 0x0014   ✓
-x9         0x00000000 0x0000   ✓
-x10        0x00000000 0x0000   ✓
-x11        0x00002800 0x2800   ✓
-x12        0x00000014 0x0014   ✓
-x13        0x00000000 0x0000   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 19 at PC 19 ===
-Instruction: 0x005211B3
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x3304
-Executing Bitty Instruction 1: 0x3400
-Executing Bitty Instruction 2: 0x3514
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFD800 0xD800   ✓
-x2         0x00000000 0x0280   ✗
-x3         0x00000014 0x0014   ✓
-x4         0x00000014 0x0014   ✓
-x5         0x00000000 0x0000   ✓
-x6         0x00000000 0x0000   ✓
-x7         0x00002800 0x2800   ✓
-x8         0x00000014 0x0014   ✓
-x9         0x00000000 0x0000   ✓
-x10        0x00000000 0x0000   ✓
-x11        0x00002800 0x2800   ✓
-x12        0x00000014 0x0014   ✓
-x13        0x00000000 0x0000   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 20 at PC 20 ===
-Instruction: 0x00628233
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x4404
-Executing Bitty Instruction 1: 0x4500
-Executing Bitty Instruction 2: 0x4600
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFD800 0xD800   ✓
-x2         0x00000000 0x0280   ✗
-x3         0x00000014 0x0014   ✓
-x4         0x00000000 0x0000   ✓
-x5         0x00000000 0x0000   ✓
-x6         0x00000000 0x0000   ✓
-x7         0x00002800 0x2800   ✓
-x8         0x00000014 0x0014   ✓
-x9         0x00000000 0x0000   ✓
-x10        0x00000000 0x0000   ✓
-x11        0x00002800 0x2800   ✓
-x12        0x00000014 0x0014   ✓
-x13        0x00000000 0x0000   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 21 at PC 21 ===
-Instruction: 0x407302B3
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x5504
-Executing Bitty Instruction 1: 0x5600
-Executing Bitty Instruction 2: 0x5704
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFD800 0xD800   ✓
-x2         0x00000000 0x0280   ✗
-x3         0x00000014 0x0014   ✓
-x4         0x00000000 0x0000   ✓
-x5         0xFFFFD800 0xD800   ✓
-x6         0x00000000 0x0000   ✓
-x7         0x00002800 0x2800   ✓
-x8         0x00000014 0x0014   ✓
-x9         0x00000000 0x0000   ✓
-x10        0x00000000 0x0000   ✓
-x11        0x00002800 0x2800   ✓
-x12        0x00000014 0x0014   ✓
-x13        0x00000000 0x0000   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 22 at PC 22 ===
-Instruction: 0x0083D333
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x6604
-Executing Bitty Instruction 1: 0x6700
-Executing Bitty Instruction 2: 0x6818
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFD800 0xD800   ✓
-x2         0x00000000 0x0280   ✗
-x3         0x00000014 0x0014   ✓
-x4         0x00000000 0x0000   ✓
-x5         0xFFFFD800 0xD800   ✓
-x6         0x00000000 0x0280   ✗
-x7         0x00002800 0x2800   ✓
-x8         0x00000014 0x0014   ✓
-x9         0x00000000 0x0000   ✓
-x10        0x00000000 0x0000   ✓
-x11        0x00002800 0x2800   ✓
-x12        0x00000014 0x0014   ✓
-x13        0x00000000 0x0000   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 23 at PC 23 ===
-Instruction: 0x009413B3
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x7704
-Executing Bitty Instruction 1: 0x7800
-Executing Bitty Instruction 2: 0x7914
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFD800 0xD800   ✓
-x2         0x00000000 0x0280   ✗
-x3         0x00000014 0x0014   ✓
-x4         0x00000000 0x0000   ✓
-x5         0xFFFFD800 0xD800   ✓
-x6         0x00000000 0x0280   ✗
-x7         0x00000014 0x0014   ✓
-x8         0x00000014 0x0014   ✓
-x9         0x00000000 0x0000   ✓
-x10        0x00000000 0x0000   ✓
-x11        0x00002800 0x2800   ✓
-x12        0x00000014 0x0014   ✓
-x13        0x00000000 0x0000   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 24 at PC 24 ===
-Instruction: 0x00A48433
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x8804
-Executing Bitty Instruction 1: 0x8900
-Executing Bitty Instruction 2: 0x8A00
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFD800 0xD800   ✓
-x2         0x00000000 0x0280   ✗
-x3         0x00000014 0x0014   ✓
-x4         0x00000000 0x0000   ✓
-x5         0xFFFFD800 0xD800   ✓
-x6         0x00000000 0x0280   ✗
-x7         0x00000014 0x0014   ✓
-x8         0x00000000 0x0000   ✓
-x9         0x00000000 0x0000   ✓
-x10        0x00000000 0x0000   ✓
-x11        0x00002800 0x2800   ✓
-x12        0x00000014 0x0014   ✓
-x13        0x00000000 0x0000   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 25 at PC 25 ===
-Instruction: 0x40B504B3
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x9904
-Executing Bitty Instruction 1: 0x9A00
-Executing Bitty Instruction 2: 0x9B04
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFD800 0xD800   ✓
-x2         0x00000000 0x0280   ✗
-x3         0x00000014 0x0014   ✓
-x4         0x00000000 0x0000   ✓
-x5         0xFFFFD800 0xD800   ✓
-x6         0x00000000 0x0280   ✗
-x7         0x00000014 0x0014   ✓
-x8         0x00000000 0x0000   ✓
-x9         0xFFFFD800 0xD800   ✓
-x10        0x00000000 0x0000   ✓
-x11        0x00002800 0x2800   ✓
-x12        0x00000014 0x0014   ✓
-x13        0x00000000 0x0000   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 26 at PC 26 ===
-Instruction: 0x00C5D533
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xAA04
-Executing Bitty Instruction 1: 0xAB00
-Executing Bitty Instruction 2: 0xAC18
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFD800 0xD800   ✓
-x2         0x00000000 0x0280   ✗
-x3         0x00000014 0x0014   ✓
-x4         0x00000000 0x0000   ✓
-x5         0xFFFFD800 0xD800   ✓
-x6         0x00000000 0x0280   ✗
-x7         0x00000014 0x0014   ✓
-x8         0x00000000 0x0000   ✓
-x9         0xFFFFD800 0xD800   ✓
-x10        0x00000000 0x0280   ✗
-x11        0x00002800 0x2800   ✓
-x12        0x00000014 0x0014   ✓
-x13        0x00000000 0x0000   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 27 at PC 27 ===
-Instruction: 0x00D615B3
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xBB04
-Executing Bitty Instruction 1: 0xBC00
-Executing Bitty Instruction 2: 0xBD14
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFD800 0xD800   ✓
-x2         0x00000000 0x0280   ✗
-x3         0x00000014 0x0014   ✓
-x4         0x00000000 0x0000   ✓
-x5         0xFFFFD800 0xD800   ✓
-x6         0x00000000 0x0280   ✗
-x7         0x00000014 0x0014   ✓
-x8         0x00000000 0x0000   ✓
-x9         0xFFFFD800 0xD800   ✓
-x10        0x00000000 0x0280   ✗
-x11        0x00000014 0x0014   ✓
-x12        0x00000014 0x0014   ✓
-x13        0x00000000 0x0000   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 28 at PC 28 ===
-Instruction: 0x00E68633
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xCC04
-Executing Bitty Instruction 1: 0xCD00
-Executing Bitty Instruction 2: 0xCE00
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFD800 0xD800   ✓
-x2         0x00000000 0x0280   ✗
-x3         0x00000014 0x0014   ✓
-x4         0x00000000 0x0000   ✓
-x5         0xFFFFD800 0xD800   ✓
-x6         0x00000000 0x0280   ✗
-x7         0x00000014 0x0014   ✓
-x8         0x00000000 0x0000   ✓
-x9         0xFFFFD800 0xD800   ✓
-x10        0x00000000 0x0280   ✗
-x11        0x00000014 0x0014   ✓
-x12        0x00000000 0x0000   ✓
-x13        0x00000000 0x0000   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 29 at PC 29 ===
-Instruction: 0x40F706B3
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xDD04
-Executing Bitty Instruction 1: 0xDE00
-Executing Bitty Instruction 2: 0xDF04
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFD800 0xD800   ✓
-x2         0x00000000 0x0280   ✗
-x3         0x00000014 0x0014   ✓
-x4         0x00000000 0x0000   ✓
-x5         0xFFFFD800 0xD800   ✓
-x6         0x00000000 0x0280   ✗
-x7         0x00000014 0x0014   ✓
-x8         0x00000000 0x0000   ✓
-x9         0xFFFFD800 0xD800   ✓
-x10        0x00000000 0x0280   ✗
-x11        0x00000014 0x0014   ✓
-x12        0x00000000 0x0000   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 30 at PC 30 ===
-Instruction: 0x0007D733
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xEE04
-Executing Bitty Instruction 1: 0xEF00
-Executing Bitty Instruction 2: 0xE018
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFD800 0xD800   ✓
-x2         0x00000000 0x0280   ✗
-x3         0x00000014 0x0014   ✓
-x4         0x00000000 0x0000   ✓
-x5         0xFFFFD800 0xD800   ✓
-x6         0x00000000 0x0280   ✗
-x7         0x00000014 0x0014   ✓
-x8         0x00000000 0x0000   ✓
-x9         0xFFFFD800 0xD800   ✓
-x10        0x00000000 0x0280   ✗
-x11        0x00000014 0x0014   ✓
-x12        0x00000000 0x0000   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 31 at PC 31 ===
-Instruction: 0x001017B3
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xFF04
-Executing Bitty Instruction 1: 0xF000
-Executing Bitty Instruction 2: 0xF114
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFD800 0xD800   ✓
-x2         0x00000000 0x0280   ✗
-x3         0x00000014 0x0014   ✓
-x4         0x00000000 0x0000   ✓
-x5         0xFFFFD800 0xD800   ✓
-x6         0x00000000 0x0280   ✗
-x7         0x00000014 0x0014   ✓
-x8         0x00000000 0x0000   ✓
-x9         0xFFFFD800 0xD800   ✓
-x10        0x00000000 0x0280   ✗
-x11        0x00000014 0x0014   ✓
-x12        0x00000000 0x0000   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 32 at PC 32 ===
-Instruction: 0x002080B3
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x1104
-Executing Bitty Instruction 1: 0x1100
-Executing Bitty Instruction 2: 0x1200
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFD800 0x0280   ✗
-x2         0x00000000 0x0280   ✗
-x3         0x00000014 0x0014   ✓
-x4         0x00000000 0x0000   ✓
-x5         0xFFFFD800 0xD800   ✓
-x6         0x00000000 0x0280   ✗
-x7         0x00000014 0x0014   ✓
-x8         0x00000000 0x0000   ✓
-x9         0xFFFFD800 0xD800   ✓
-x10        0x00000000 0x0280   ✗
-x11        0x00000014 0x0014   ✓
-x12        0x00000000 0x0000   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 33 at PC 33 ===
-Instruction: 0x403100B3
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x1104
-Executing Bitty Instruction 1: 0x1200
-Executing Bitty Instruction 2: 0x1304
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFFFEC 0x026C   ✗
-x2         0x00000000 0x0280   ✗
-x3         0x00000014 0x0014   ✓
-x4         0x00000000 0x0000   ✓
-x5         0xFFFFD800 0xD800   ✓
-x6         0x00000000 0x0280   ✗
-x7         0x00000014 0x0014   ✓
-x8         0x00000000 0x0000   ✓
-x9         0xFFFFD800 0xD800   ✓
-x10        0x00000000 0x0280   ✗
-x11        0x00000014 0x0014   ✓
-x12        0x00000000 0x0000   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 34 at PC 34 ===
-Instruction: 0x0041D133
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x2204
-Executing Bitty Instruction 1: 0x2300
-Executing Bitty Instruction 2: 0x2418
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFFFEC 0x026C   ✗
-x2         0x00000014 0x0014   ✓
-x3         0x00000014 0x0014   ✓
-x4         0x00000000 0x0000   ✓
-x5         0xFFFFD800 0xD800   ✓
-x6         0x00000000 0x0280   ✗
-x7         0x00000014 0x0014   ✓
-x8         0x00000000 0x0000   ✓
-x9         0xFFFFD800 0xD800   ✓
-x10        0x00000000 0x0280   ✗
-x11        0x00000014 0x0014   ✓
-x12        0x00000000 0x0000   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 35 at PC 35 ===
-Instruction: 0x005211B3
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x3304
-Executing Bitty Instruction 1: 0x3400
-Executing Bitty Instruction 2: 0x3514
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFFFEC 0x026C   ✗
-x2         0x00000014 0x0014   ✓
-x3         0x00000000 0x0000   ✓
-x4         0x00000000 0x0000   ✓
-x5         0xFFFFD800 0xD800   ✓
-x6         0x00000000 0x0280   ✗
-x7         0x00000014 0x0014   ✓
-x8         0x00000000 0x0000   ✓
-x9         0xFFFFD800 0xD800   ✓
-x10        0x00000000 0x0280   ✗
-x11        0x00000014 0x0014   ✓
-x12        0x00000000 0x0000   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 36 at PC 36 ===
-Instruction: 0x00628233
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x4404
-Executing Bitty Instruction 1: 0x4500
-Executing Bitty Instruction 2: 0x4600
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFFFEC 0x026C   ✗
-x2         0x00000014 0x0014   ✓
-x3         0x00000000 0x0000   ✓
-x4         0xFFFFD800 0xDA80   ✗
-x5         0xFFFFD800 0xD800   ✓
-x6         0x00000000 0x0280   ✗
-x7         0x00000014 0x0014   ✓
-x8         0x00000000 0x0000   ✓
-x9         0xFFFFD800 0xD800   ✓
-x10        0x00000000 0x0280   ✗
-x11        0x00000014 0x0014   ✓
-x12        0x00000000 0x0000   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 37 at PC 37 ===
-Instruction: 0x407302B3
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x5504
-Executing Bitty Instruction 1: 0x5600
-Executing Bitty Instruction 2: 0x5704
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFFFEC 0x026C   ✗
-x2         0x00000014 0x0014   ✓
-x3         0x00000000 0x0000   ✓
-x4         0xFFFFD800 0xDA80   ✗
-x5         0xFFFFFFEC 0x026C   ✗
-x6         0x00000000 0x0280   ✗
-x7         0x00000014 0x0014   ✓
-x8         0x00000000 0x0000   ✓
-x9         0xFFFFD800 0xD800   ✓
-x10        0x00000000 0x0280   ✗
-x11        0x00000014 0x0014   ✓
-x12        0x00000000 0x0000   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 38 at PC 38 ===
-Instruction: 0x0083D333
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x6604
-Executing Bitty Instruction 1: 0x6700
-Executing Bitty Instruction 2: 0x6818
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFFFEC 0x026C   ✗
-x2         0x00000014 0x0014   ✓
-x3         0x00000000 0x0000   ✓
-x4         0xFFFFD800 0xDA80   ✗
-x5         0xFFFFFFEC 0x026C   ✗
-x6         0x00000014 0x0014   ✓
-x7         0x00000014 0x0014   ✓
-x8         0x00000000 0x0000   ✓
-x9         0xFFFFD800 0xD800   ✓
-x10        0x00000000 0x0280   ✗
-x11        0x00000014 0x0014   ✓
-x12        0x00000000 0x0000   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 39 at PC 39 ===
-Instruction: 0x009413B3
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x7704
-Executing Bitty Instruction 1: 0x7800
-Executing Bitty Instruction 2: 0x7914
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFFFEC 0x026C   ✗
-x2         0x00000014 0x0014   ✓
-x3         0x00000000 0x0000   ✓
-x4         0xFFFFD800 0xDA80   ✗
-x5         0xFFFFFFEC 0x026C   ✗
-x6         0x00000014 0x0014   ✓
-x7         0x00000000 0x0000   ✓
-x8         0x00000000 0x0000   ✓
-x9         0xFFFFD800 0xD800   ✓
-x10        0x00000000 0x0280   ✗
-x11        0x00000014 0x0014   ✓
-x12        0x00000000 0x0000   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 40 at PC 40 ===
-Instruction: 0x00A48433
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x8804
-Executing Bitty Instruction 1: 0x8900
-Executing Bitty Instruction 2: 0x8A00
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFFFEC 0x026C   ✗
-x2         0x00000014 0x0014   ✓
-x3         0x00000000 0x0000   ✓
-x4         0xFFFFD800 0xDA80   ✗
-x5         0xFFFFFFEC 0x026C   ✗
-x6         0x00000014 0x0014   ✓
-x7         0x00000000 0x0000   ✓
-x8         0xFFFFD800 0xDA80   ✗
-x9         0xFFFFD800 0xD800   ✓
-x10        0x00000000 0x0280   ✗
-x11        0x00000014 0x0014   ✓
-x12        0x00000000 0x0000   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 41 at PC 41 ===
-Instruction: 0x40B504B3
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x9904
-Executing Bitty Instruction 1: 0x9A00
-Executing Bitty Instruction 2: 0x9B04
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFFFEC 0x026C   ✗
-x2         0x00000014 0x0014   ✓
-x3         0x00000000 0x0000   ✓
-x4         0xFFFFD800 0xDA80   ✗
-x5         0xFFFFFFEC 0x026C   ✗
-x6         0x00000014 0x0014   ✓
-x7         0x00000000 0x0000   ✓
-x8         0xFFFFD800 0xDA80   ✗
-x9         0xFFFFFFEC 0x026C   ✗
-x10        0x00000000 0x0280   ✗
-x11        0x00000014 0x0014   ✓
-x12        0x00000000 0x0000   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 42 at PC 42 ===
-Instruction: 0x00C5D533
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xAA04
-Executing Bitty Instruction 1: 0xAB00
-Executing Bitty Instruction 2: 0xAC18
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFFFEC 0x026C   ✗
-x2         0x00000014 0x0014   ✓
-x3         0x00000000 0x0000   ✓
-x4         0xFFFFD800 0xDA80   ✗
-x5         0xFFFFFFEC 0x026C   ✗
-x6         0x00000014 0x0014   ✓
-x7         0x00000000 0x0000   ✓
-x8         0xFFFFD800 0xDA80   ✗
-x9         0xFFFFFFEC 0x026C   ✗
-x10        0x00000014 0x0014   ✓
-x11        0x00000014 0x0014   ✓
-x12        0x00000000 0x0000   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 43 at PC 43 ===
-Instruction: 0x00D615B3
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xBB04
-Executing Bitty Instruction 1: 0xBC00
-Executing Bitty Instruction 2: 0xBD14
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFFFEC 0x026C   ✗
-x2         0x00000014 0x0014   ✓
-x3         0x00000000 0x0000   ✓
-x4         0xFFFFD800 0xDA80   ✗
-x5         0xFFFFFFEC 0x026C   ✗
-x6         0x00000014 0x0014   ✓
-x7         0x00000000 0x0000   ✓
-x8         0xFFFFD800 0xDA80   ✗
-x9         0xFFFFFFEC 0x026C   ✗
-x10        0x00000014 0x0014   ✓
-x11        0x00000000 0x0000   ✓
-x12        0x00000000 0x0000   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 44 at PC 44 ===
-Instruction: 0x00E68633
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xCC04
-Executing Bitty Instruction 1: 0xCD00
-Executing Bitty Instruction 2: 0xCE00
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFFFEC 0x026C   ✗
-x2         0x00000014 0x0014   ✓
-x3         0x00000000 0x0000   ✓
-x4         0xFFFFD800 0xDA80   ✗
-x5         0xFFFFFFEC 0x026C   ✗
-x6         0x00000014 0x0014   ✓
-x7         0x00000000 0x0000   ✓
-x8         0xFFFFD800 0xDA80   ✗
-x9         0xFFFFFFEC 0x026C   ✗
-x10        0x00000014 0x0014   ✓
-x11        0x00000000 0x0000   ✓
-x12        0xFFFFFFF6 0xFFF6   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 45 at PC 45 ===
-Instruction: 0x40F706B3
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xDD04
-Executing Bitty Instruction 1: 0xDE00
-Executing Bitty Instruction 2: 0xDF04
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFFFEC 0x026C   ✗
-x2         0x00000014 0x0014   ✓
-x3         0x00000000 0x0000   ✓
-x4         0xFFFFD800 0xDA80   ✗
-x5         0xFFFFFFEC 0x026C   ✗
-x6         0x00000014 0x0014   ✓
-x7         0x00000000 0x0000   ✓
-x8         0xFFFFD800 0xDA80   ✗
-x9         0xFFFFFFEC 0x026C   ✗
-x10        0x00000014 0x0014   ✓
-x11        0x00000000 0x0000   ✓
-x12        0xFFFFFFF6 0xFFF6   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 46 at PC 46 ===
-Instruction: 0x0007D733
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xEE04
-Executing Bitty Instruction 1: 0xEF00
-Executing Bitty Instruction 2: 0xE018
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFFFEC 0x026C   ✗
-x2         0x00000014 0x0014   ✓
-x3         0x00000000 0x0000   ✓
-x4         0xFFFFD800 0xDA80   ✗
-x5         0xFFFFFFEC 0x026C   ✗
-x6         0x00000014 0x0014   ✓
-x7         0x00000000 0x0000   ✓
-x8         0xFFFFD800 0xDA80   ✗
-x9         0xFFFFFFEC 0x026C   ✗
-x10        0x00000014 0x0014   ✓
-x11        0x00000000 0x0000   ✓
-x12        0xFFFFFFF6 0xFFF6   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
-
-=== RISC-V Instruction 47 at PC 47 ===
-Instruction: 0x001017B3
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xFF04
-Executing Bitty Instruction 1: 0xF000
-Executing Bitty Instruction 2: 0xF114
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFFFEC 0x026C   ✗
-x2         0x00000014 0x0014   ✓
-x3         0x00000000 0x0000   ✓
-x4         0xFFFFD800 0xDA80   ✗
-x5         0xFFFFFFEC 0x026C   ✗
-x6         0x00000014 0x0014   ✓
-x7         0x00000000 0x0000   ✓
-x8         0xFFFFD800 0xDA80   ✗
-x9         0xFFFFFFEC 0x026C   ✗
-x10        0x00000014 0x0014   ✓
-x11        0x00000000 0x0000   ✓
-x12        0xFFFFFFF6 0xFFF6   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000A000 0xA000   ✓
-
-=== RISC-V Instruction 48 at PC 48 ===
-Instruction: 0x002080B3
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x1104
-Executing Bitty Instruction 1: 0x1100
-Executing Bitty Instruction 2: 0x1200
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0014   ✗
-x2         0x00000014 0x0014   ✓
-x3         0x00000000 0x0000   ✓
-x4         0xFFFFD800 0xDA80   ✗
-x5         0xFFFFFFEC 0x026C   ✗
-x6         0x00000014 0x0014   ✓
-x7         0x00000000 0x0000   ✓
-x8         0xFFFFD800 0xDA80   ✗
-x9         0xFFFFFFEC 0x026C   ✗
-x10        0x00000014 0x0014   ✓
-x11        0x00000000 0x0000   ✓
-x12        0xFFFFFFF6 0xFFF6   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000A000 0xA000   ✓
-
-=== RISC-V Instruction 49 at PC 49 ===
-Instruction: 0x403100B3
-
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x1104
-Executing Bitty Instruction 1: 0x1200
-Executing Bitty Instruction 2: 0x1304
-
-=== Register Comparison ===
-Register   RISC-V     Bitty      Match 
-----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000014 0x0014   ✓
-x2         0x00000014 0x0014   ✓
-x3         0x00000000 0x0000   ✓
-x4         0xFFFFD800 0xDA80   ✗
-x5         0xFFFFFFEC 0x026C   ✗
-x6         0x00000014 0x0014   ✓
-x7         0x00000000 0x0000   ✓
-x8         0xFFFFD800 0xDA80   ✗
-x9         0xFFFFFFEC 0x026C   ✗
-x10        0x00000014 0x0014   ✓
-x11        0x00000000 0x0000   ✓
-x12        0xFFFFFFF6 0xFFF6   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000A000 0xA000   ✓
-
-=== Comparison Complete ===
-Executed 50 RISC-V instructions and 150 Bitty instructions
 === Starting Emulator Comparison ===
 
 === RISC-V Instruction 0 at PC 0 ===
-Instruction: 0x002080B3
+Instruction: 0xD23D66B7
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x1104
-Executing Bitty Instruction 1: 0x1100
-Executing Bitty Instruction 2: 0x1200
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0xDD04
+Bitty Instruction 1: 0xDD01
+Bitty Instruction 2: 0xD155
+Bitty Instruction 3: 0xD441
+Bitty Instruction 4: 0xD155
+Bitty Instruction 5: 0xD741
+Bitty Instruction 6: 0xD115
+Bitty Instruction 7: 0xD181
+Bitty Instruction 8: 0xD315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000014 0x000A   ✗
-x2         0x0000000A 0x000A   ✓
-x3         0x0000000A 0x000A   ✓
-x4         0x0000000A 0x000A   ✓
-x5         0x0000000A 0x000A   ✓
-x6         0x0000000A 0x000A   ✓
-x7         0x0000000A 0x000A   ✓
-x8         0x0000000A 0x000A   ✓
-x9         0x0000000A 0x000A   ✓
-x10        0x0000000A 0x000A   ✓
-x11        0x0000000A 0x000A   ✓
-x12        0x0000000A 0x000A   ✓
-x13        0x0000000A 0x000A   ✓
-x14        0x0000000A 0x000A   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x0000000A 0x0000000A   ✓
+x2         0x00000014 0x00000014   ✓
+x3         0x0000001E 0x0000001E   ✓
+x4         0x00000028 0x00000028   ✓
+x5         0x00000032 0x00000032   ✓
+x6         0x0000003C 0x0000003C   ✓
+x7         0x00000046 0x00000046   ✓
+x8         0x00000050 0x00000050   ✓
+x9         0x0000005A 0x0000005A   ✓
+x10        0x00000064 0x00000064   ✓
+x11        0x0000006E 0x0000006E   ✓
+x12        0x00000078 0x00000078   ✓
+x13        0xD23D6000 0xD23D6000   ✓
+x14        0x0000008C 0x0000008C   ✓
+x15        0x00000096 0x00000096   ✓
 
 === RISC-V Instruction 1 at PC 1 ===
-Instruction: 0x403100B3
+Instruction: 0x6B8D25B7
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x1104
-Executing Bitty Instruction 1: 0x1200
-Executing Bitty Instruction 2: 0x1304
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0xBB04
+Bitty Instruction 1: 0xB681
+Bitty Instruction 2: 0xB155
+Bitty Instruction 3: 0xB701
+Bitty Instruction 4: 0xB155
+Bitty Instruction 5: 0xB341
+Bitty Instruction 6: 0xB115
+Bitty Instruction 7: 0xB081
+Bitty Instruction 8: 0xB315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0000   ✓
-x2         0x0000000A 0x000A   ✓
-x3         0x0000000A 0x000A   ✓
-x4         0x0000000A 0x000A   ✓
-x5         0x0000000A 0x000A   ✓
-x6         0x0000000A 0x000A   ✓
-x7         0x0000000A 0x000A   ✓
-x8         0x0000000A 0x000A   ✓
-x9         0x0000000A 0x000A   ✓
-x10        0x0000000A 0x000A   ✓
-x11        0x0000000A 0x000A   ✓
-x12        0x0000000A 0x000A   ✓
-x13        0x0000000A 0x000A   ✓
-x14        0x0000000A 0x000A   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x0000000A 0x0000000A   ✓
+x2         0x00000014 0x00000014   ✓
+x3         0x0000001E 0x0000001E   ✓
+x4         0x00000028 0x00000028   ✓
+x5         0x00000032 0x00000032   ✓
+x6         0x0000003C 0x0000003C   ✓
+x7         0x00000046 0x00000046   ✓
+x8         0x00000050 0x00000050   ✓
+x9         0x0000005A 0x0000005A   ✓
+x10        0x00000064 0x00000064   ✓
+x11        0x6B8D2000 0x6B8D2000   ✓
+x12        0x00000078 0x00000078   ✓
+x13        0xD23D6000 0xD23D6000   ✓
+x14        0x0000008C 0x0000008C   ✓
+x15        0x00000096 0x00000096   ✓
 
 === RISC-V Instruction 2 at PC 2 ===
-Instruction: 0x0041D133
+Instruction: 0x3CD32137
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x2204
-Executing Bitty Instruction 1: 0x2300
-Executing Bitty Instruction 2: 0x2418
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x2204
+Bitty Instruction 1: 0x23C1
+Bitty Instruction 2: 0x2155
+Bitty Instruction 3: 0x2181
+Bitty Instruction 4: 0x2155
+Bitty Instruction 5: 0x24C1
+Bitty Instruction 6: 0x2115
+Bitty Instruction 7: 0x2081
+Bitty Instruction 8: 0x2315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0000   ✓
-x2         0x00000000 0x0000   ✓
-x3         0x0000000A 0x000A   ✓
-x4         0x0000000A 0x000A   ✓
-x5         0x0000000A 0x000A   ✓
-x6         0x0000000A 0x000A   ✓
-x7         0x0000000A 0x000A   ✓
-x8         0x0000000A 0x000A   ✓
-x9         0x0000000A 0x000A   ✓
-x10        0x0000000A 0x000A   ✓
-x11        0x0000000A 0x000A   ✓
-x12        0x0000000A 0x000A   ✓
-x13        0x0000000A 0x000A   ✓
-x14        0x0000000A 0x000A   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x0000000A 0x0000000A   ✓
+x2         0x3CD32000 0x3CD32000   ✓
+x3         0x0000001E 0x0000001E   ✓
+x4         0x00000028 0x00000028   ✓
+x5         0x00000032 0x00000032   ✓
+x6         0x0000003C 0x0000003C   ✓
+x7         0x00000046 0x00000046   ✓
+x8         0x00000050 0x00000050   ✓
+x9         0x0000005A 0x0000005A   ✓
+x10        0x00000064 0x00000064   ✓
+x11        0x6B8D2000 0x6B8D2000   ✓
+x12        0x00000078 0x00000078   ✓
+x13        0xD23D6000 0xD23D6000   ✓
+x14        0x0000008C 0x0000008C   ✓
+x15        0x00000096 0x00000096   ✓
 
 === RISC-V Instruction 3 at PC 3 ===
-Instruction: 0x005211B3
+Instruction: 0x6C00A3B7
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x3304
-Executing Bitty Instruction 1: 0x3400
-Executing Bitty Instruction 2: 0x3514
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x7704
+Bitty Instruction 1: 0x76C1
+Bitty Instruction 2: 0x7155
+Bitty Instruction 3: 0x7001
+Bitty Instruction 4: 0x7155
+Bitty Instruction 5: 0x7001
+Bitty Instruction 6: 0x7115
+Bitty Instruction 7: 0x7281
+Bitty Instruction 8: 0x7315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0000   ✓
-x2         0x00000000 0x0000   ✓
-x3         0x00002800 0x2800   ✓
-x4         0x0000000A 0x000A   ✓
-x5         0x0000000A 0x000A   ✓
-x6         0x0000000A 0x000A   ✓
-x7         0x0000000A 0x000A   ✓
-x8         0x0000000A 0x000A   ✓
-x9         0x0000000A 0x000A   ✓
-x10        0x0000000A 0x000A   ✓
-x11        0x0000000A 0x000A   ✓
-x12        0x0000000A 0x000A   ✓
-x13        0x0000000A 0x000A   ✓
-x14        0x0000000A 0x000A   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x0000000A 0x0000000A   ✓
+x2         0x3CD32000 0x3CD32000   ✓
+x3         0x0000001E 0x0000001E   ✓
+x4         0x00000028 0x00000028   ✓
+x5         0x00000032 0x00000032   ✓
+x6         0x0000003C 0x0000003C   ✓
+x7         0x6C00A000 0x6C00A000   ✓
+x8         0x00000050 0x00000050   ✓
+x9         0x0000005A 0x0000005A   ✓
+x10        0x00000064 0x00000064   ✓
+x11        0x6B8D2000 0x6B8D2000   ✓
+x12        0x00000078 0x00000078   ✓
+x13        0xD23D6000 0xD23D6000   ✓
+x14        0x0000008C 0x0000008C   ✓
+x15        0x00000096 0x00000096   ✓
 
 === RISC-V Instruction 4 at PC 4 ===
-Instruction: 0x00628233
+Instruction: 0x3BC7A5B7
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x4404
-Executing Bitty Instruction 1: 0x4500
-Executing Bitty Instruction 2: 0x4600
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0xBB04
+Bitty Instruction 1: 0xB381
+Bitty Instruction 2: 0xB155
+Bitty Instruction 3: 0xB781
+Bitty Instruction 4: 0xB155
+Bitty Instruction 5: 0xB1C1
+Bitty Instruction 6: 0xB115
+Bitty Instruction 7: 0xB281
+Bitty Instruction 8: 0xB315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0000   ✓
-x2         0x00000000 0x0000   ✓
-x3         0x00002800 0x2800   ✓
-x4         0x00000014 0x0014   ✓
-x5         0x0000000A 0x000A   ✓
-x6         0x0000000A 0x000A   ✓
-x7         0x0000000A 0x000A   ✓
-x8         0x0000000A 0x000A   ✓
-x9         0x0000000A 0x000A   ✓
-x10        0x0000000A 0x000A   ✓
-x11        0x0000000A 0x000A   ✓
-x12        0x0000000A 0x000A   ✓
-x13        0x0000000A 0x000A   ✓
-x14        0x0000000A 0x000A   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x0000000A 0x0000000A   ✓
+x2         0x3CD32000 0x3CD32000   ✓
+x3         0x0000001E 0x0000001E   ✓
+x4         0x00000028 0x00000028   ✓
+x5         0x00000032 0x00000032   ✓
+x6         0x0000003C 0x0000003C   ✓
+x7         0x6C00A000 0x6C00A000   ✓
+x8         0x00000050 0x00000050   ✓
+x9         0x0000005A 0x0000005A   ✓
+x10        0x00000064 0x00000064   ✓
+x11        0x3BC7A000 0x3BC7A000   ✓
+x12        0x00000078 0x00000078   ✓
+x13        0xD23D6000 0xD23D6000   ✓
+x14        0x0000008C 0x0000008C   ✓
+x15        0x00000096 0x00000096   ✓
 
 === RISC-V Instruction 5 at PC 5 ===
-Instruction: 0x407302B3
+Instruction: 0xDC8AD337
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x5504
-Executing Bitty Instruction 1: 0x5600
-Executing Bitty Instruction 2: 0x5704
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x6604
+Bitty Instruction 1: 0x6DC1
+Bitty Instruction 2: 0x6155
+Bitty Instruction 3: 0x6101
+Bitty Instruction 4: 0x6155
+Bitty Instruction 5: 0x6281
+Bitty Instruction 6: 0x6115
+Bitty Instruction 7: 0x6341
+Bitty Instruction 8: 0x6315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0000   ✓
-x2         0x00000000 0x0000   ✓
-x3         0x00002800 0x2800   ✓
-x4         0x00000014 0x0014   ✓
-x5         0x00000000 0x0000   ✓
-x6         0x0000000A 0x000A   ✓
-x7         0x0000000A 0x000A   ✓
-x8         0x0000000A 0x000A   ✓
-x9         0x0000000A 0x000A   ✓
-x10        0x0000000A 0x000A   ✓
-x11        0x0000000A 0x000A   ✓
-x12        0x0000000A 0x000A   ✓
-x13        0x0000000A 0x000A   ✓
-x14        0x0000000A 0x000A   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x0000000A 0x0000000A   ✓
+x2         0x3CD32000 0x3CD32000   ✓
+x3         0x0000001E 0x0000001E   ✓
+x4         0x00000028 0x00000028   ✓
+x5         0x00000032 0x00000032   ✓
+x6         0xDC8AD000 0xDC8AD000   ✓
+x7         0x6C00A000 0x6C00A000   ✓
+x8         0x00000050 0x00000050   ✓
+x9         0x0000005A 0x0000005A   ✓
+x10        0x00000064 0x00000064   ✓
+x11        0x3BC7A000 0x3BC7A000   ✓
+x12        0x00000078 0x00000078   ✓
+x13        0xD23D6000 0xD23D6000   ✓
+x14        0x0000008C 0x0000008C   ✓
+x15        0x00000096 0x00000096   ✓
 
 === RISC-V Instruction 6 at PC 6 ===
-Instruction: 0x0083D333
+Instruction: 0xA1F4A0B7
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x6604
-Executing Bitty Instruction 1: 0x6700
-Executing Bitty Instruction 2: 0x6818
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x1104
+Bitty Instruction 1: 0x1A01
+Bitty Instruction 2: 0x1155
+Bitty Instruction 3: 0x13C1
+Bitty Instruction 4: 0x1155
+Bitty Instruction 5: 0x1501
+Bitty Instruction 6: 0x1115
+Bitty Instruction 7: 0x1281
+Bitty Instruction 8: 0x1315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0000   ✓
-x2         0x00000000 0x0000   ✓
-x3         0x00002800 0x2800   ✓
-x4         0x00000014 0x0014   ✓
-x5         0x00000000 0x0000   ✓
-x6         0x00000000 0x0000   ✓
-x7         0x0000000A 0x000A   ✓
-x8         0x0000000A 0x000A   ✓
-x9         0x0000000A 0x000A   ✓
-x10        0x0000000A 0x000A   ✓
-x11        0x0000000A 0x000A   ✓
-x12        0x0000000A 0x000A   ✓
-x13        0x0000000A 0x000A   ✓
-x14        0x0000000A 0x000A   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0xA1F4A000 0xA1F4A000   ✓
+x2         0x3CD32000 0x3CD32000   ✓
+x3         0x0000001E 0x0000001E   ✓
+x4         0x00000028 0x00000028   ✓
+x5         0x00000032 0x00000032   ✓
+x6         0xDC8AD000 0xDC8AD000   ✓
+x7         0x6C00A000 0x6C00A000   ✓
+x8         0x00000050 0x00000050   ✓
+x9         0x0000005A 0x0000005A   ✓
+x10        0x00000064 0x00000064   ✓
+x11        0x3BC7A000 0x3BC7A000   ✓
+x12        0x00000078 0x00000078   ✓
+x13        0xD23D6000 0xD23D6000   ✓
+x14        0x0000008C 0x0000008C   ✓
+x15        0x00000096 0x00000096   ✓
 
 === RISC-V Instruction 7 at PC 7 ===
-Instruction: 0x009413B3
+Instruction: 0x43DCF0B7
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x7704
-Executing Bitty Instruction 1: 0x7800
-Executing Bitty Instruction 2: 0x7914
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x1104
+Bitty Instruction 1: 0x1401
+Bitty Instruction 2: 0x1155
+Bitty Instruction 3: 0x1781
+Bitty Instruction 4: 0x1155
+Bitty Instruction 5: 0x1701
+Bitty Instruction 6: 0x1115
+Bitty Instruction 7: 0x13C1
+Bitty Instruction 8: 0x1315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0000   ✓
-x2         0x00000000 0x0000   ✓
-x3         0x00002800 0x2800   ✓
-x4         0x00000014 0x0014   ✓
-x5         0x00000000 0x0000   ✓
-x6         0x00000000 0x0000   ✓
-x7         0x00002800 0x2800   ✓
-x8         0x0000000A 0x000A   ✓
-x9         0x0000000A 0x000A   ✓
-x10        0x0000000A 0x000A   ✓
-x11        0x0000000A 0x000A   ✓
-x12        0x0000000A 0x000A   ✓
-x13        0x0000000A 0x000A   ✓
-x14        0x0000000A 0x000A   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x43DCF000 0x43DCF000   ✓
+x2         0x3CD32000 0x3CD32000   ✓
+x3         0x0000001E 0x0000001E   ✓
+x4         0x00000028 0x00000028   ✓
+x5         0x00000032 0x00000032   ✓
+x6         0xDC8AD000 0xDC8AD000   ✓
+x7         0x6C00A000 0x6C00A000   ✓
+x8         0x00000050 0x00000050   ✓
+x9         0x0000005A 0x0000005A   ✓
+x10        0x00000064 0x00000064   ✓
+x11        0x3BC7A000 0x3BC7A000   ✓
+x12        0x00000078 0x00000078   ✓
+x13        0xD23D6000 0xD23D6000   ✓
+x14        0x0000008C 0x0000008C   ✓
+x15        0x00000096 0x00000096   ✓
 
 === RISC-V Instruction 8 at PC 8 ===
-Instruction: 0x00A48433
+Instruction: 0xFE5C6437
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x8804
-Executing Bitty Instruction 1: 0x8900
-Executing Bitty Instruction 2: 0x8A00
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x8804
+Bitty Instruction 1: 0x8FC1
+Bitty Instruction 2: 0x8155
+Bitty Instruction 3: 0x8481
+Bitty Instruction 4: 0x8155
+Bitty Instruction 5: 0x8701
+Bitty Instruction 6: 0x8115
+Bitty Instruction 7: 0x8181
+Bitty Instruction 8: 0x8315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0000   ✓
-x2         0x00000000 0x0000   ✓
-x3         0x00002800 0x2800   ✓
-x4         0x00000014 0x0014   ✓
-x5         0x00000000 0x0000   ✓
-x6         0x00000000 0x0000   ✓
-x7         0x00002800 0x2800   ✓
-x8         0x00000014 0x0014   ✓
-x9         0x0000000A 0x000A   ✓
-x10        0x0000000A 0x000A   ✓
-x11        0x0000000A 0x000A   ✓
-x12        0x0000000A 0x000A   ✓
-x13        0x0000000A 0x000A   ✓
-x14        0x0000000A 0x000A   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x43DCF000 0x43DCF000   ✓
+x2         0x3CD32000 0x3CD32000   ✓
+x3         0x0000001E 0x0000001E   ✓
+x4         0x00000028 0x00000028   ✓
+x5         0x00000032 0x00000032   ✓
+x6         0xDC8AD000 0xDC8AD000   ✓
+x7         0x6C00A000 0x6C00A000   ✓
+x8         0xFE5C6000 0xFE5C6000   ✓
+x9         0x0000005A 0x0000005A   ✓
+x10        0x00000064 0x00000064   ✓
+x11        0x3BC7A000 0x3BC7A000   ✓
+x12        0x00000078 0x00000078   ✓
+x13        0xD23D6000 0xD23D6000   ✓
+x14        0x0000008C 0x0000008C   ✓
+x15        0x00000096 0x00000096   ✓
 
 === RISC-V Instruction 9 at PC 9 ===
-Instruction: 0x40B504B3
+Instruction: 0x377D42B7
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x9904
-Executing Bitty Instruction 1: 0x9A00
-Executing Bitty Instruction 2: 0x9B04
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x5504
+Bitty Instruction 1: 0x5341
+Bitty Instruction 2: 0x5155
+Bitty Instruction 3: 0x56C1
+Bitty Instruction 4: 0x5155
+Bitty Instruction 5: 0x5741
+Bitty Instruction 6: 0x5115
+Bitty Instruction 7: 0x5101
+Bitty Instruction 8: 0x5315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0000   ✓
-x2         0x00000000 0x0000   ✓
-x3         0x00002800 0x2800   ✓
-x4         0x00000014 0x0014   ✓
-x5         0x00000000 0x0000   ✓
-x6         0x00000000 0x0000   ✓
-x7         0x00002800 0x2800   ✓
-x8         0x00000014 0x0014   ✓
-x9         0x00000000 0x0000   ✓
-x10        0x0000000A 0x000A   ✓
-x11        0x0000000A 0x000A   ✓
-x12        0x0000000A 0x000A   ✓
-x13        0x0000000A 0x000A   ✓
-x14        0x0000000A 0x000A   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x43DCF000 0x43DCF000   ✓
+x2         0x3CD32000 0x3CD32000   ✓
+x3         0x0000001E 0x0000001E   ✓
+x4         0x00000028 0x00000028   ✓
+x5         0x377D4000 0x377D4000   ✓
+x6         0xDC8AD000 0xDC8AD000   ✓
+x7         0x6C00A000 0x6C00A000   ✓
+x8         0xFE5C6000 0xFE5C6000   ✓
+x9         0x0000005A 0x0000005A   ✓
+x10        0x00000064 0x00000064   ✓
+x11        0x3BC7A000 0x3BC7A000   ✓
+x12        0x00000078 0x00000078   ✓
+x13        0xD23D6000 0xD23D6000   ✓
+x14        0x0000008C 0x0000008C   ✓
+x15        0x00000096 0x00000096   ✓
 
 === RISC-V Instruction 10 at PC 10 ===
-Instruction: 0x00C5D533
+Instruction: 0xD6A58737
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xAA04
-Executing Bitty Instruction 1: 0xAB00
-Executing Bitty Instruction 2: 0xAC18
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0xEE04
+Bitty Instruction 1: 0xED41
+Bitty Instruction 2: 0xE155
+Bitty Instruction 3: 0xE541
+Bitty Instruction 4: 0xE155
+Bitty Instruction 5: 0xE141
+Bitty Instruction 6: 0xE115
+Bitty Instruction 7: 0xE201
+Bitty Instruction 8: 0xE315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0000   ✓
-x2         0x00000000 0x0000   ✓
-x3         0x00002800 0x2800   ✓
-x4         0x00000014 0x0014   ✓
-x5         0x00000000 0x0000   ✓
-x6         0x00000000 0x0000   ✓
-x7         0x00002800 0x2800   ✓
-x8         0x00000014 0x0014   ✓
-x9         0x00000000 0x0000   ✓
-x10        0x00000000 0x0000   ✓
-x11        0x0000000A 0x000A   ✓
-x12        0x0000000A 0x000A   ✓
-x13        0x0000000A 0x000A   ✓
-x14        0x0000000A 0x000A   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x43DCF000 0x43DCF000   ✓
+x2         0x3CD32000 0x3CD32000   ✓
+x3         0x0000001E 0x0000001E   ✓
+x4         0x00000028 0x00000028   ✓
+x5         0x377D4000 0x377D4000   ✓
+x6         0xDC8AD000 0xDC8AD000   ✓
+x7         0x6C00A000 0x6C00A000   ✓
+x8         0xFE5C6000 0xFE5C6000   ✓
+x9         0x0000005A 0x0000005A   ✓
+x10        0x00000064 0x00000064   ✓
+x11        0x3BC7A000 0x3BC7A000   ✓
+x12        0x00000078 0x00000078   ✓
+x13        0xD23D6000 0xD23D6000   ✓
+x14        0xD6A58000 0xD6A58000   ✓
+x15        0x00000096 0x00000096   ✓
 
 === RISC-V Instruction 11 at PC 11 ===
-Instruction: 0x00D615B3
+Instruction: 0x0D38F2B7
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xBB04
-Executing Bitty Instruction 1: 0xBC00
-Executing Bitty Instruction 2: 0xBD14
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x5504
+Bitty Instruction 1: 0x50C1
+Bitty Instruction 2: 0x5155
+Bitty Instruction 3: 0x5241
+Bitty Instruction 4: 0x5155
+Bitty Instruction 5: 0x5601
+Bitty Instruction 6: 0x5115
+Bitty Instruction 7: 0x53C1
+Bitty Instruction 8: 0x5315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0000   ✓
-x2         0x00000000 0x0000   ✓
-x3         0x00002800 0x2800   ✓
-x4         0x00000014 0x0014   ✓
-x5         0x00000000 0x0000   ✓
-x6         0x00000000 0x0000   ✓
-x7         0x00002800 0x2800   ✓
-x8         0x00000014 0x0014   ✓
-x9         0x00000000 0x0000   ✓
-x10        0x00000000 0x0000   ✓
-x11        0x00002800 0x2800   ✓
-x12        0x0000000A 0x000A   ✓
-x13        0x0000000A 0x000A   ✓
-x14        0x0000000A 0x000A   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x43DCF000 0x43DCF000   ✓
+x2         0x3CD32000 0x3CD32000   ✓
+x3         0x0000001E 0x0000001E   ✓
+x4         0x00000028 0x00000028   ✓
+x5         0x0D38F000 0x0D38F000   ✓
+x6         0xDC8AD000 0xDC8AD000   ✓
+x7         0x6C00A000 0x6C00A000   ✓
+x8         0xFE5C6000 0xFE5C6000   ✓
+x9         0x0000005A 0x0000005A   ✓
+x10        0x00000064 0x00000064   ✓
+x11        0x3BC7A000 0x3BC7A000   ✓
+x12        0x00000078 0x00000078   ✓
+x13        0xD23D6000 0xD23D6000   ✓
+x14        0xD6A58000 0xD6A58000   ✓
+x15        0x00000096 0x00000096   ✓
 
 === RISC-V Instruction 12 at PC 12 ===
-Instruction: 0x00E68633
+Instruction: 0x2608B237
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xCC04
-Executing Bitty Instruction 1: 0xCD00
-Executing Bitty Instruction 2: 0xCE00
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x4404
+Bitty Instruction 1: 0x4241
+Bitty Instruction 2: 0x4155
+Bitty Instruction 3: 0x4401
+Bitty Instruction 4: 0x4155
+Bitty Instruction 5: 0x4201
+Bitty Instruction 6: 0x4115
+Bitty Instruction 7: 0x42C1
+Bitty Instruction 8: 0x4315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0000   ✓
-x2         0x00000000 0x0000   ✓
-x3         0x00002800 0x2800   ✓
-x4         0x00000014 0x0014   ✓
-x5         0x00000000 0x0000   ✓
-x6         0x00000000 0x0000   ✓
-x7         0x00002800 0x2800   ✓
-x8         0x00000014 0x0014   ✓
-x9         0x00000000 0x0000   ✓
-x10        0x00000000 0x0000   ✓
-x11        0x00002800 0x2800   ✓
-x12        0x00000014 0x0014   ✓
-x13        0x0000000A 0x000A   ✓
-x14        0x0000000A 0x000A   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x43DCF000 0x43DCF000   ✓
+x2         0x3CD32000 0x3CD32000   ✓
+x3         0x0000001E 0x0000001E   ✓
+x4         0x2608B000 0x2608B000   ✓
+x5         0x0D38F000 0x0D38F000   ✓
+x6         0xDC8AD000 0xDC8AD000   ✓
+x7         0x6C00A000 0x6C00A000   ✓
+x8         0xFE5C6000 0xFE5C6000   ✓
+x9         0x0000005A 0x0000005A   ✓
+x10        0x00000064 0x00000064   ✓
+x11        0x3BC7A000 0x3BC7A000   ✓
+x12        0x00000078 0x00000078   ✓
+x13        0xD23D6000 0xD23D6000   ✓
+x14        0xD6A58000 0xD6A58000   ✓
+x15        0x00000096 0x00000096   ✓
 
 === RISC-V Instruction 13 at PC 13 ===
-Instruction: 0x40F706B3
+Instruction: 0x01E7C6B7
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xDD04
-Executing Bitty Instruction 1: 0xDE00
-Executing Bitty Instruction 2: 0xDF04
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0xDD04
+Bitty Instruction 1: 0xD001
+Bitty Instruction 2: 0xD155
+Bitty Instruction 3: 0xD3C1
+Bitty Instruction 4: 0xD155
+Bitty Instruction 5: 0xD1C1
+Bitty Instruction 6: 0xD115
+Bitty Instruction 7: 0xD301
+Bitty Instruction 8: 0xD315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0000   ✓
-x2         0x00000000 0x0000   ✓
-x3         0x00002800 0x2800   ✓
-x4         0x00000014 0x0014   ✓
-x5         0x00000000 0x0000   ✓
-x6         0x00000000 0x0000   ✓
-x7         0x00002800 0x2800   ✓
-x8         0x00000014 0x0014   ✓
-x9         0x00000000 0x0000   ✓
-x10        0x00000000 0x0000   ✓
-x11        0x00002800 0x2800   ✓
-x12        0x00000014 0x0014   ✓
-x13        0x00000000 0x0000   ✓
-x14        0x0000000A 0x000A   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x43DCF000 0x43DCF000   ✓
+x2         0x3CD32000 0x3CD32000   ✓
+x3         0x0000001E 0x0000001E   ✓
+x4         0x2608B000 0x2608B000   ✓
+x5         0x0D38F000 0x0D38F000   ✓
+x6         0xDC8AD000 0xDC8AD000   ✓
+x7         0x6C00A000 0x6C00A000   ✓
+x8         0xFE5C6000 0xFE5C6000   ✓
+x9         0x0000005A 0x0000005A   ✓
+x10        0x00000064 0x00000064   ✓
+x11        0x3BC7A000 0x3BC7A000   ✓
+x12        0x00000078 0x00000078   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xD6A58000 0xD6A58000   ✓
+x15        0x00000096 0x00000096   ✓
 
 === RISC-V Instruction 14 at PC 14 ===
-Instruction: 0x0007D733
+Instruction: 0x22551337
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xEE04
-Executing Bitty Instruction 1: 0xEF00
-Executing Bitty Instruction 2: 0xE018
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x6604
+Bitty Instruction 1: 0x6201
+Bitty Instruction 2: 0x6155
+Bitty Instruction 3: 0x6481
+Bitty Instruction 4: 0x6155
+Bitty Instruction 5: 0x6541
+Bitty Instruction 6: 0x6115
+Bitty Instruction 7: 0x6041
+Bitty Instruction 8: 0x6315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0000   ✓
-x2         0x00000000 0x0000   ✓
-x3         0x00002800 0x2800   ✓
-x4         0x00000014 0x0014   ✓
-x5         0x00000000 0x0000   ✓
-x6         0x00000000 0x0000   ✓
-x7         0x00002800 0x2800   ✓
-x8         0x00000014 0x0014   ✓
-x9         0x00000000 0x0000   ✓
-x10        0x00000000 0x0000   ✓
-x11        0x00002800 0x2800   ✓
-x12        0x00000014 0x0014   ✓
-x13        0x00000000 0x0000   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x43DCF000 0x43DCF000   ✓
+x2         0x3CD32000 0x3CD32000   ✓
+x3         0x0000001E 0x0000001E   ✓
+x4         0x2608B000 0x2608B000   ✓
+x5         0x0D38F000 0x0D38F000   ✓
+x6         0x22551000 0x22551000   ✓
+x7         0x6C00A000 0x6C00A000   ✓
+x8         0xFE5C6000 0xFE5C6000   ✓
+x9         0x0000005A 0x0000005A   ✓
+x10        0x00000064 0x00000064   ✓
+x11        0x3BC7A000 0x3BC7A000   ✓
+x12        0x00000078 0x00000078   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xD6A58000 0xD6A58000   ✓
+x15        0x00000096 0x00000096   ✓
 
 === RISC-V Instruction 15 at PC 15 ===
-Instruction: 0x001017B3
+Instruction: 0x2DEE7637
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xFF04
-Executing Bitty Instruction 1: 0xF000
-Executing Bitty Instruction 2: 0xF114
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0xCC04
+Bitty Instruction 1: 0xC2C1
+Bitty Instruction 2: 0xC155
+Bitty Instruction 3: 0xC3C1
+Bitty Instruction 4: 0xC155
+Bitty Instruction 5: 0xC381
+Bitty Instruction 6: 0xC115
+Bitty Instruction 7: 0xC1C1
+Bitty Instruction 8: 0xC315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0000   ✓
-x2         0x00000000 0x0000   ✓
-x3         0x00002800 0x2800   ✓
-x4         0x00000014 0x0014   ✓
-x5         0x00000000 0x0000   ✓
-x6         0x00000000 0x0000   ✓
-x7         0x00002800 0x2800   ✓
-x8         0x00000014 0x0014   ✓
-x9         0x00000000 0x0000   ✓
-x10        0x00000000 0x0000   ✓
-x11        0x00002800 0x2800   ✓
-x12        0x00000014 0x0014   ✓
-x13        0x00000000 0x0000   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x43DCF000 0x43DCF000   ✓
+x2         0x3CD32000 0x3CD32000   ✓
+x3         0x0000001E 0x0000001E   ✓
+x4         0x2608B000 0x2608B000   ✓
+x5         0x0D38F000 0x0D38F000   ✓
+x6         0x22551000 0x22551000   ✓
+x7         0x6C00A000 0x6C00A000   ✓
+x8         0xFE5C6000 0xFE5C6000   ✓
+x9         0x0000005A 0x0000005A   ✓
+x10        0x00000064 0x00000064   ✓
+x11        0x3BC7A000 0x3BC7A000   ✓
+x12        0x2DEE7000 0x2DEE7000   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xD6A58000 0xD6A58000   ✓
+x15        0x00000096 0x00000096   ✓
 
 === RISC-V Instruction 16 at PC 16 ===
-Instruction: 0x002080B3
+Instruction: 0x236D7437
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x1104
-Executing Bitty Instruction 1: 0x1100
-Executing Bitty Instruction 2: 0x1200
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x8804
+Bitty Instruction 1: 0x8201
+Bitty Instruction 2: 0x8155
+Bitty Instruction 3: 0x86C1
+Bitty Instruction 4: 0x8155
+Bitty Instruction 5: 0x8341
+Bitty Instruction 6: 0x8115
+Bitty Instruction 7: 0x81C1
+Bitty Instruction 8: 0x8315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0000   ✓
-x2         0x00000000 0x0000   ✓
-x3         0x00002800 0x2800   ✓
-x4         0x00000014 0x0014   ✓
-x5         0x00000000 0x0000   ✓
-x6         0x00000000 0x0000   ✓
-x7         0x00002800 0x2800   ✓
-x8         0x00000014 0x0014   ✓
-x9         0x00000000 0x0000   ✓
-x10        0x00000000 0x0000   ✓
-x11        0x00002800 0x2800   ✓
-x12        0x00000014 0x0014   ✓
-x13        0x00000000 0x0000   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x43DCF000 0x43DCF000   ✓
+x2         0x3CD32000 0x3CD32000   ✓
+x3         0x0000001E 0x0000001E   ✓
+x4         0x2608B000 0x2608B000   ✓
+x5         0x0D38F000 0x0D38F000   ✓
+x6         0x22551000 0x22551000   ✓
+x7         0x6C00A000 0x6C00A000   ✓
+x8         0x236D7000 0x236D7000   ✓
+x9         0x0000005A 0x0000005A   ✓
+x10        0x00000064 0x00000064   ✓
+x11        0x3BC7A000 0x3BC7A000   ✓
+x12        0x2DEE7000 0x2DEE7000   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xD6A58000 0xD6A58000   ✓
+x15        0x00000096 0x00000096   ✓
 
 === RISC-V Instruction 17 at PC 17 ===
-Instruction: 0x403100B3
+Instruction: 0x7310F437
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x1104
-Executing Bitty Instruction 1: 0x1200
-Executing Bitty Instruction 2: 0x1304
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x8804
+Bitty Instruction 1: 0x8701
+Bitty Instruction 2: 0x8155
+Bitty Instruction 3: 0x8601
+Bitty Instruction 4: 0x8155
+Bitty Instruction 5: 0x8401
+Bitty Instruction 6: 0x8115
+Bitty Instruction 7: 0x83C1
+Bitty Instruction 8: 0x8315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFD800 0xD800   ✓
-x2         0x00000000 0x0000   ✓
-x3         0x00002800 0x2800   ✓
-x4         0x00000014 0x0014   ✓
-x5         0x00000000 0x0000   ✓
-x6         0x00000000 0x0000   ✓
-x7         0x00002800 0x2800   ✓
-x8         0x00000014 0x0014   ✓
-x9         0x00000000 0x0000   ✓
-x10        0x00000000 0x0000   ✓
-x11        0x00002800 0x2800   ✓
-x12        0x00000014 0x0014   ✓
-x13        0x00000000 0x0000   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x43DCF000 0x43DCF000   ✓
+x2         0x3CD32000 0x3CD32000   ✓
+x3         0x0000001E 0x0000001E   ✓
+x4         0x2608B000 0x2608B000   ✓
+x5         0x0D38F000 0x0D38F000   ✓
+x6         0x22551000 0x22551000   ✓
+x7         0x6C00A000 0x6C00A000   ✓
+x8         0x7310F000 0x7310F000   ✓
+x9         0x0000005A 0x0000005A   ✓
+x10        0x00000064 0x00000064   ✓
+x11        0x3BC7A000 0x3BC7A000   ✓
+x12        0x2DEE7000 0x2DEE7000   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xD6A58000 0xD6A58000   ✓
+x15        0x00000096 0x00000096   ✓
 
 === RISC-V Instruction 18 at PC 18 ===
-Instruction: 0x0041D133
+Instruction: 0x17B6B3B7
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x2204
-Executing Bitty Instruction 1: 0x2300
-Executing Bitty Instruction 2: 0x2418
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x7704
+Bitty Instruction 1: 0x7141
+Bitty Instruction 2: 0x7155
+Bitty Instruction 3: 0x7741
+Bitty Instruction 4: 0x7155
+Bitty Instruction 5: 0x7581
+Bitty Instruction 6: 0x7115
+Bitty Instruction 7: 0x72C1
+Bitty Instruction 8: 0x7315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFD800 0xD800   ✓
-x2         0x00000000 0x0280   ✗
-x3         0x00002800 0x2800   ✓
-x4         0x00000014 0x0014   ✓
-x5         0x00000000 0x0000   ✓
-x6         0x00000000 0x0000   ✓
-x7         0x00002800 0x2800   ✓
-x8         0x00000014 0x0014   ✓
-x9         0x00000000 0x0000   ✓
-x10        0x00000000 0x0000   ✓
-x11        0x00002800 0x2800   ✓
-x12        0x00000014 0x0014   ✓
-x13        0x00000000 0x0000   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x43DCF000 0x43DCF000   ✓
+x2         0x3CD32000 0x3CD32000   ✓
+x3         0x0000001E 0x0000001E   ✓
+x4         0x2608B000 0x2608B000   ✓
+x5         0x0D38F000 0x0D38F000   ✓
+x6         0x22551000 0x22551000   ✓
+x7         0x17B6B000 0x17B6B000   ✓
+x8         0x7310F000 0x7310F000   ✓
+x9         0x0000005A 0x0000005A   ✓
+x10        0x00000064 0x00000064   ✓
+x11        0x3BC7A000 0x3BC7A000   ✓
+x12        0x2DEE7000 0x2DEE7000   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xD6A58000 0xD6A58000   ✓
+x15        0x00000096 0x00000096   ✓
 
 === RISC-V Instruction 19 at PC 19 ===
-Instruction: 0x005211B3
+Instruction: 0xFBCEC7B7
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x3304
-Executing Bitty Instruction 1: 0x3400
-Executing Bitty Instruction 2: 0x3514
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0xFF04
+Bitty Instruction 1: 0xFF81
+Bitty Instruction 2: 0xF155
+Bitty Instruction 3: 0xF781
+Bitty Instruction 4: 0xF155
+Bitty Instruction 5: 0xF381
+Bitty Instruction 6: 0xF115
+Bitty Instruction 7: 0xF301
+Bitty Instruction 8: 0xF315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFD800 0xD800   ✓
-x2         0x00000000 0x0280   ✗
-x3         0x00000014 0x0014   ✓
-x4         0x00000014 0x0014   ✓
-x5         0x00000000 0x0000   ✓
-x6         0x00000000 0x0000   ✓
-x7         0x00002800 0x2800   ✓
-x8         0x00000014 0x0014   ✓
-x9         0x00000000 0x0000   ✓
-x10        0x00000000 0x0000   ✓
-x11        0x00002800 0x2800   ✓
-x12        0x00000014 0x0014   ✓
-x13        0x00000000 0x0000   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x43DCF000 0x43DCF000   ✓
+x2         0x3CD32000 0x3CD32000   ✓
+x3         0x0000001E 0x0000001E   ✓
+x4         0x2608B000 0x2608B000   ✓
+x5         0x0D38F000 0x0D38F000   ✓
+x6         0x22551000 0x22551000   ✓
+x7         0x17B6B000 0x17B6B000   ✓
+x8         0x7310F000 0x7310F000   ✓
+x9         0x0000005A 0x0000005A   ✓
+x10        0x00000064 0x00000064   ✓
+x11        0x3BC7A000 0x3BC7A000   ✓
+x12        0x2DEE7000 0x2DEE7000   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xD6A58000 0xD6A58000   ✓
+x15        0xFBCEC000 0xFBCEC000   ✓
 
 === RISC-V Instruction 20 at PC 20 ===
-Instruction: 0x00628233
+Instruction: 0x2D7B71B7
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x4404
-Executing Bitty Instruction 1: 0x4500
-Executing Bitty Instruction 2: 0x4600
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x3304
+Bitty Instruction 1: 0x32C1
+Bitty Instruction 2: 0x3155
+Bitty Instruction 3: 0x32C1
+Bitty Instruction 4: 0x3155
+Bitty Instruction 5: 0x36C1
+Bitty Instruction 6: 0x3115
+Bitty Instruction 7: 0x31C1
+Bitty Instruction 8: 0x3315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFD800 0xD800   ✓
-x2         0x00000000 0x0280   ✗
-x3         0x00000014 0x0014   ✓
-x4         0x00000000 0x0000   ✓
-x5         0x00000000 0x0000   ✓
-x6         0x00000000 0x0000   ✓
-x7         0x00002800 0x2800   ✓
-x8         0x00000014 0x0014   ✓
-x9         0x00000000 0x0000   ✓
-x10        0x00000000 0x0000   ✓
-x11        0x00002800 0x2800   ✓
-x12        0x00000014 0x0014   ✓
-x13        0x00000000 0x0000   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x43DCF000 0x43DCF000   ✓
+x2         0x3CD32000 0x3CD32000   ✓
+x3         0x2D7B7000 0x2D7B7000   ✓
+x4         0x2608B000 0x2608B000   ✓
+x5         0x0D38F000 0x0D38F000   ✓
+x6         0x22551000 0x22551000   ✓
+x7         0x17B6B000 0x17B6B000   ✓
+x8         0x7310F000 0x7310F000   ✓
+x9         0x0000005A 0x0000005A   ✓
+x10        0x00000064 0x00000064   ✓
+x11        0x3BC7A000 0x3BC7A000   ✓
+x12        0x2DEE7000 0x2DEE7000   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xD6A58000 0xD6A58000   ✓
+x15        0xFBCEC000 0xFBCEC000   ✓
 
 === RISC-V Instruction 21 at PC 21 ===
-Instruction: 0x407302B3
+Instruction: 0xCBBA5537
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x5504
-Executing Bitty Instruction 1: 0x5600
-Executing Bitty Instruction 2: 0x5704
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0xAA04
+Bitty Instruction 1: 0xAC81
+Bitty Instruction 2: 0xA155
+Bitty Instruction 3: 0xA741
+Bitty Instruction 4: 0xA155
+Bitty Instruction 5: 0xA681
+Bitty Instruction 6: 0xA115
+Bitty Instruction 7: 0xA141
+Bitty Instruction 8: 0xA315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFD800 0xD800   ✓
-x2         0x00000000 0x0280   ✗
-x3         0x00000014 0x0014   ✓
-x4         0x00000000 0x0000   ✓
-x5         0xFFFFD800 0xD800   ✓
-x6         0x00000000 0x0000   ✓
-x7         0x00002800 0x2800   ✓
-x8         0x00000014 0x0014   ✓
-x9         0x00000000 0x0000   ✓
-x10        0x00000000 0x0000   ✓
-x11        0x00002800 0x2800   ✓
-x12        0x00000014 0x0014   ✓
-x13        0x00000000 0x0000   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x43DCF000 0x43DCF000   ✓
+x2         0x3CD32000 0x3CD32000   ✓
+x3         0x2D7B7000 0x2D7B7000   ✓
+x4         0x2608B000 0x2608B000   ✓
+x5         0x0D38F000 0x0D38F000   ✓
+x6         0x22551000 0x22551000   ✓
+x7         0x17B6B000 0x17B6B000   ✓
+x8         0x7310F000 0x7310F000   ✓
+x9         0x0000005A 0x0000005A   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x3BC7A000 0x3BC7A000   ✓
+x12        0x2DEE7000 0x2DEE7000   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xD6A58000 0xD6A58000   ✓
+x15        0xFBCEC000 0xFBCEC000   ✓
 
 === RISC-V Instruction 22 at PC 22 ===
-Instruction: 0x0083D333
+Instruction: 0x7FAED3B7
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x6604
-Executing Bitty Instruction 1: 0x6700
-Executing Bitty Instruction 2: 0x6818
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x7704
+Bitty Instruction 1: 0x77C1
+Bitty Instruction 2: 0x7155
+Bitty Instruction 3: 0x7741
+Bitty Instruction 4: 0x7155
+Bitty Instruction 5: 0x7381
+Bitty Instruction 6: 0x7115
+Bitty Instruction 7: 0x7341
+Bitty Instruction 8: 0x7315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFD800 0xD800   ✓
-x2         0x00000000 0x0280   ✗
-x3         0x00000014 0x0014   ✓
-x4         0x00000000 0x0000   ✓
-x5         0xFFFFD800 0xD800   ✓
-x6         0x00000000 0x0280   ✗
-x7         0x00002800 0x2800   ✓
-x8         0x00000014 0x0014   ✓
-x9         0x00000000 0x0000   ✓
-x10        0x00000000 0x0000   ✓
-x11        0x00002800 0x2800   ✓
-x12        0x00000014 0x0014   ✓
-x13        0x00000000 0x0000   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x43DCF000 0x43DCF000   ✓
+x2         0x3CD32000 0x3CD32000   ✓
+x3         0x2D7B7000 0x2D7B7000   ✓
+x4         0x2608B000 0x2608B000   ✓
+x5         0x0D38F000 0x0D38F000   ✓
+x6         0x22551000 0x22551000   ✓
+x7         0x7FAED000 0x7FAED000   ✓
+x8         0x7310F000 0x7310F000   ✓
+x9         0x0000005A 0x0000005A   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x3BC7A000 0x3BC7A000   ✓
+x12        0x2DEE7000 0x2DEE7000   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xD6A58000 0xD6A58000   ✓
+x15        0xFBCEC000 0xFBCEC000   ✓
 
 === RISC-V Instruction 23 at PC 23 ===
-Instruction: 0x009413B3
+Instruction: 0x61FF8237
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x7704
-Executing Bitty Instruction 1: 0x7800
-Executing Bitty Instruction 2: 0x7914
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x4404
+Bitty Instruction 1: 0x4601
+Bitty Instruction 2: 0x4155
+Bitty Instruction 3: 0x43C1
+Bitty Instruction 4: 0x4155
+Bitty Instruction 5: 0x47C1
+Bitty Instruction 6: 0x4115
+Bitty Instruction 7: 0x4201
+Bitty Instruction 8: 0x4315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFD800 0xD800   ✓
-x2         0x00000000 0x0280   ✗
-x3         0x00000014 0x0014   ✓
-x4         0x00000000 0x0000   ✓
-x5         0xFFFFD800 0xD800   ✓
-x6         0x00000000 0x0280   ✗
-x7         0x00000014 0x0014   ✓
-x8         0x00000014 0x0014   ✓
-x9         0x00000000 0x0000   ✓
-x10        0x00000000 0x0000   ✓
-x11        0x00002800 0x2800   ✓
-x12        0x00000014 0x0014   ✓
-x13        0x00000000 0x0000   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x43DCF000 0x43DCF000   ✓
+x2         0x3CD32000 0x3CD32000   ✓
+x3         0x2D7B7000 0x2D7B7000   ✓
+x4         0x61FF8000 0x61FF8000   ✓
+x5         0x0D38F000 0x0D38F000   ✓
+x6         0x22551000 0x22551000   ✓
+x7         0x7FAED000 0x7FAED000   ✓
+x8         0x7310F000 0x7310F000   ✓
+x9         0x0000005A 0x0000005A   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x3BC7A000 0x3BC7A000   ✓
+x12        0x2DEE7000 0x2DEE7000   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xD6A58000 0xD6A58000   ✓
+x15        0xFBCEC000 0xFBCEC000   ✓
 
 === RISC-V Instruction 24 at PC 24 ===
-Instruction: 0x00A48433
+Instruction: 0xBA1554B7
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x8804
-Executing Bitty Instruction 1: 0x8900
-Executing Bitty Instruction 2: 0x8A00
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x9904
+Bitty Instruction 1: 0x9B81
+Bitty Instruction 2: 0x9155
+Bitty Instruction 3: 0x9401
+Bitty Instruction 4: 0x9155
+Bitty Instruction 5: 0x9541
+Bitty Instruction 6: 0x9115
+Bitty Instruction 7: 0x9141
+Bitty Instruction 8: 0x9315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFD800 0xD800   ✓
-x2         0x00000000 0x0280   ✗
-x3         0x00000014 0x0014   ✓
-x4         0x00000000 0x0000   ✓
-x5         0xFFFFD800 0xD800   ✓
-x6         0x00000000 0x0280   ✗
-x7         0x00000014 0x0014   ✓
-x8         0x00000000 0x0000   ✓
-x9         0x00000000 0x0000   ✓
-x10        0x00000000 0x0000   ✓
-x11        0x00002800 0x2800   ✓
-x12        0x00000014 0x0014   ✓
-x13        0x00000000 0x0000   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x43DCF000 0x43DCF000   ✓
+x2         0x3CD32000 0x3CD32000   ✓
+x3         0x2D7B7000 0x2D7B7000   ✓
+x4         0x61FF8000 0x61FF8000   ✓
+x5         0x0D38F000 0x0D38F000   ✓
+x6         0x22551000 0x22551000   ✓
+x7         0x7FAED000 0x7FAED000   ✓
+x8         0x7310F000 0x7310F000   ✓
+x9         0xBA155000 0xBA155000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x3BC7A000 0x3BC7A000   ✓
+x12        0x2DEE7000 0x2DEE7000   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xD6A58000 0xD6A58000   ✓
+x15        0xFBCEC000 0xFBCEC000   ✓
 
 === RISC-V Instruction 25 at PC 25 ===
-Instruction: 0x40B504B3
+Instruction: 0x4582A337
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x9904
-Executing Bitty Instruction 1: 0x9A00
-Executing Bitty Instruction 2: 0x9B04
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x6604
+Bitty Instruction 1: 0x6441
+Bitty Instruction 2: 0x6155
+Bitty Instruction 3: 0x6301
+Bitty Instruction 4: 0x6155
+Bitty Instruction 5: 0x6081
+Bitty Instruction 6: 0x6115
+Bitty Instruction 7: 0x6281
+Bitty Instruction 8: 0x6315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFD800 0xD800   ✓
-x2         0x00000000 0x0280   ✗
-x3         0x00000014 0x0014   ✓
-x4         0x00000000 0x0000   ✓
-x5         0xFFFFD800 0xD800   ✓
-x6         0x00000000 0x0280   ✗
-x7         0x00000014 0x0014   ✓
-x8         0x00000000 0x0000   ✓
-x9         0xFFFFD800 0xD800   ✓
-x10        0x00000000 0x0000   ✓
-x11        0x00002800 0x2800   ✓
-x12        0x00000014 0x0014   ✓
-x13        0x00000000 0x0000   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x43DCF000 0x43DCF000   ✓
+x2         0x3CD32000 0x3CD32000   ✓
+x3         0x2D7B7000 0x2D7B7000   ✓
+x4         0x61FF8000 0x61FF8000   ✓
+x5         0x0D38F000 0x0D38F000   ✓
+x6         0x4582A000 0x4582A000   ✓
+x7         0x7FAED000 0x7FAED000   ✓
+x8         0x7310F000 0x7310F000   ✓
+x9         0xBA155000 0xBA155000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x3BC7A000 0x3BC7A000   ✓
+x12        0x2DEE7000 0x2DEE7000   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xD6A58000 0xD6A58000   ✓
+x15        0xFBCEC000 0xFBCEC000   ✓
 
 === RISC-V Instruction 26 at PC 26 ===
-Instruction: 0x00C5D533
+Instruction: 0x88E37137
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xAA04
-Executing Bitty Instruction 1: 0xAB00
-Executing Bitty Instruction 2: 0xAC18
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x2204
+Bitty Instruction 1: 0x2881
+Bitty Instruction 2: 0x2155
+Bitty Instruction 3: 0x21C1
+Bitty Instruction 4: 0x2155
+Bitty Instruction 5: 0x20C1
+Bitty Instruction 6: 0x2115
+Bitty Instruction 7: 0x21C1
+Bitty Instruction 8: 0x2315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFD800 0xD800   ✓
-x2         0x00000000 0x0280   ✗
-x3         0x00000014 0x0014   ✓
-x4         0x00000000 0x0000   ✓
-x5         0xFFFFD800 0xD800   ✓
-x6         0x00000000 0x0280   ✗
-x7         0x00000014 0x0014   ✓
-x8         0x00000000 0x0000   ✓
-x9         0xFFFFD800 0xD800   ✓
-x10        0x00000000 0x0280   ✗
-x11        0x00002800 0x2800   ✓
-x12        0x00000014 0x0014   ✓
-x13        0x00000000 0x0000   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x43DCF000 0x43DCF000   ✓
+x2         0x88E37000 0x88E37000   ✓
+x3         0x2D7B7000 0x2D7B7000   ✓
+x4         0x61FF8000 0x61FF8000   ✓
+x5         0x0D38F000 0x0D38F000   ✓
+x6         0x4582A000 0x4582A000   ✓
+x7         0x7FAED000 0x7FAED000   ✓
+x8         0x7310F000 0x7310F000   ✓
+x9         0xBA155000 0xBA155000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x3BC7A000 0x3BC7A000   ✓
+x12        0x2DEE7000 0x2DEE7000   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xD6A58000 0xD6A58000   ✓
+x15        0xFBCEC000 0xFBCEC000   ✓
 
 === RISC-V Instruction 27 at PC 27 ===
-Instruction: 0x00D615B3
+Instruction: 0x7225D7B7
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xBB04
-Executing Bitty Instruction 1: 0xBC00
-Executing Bitty Instruction 2: 0xBD14
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0xFF04
+Bitty Instruction 1: 0xF701
+Bitty Instruction 2: 0xF155
+Bitty Instruction 3: 0xF441
+Bitty Instruction 4: 0xF155
+Bitty Instruction 5: 0xF141
+Bitty Instruction 6: 0xF115
+Bitty Instruction 7: 0xF341
+Bitty Instruction 8: 0xF315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFD800 0xD800   ✓
-x2         0x00000000 0x0280   ✗
-x3         0x00000014 0x0014   ✓
-x4         0x00000000 0x0000   ✓
-x5         0xFFFFD800 0xD800   ✓
-x6         0x00000000 0x0280   ✗
-x7         0x00000014 0x0014   ✓
-x8         0x00000000 0x0000   ✓
-x9         0xFFFFD800 0xD800   ✓
-x10        0x00000000 0x0280   ✗
-x11        0x00000014 0x0014   ✓
-x12        0x00000014 0x0014   ✓
-x13        0x00000000 0x0000   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x43DCF000 0x43DCF000   ✓
+x2         0x88E37000 0x88E37000   ✓
+x3         0x2D7B7000 0x2D7B7000   ✓
+x4         0x61FF8000 0x61FF8000   ✓
+x5         0x0D38F000 0x0D38F000   ✓
+x6         0x4582A000 0x4582A000   ✓
+x7         0x7FAED000 0x7FAED000   ✓
+x8         0x7310F000 0x7310F000   ✓
+x9         0xBA155000 0xBA155000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x3BC7A000 0x3BC7A000   ✓
+x12        0x2DEE7000 0x2DEE7000   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xD6A58000 0xD6A58000   ✓
+x15        0x7225D000 0x7225D000   ✓
 
 === RISC-V Instruction 28 at PC 28 ===
-Instruction: 0x00E68633
+Instruction: 0xFA29C1B7
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xCC04
-Executing Bitty Instruction 1: 0xCD00
-Executing Bitty Instruction 2: 0xCE00
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x3304
+Bitty Instruction 1: 0x3F81
+Bitty Instruction 2: 0x3155
+Bitty Instruction 3: 0x3441
+Bitty Instruction 4: 0x3155
+Bitty Instruction 5: 0x3241
+Bitty Instruction 6: 0x3115
+Bitty Instruction 7: 0x3301
+Bitty Instruction 8: 0x3315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFD800 0xD800   ✓
-x2         0x00000000 0x0280   ✗
-x3         0x00000014 0x0014   ✓
-x4         0x00000000 0x0000   ✓
-x5         0xFFFFD800 0xD800   ✓
-x6         0x00000000 0x0280   ✗
-x7         0x00000014 0x0014   ✓
-x8         0x00000000 0x0000   ✓
-x9         0xFFFFD800 0xD800   ✓
-x10        0x00000000 0x0280   ✗
-x11        0x00000014 0x0014   ✓
-x12        0x00000000 0x0000   ✓
-x13        0x00000000 0x0000   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x43DCF000 0x43DCF000   ✓
+x2         0x88E37000 0x88E37000   ✓
+x3         0xFA29C000 0xFA29C000   ✓
+x4         0x61FF8000 0x61FF8000   ✓
+x5         0x0D38F000 0x0D38F000   ✓
+x6         0x4582A000 0x4582A000   ✓
+x7         0x7FAED000 0x7FAED000   ✓
+x8         0x7310F000 0x7310F000   ✓
+x9         0xBA155000 0xBA155000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x3BC7A000 0x3BC7A000   ✓
+x12        0x2DEE7000 0x2DEE7000   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xD6A58000 0xD6A58000   ✓
+x15        0x7225D000 0x7225D000   ✓
 
 === RISC-V Instruction 29 at PC 29 ===
-Instruction: 0x40F706B3
+Instruction: 0x7FDCE0B7
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xDD04
-Executing Bitty Instruction 1: 0xDE00
-Executing Bitty Instruction 2: 0xDF04
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x1104
+Bitty Instruction 1: 0x17C1
+Bitty Instruction 2: 0x1155
+Bitty Instruction 3: 0x1781
+Bitty Instruction 4: 0x1155
+Bitty Instruction 5: 0x1701
+Bitty Instruction 6: 0x1115
+Bitty Instruction 7: 0x1381
+Bitty Instruction 8: 0x1315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFD800 0xD800   ✓
-x2         0x00000000 0x0280   ✗
-x3         0x00000014 0x0014   ✓
-x4         0x00000000 0x0000   ✓
-x5         0xFFFFD800 0xD800   ✓
-x6         0x00000000 0x0280   ✗
-x7         0x00000014 0x0014   ✓
-x8         0x00000000 0x0000   ✓
-x9         0xFFFFD800 0xD800   ✓
-x10        0x00000000 0x0280   ✗
-x11        0x00000014 0x0014   ✓
-x12        0x00000000 0x0000   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x7FDCE000 0x7FDCE000   ✓
+x2         0x88E37000 0x88E37000   ✓
+x3         0xFA29C000 0xFA29C000   ✓
+x4         0x61FF8000 0x61FF8000   ✓
+x5         0x0D38F000 0x0D38F000   ✓
+x6         0x4582A000 0x4582A000   ✓
+x7         0x7FAED000 0x7FAED000   ✓
+x8         0x7310F000 0x7310F000   ✓
+x9         0xBA155000 0xBA155000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x3BC7A000 0x3BC7A000   ✓
+x12        0x2DEE7000 0x2DEE7000   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xD6A58000 0xD6A58000   ✓
+x15        0x7225D000 0x7225D000   ✓
 
 === RISC-V Instruction 30 at PC 30 ===
-Instruction: 0x0007D733
+Instruction: 0x5C190337
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xEE04
-Executing Bitty Instruction 1: 0xEF00
-Executing Bitty Instruction 2: 0xE018
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x6604
+Bitty Instruction 1: 0x65C1
+Bitty Instruction 2: 0x6155
+Bitty Instruction 3: 0x6001
+Bitty Instruction 4: 0x6155
+Bitty Instruction 5: 0x6641
+Bitty Instruction 6: 0x6115
+Bitty Instruction 7: 0x6001
+Bitty Instruction 8: 0x6315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFD800 0xD800   ✓
-x2         0x00000000 0x0280   ✗
-x3         0x00000014 0x0014   ✓
-x4         0x00000000 0x0000   ✓
-x5         0xFFFFD800 0xD800   ✓
-x6         0x00000000 0x0280   ✗
-x7         0x00000014 0x0014   ✓
-x8         0x00000000 0x0000   ✓
-x9         0xFFFFD800 0xD800   ✓
-x10        0x00000000 0x0280   ✗
-x11        0x00000014 0x0014   ✓
-x12        0x00000000 0x0000   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x7FDCE000 0x7FDCE000   ✓
+x2         0x88E37000 0x88E37000   ✓
+x3         0xFA29C000 0xFA29C000   ✓
+x4         0x61FF8000 0x61FF8000   ✓
+x5         0x0D38F000 0x0D38F000   ✓
+x6         0x5C190000 0x5C190000   ✓
+x7         0x7FAED000 0x7FAED000   ✓
+x8         0x7310F000 0x7310F000   ✓
+x9         0xBA155000 0xBA155000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x3BC7A000 0x3BC7A000   ✓
+x12        0x2DEE7000 0x2DEE7000   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xD6A58000 0xD6A58000   ✓
+x15        0x7225D000 0x7225D000   ✓
 
 === RISC-V Instruction 31 at PC 31 ===
-Instruction: 0x001017B3
+Instruction: 0x653942B7
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xFF04
-Executing Bitty Instruction 1: 0xF000
-Executing Bitty Instruction 2: 0xF114
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x5504
+Bitty Instruction 1: 0x5641
+Bitty Instruction 2: 0x5155
+Bitty Instruction 3: 0x5241
+Bitty Instruction 4: 0x5155
+Bitty Instruction 5: 0x5641
+Bitty Instruction 6: 0x5115
+Bitty Instruction 7: 0x5101
+Bitty Instruction 8: 0x5315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFD800 0xD800   ✓
-x2         0x00000000 0x0280   ✗
-x3         0x00000014 0x0014   ✓
-x4         0x00000000 0x0000   ✓
-x5         0xFFFFD800 0xD800   ✓
-x6         0x00000000 0x0280   ✗
-x7         0x00000014 0x0014   ✓
-x8         0x00000000 0x0000   ✓
-x9         0xFFFFD800 0xD800   ✓
-x10        0x00000000 0x0280   ✗
-x11        0x00000014 0x0014   ✓
-x12        0x00000000 0x0000   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x7FDCE000 0x7FDCE000   ✓
+x2         0x88E37000 0x88E37000   ✓
+x3         0xFA29C000 0xFA29C000   ✓
+x4         0x61FF8000 0x61FF8000   ✓
+x5         0x65394000 0x65394000   ✓
+x6         0x5C190000 0x5C190000   ✓
+x7         0x7FAED000 0x7FAED000   ✓
+x8         0x7310F000 0x7310F000   ✓
+x9         0xBA155000 0xBA155000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x3BC7A000 0x3BC7A000   ✓
+x12        0x2DEE7000 0x2DEE7000   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xD6A58000 0xD6A58000   ✓
+x15        0x7225D000 0x7225D000   ✓
 
 === RISC-V Instruction 32 at PC 32 ===
-Instruction: 0x002080B3
+Instruction: 0xA4D582B7
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x1104
-Executing Bitty Instruction 1: 0x1100
-Executing Bitty Instruction 2: 0x1200
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x5504
+Bitty Instruction 1: 0x5A41
+Bitty Instruction 2: 0x5155
+Bitty Instruction 3: 0x5181
+Bitty Instruction 4: 0x5155
+Bitty Instruction 5: 0x5541
+Bitty Instruction 6: 0x5115
+Bitty Instruction 7: 0x5201
+Bitty Instruction 8: 0x5315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFD800 0x0280   ✗
-x2         0x00000000 0x0280   ✗
-x3         0x00000014 0x0014   ✓
-x4         0x00000000 0x0000   ✓
-x5         0xFFFFD800 0xD800   ✓
-x6         0x00000000 0x0280   ✗
-x7         0x00000014 0x0014   ✓
-x8         0x00000000 0x0000   ✓
-x9         0xFFFFD800 0xD800   ✓
-x10        0x00000000 0x0280   ✗
-x11        0x00000014 0x0014   ✓
-x12        0x00000000 0x0000   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x7FDCE000 0x7FDCE000   ✓
+x2         0x88E37000 0x88E37000   ✓
+x3         0xFA29C000 0xFA29C000   ✓
+x4         0x61FF8000 0x61FF8000   ✓
+x5         0xA4D58000 0xA4D58000   ✓
+x6         0x5C190000 0x5C190000   ✓
+x7         0x7FAED000 0x7FAED000   ✓
+x8         0x7310F000 0x7310F000   ✓
+x9         0xBA155000 0xBA155000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x3BC7A000 0x3BC7A000   ✓
+x12        0x2DEE7000 0x2DEE7000   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xD6A58000 0xD6A58000   ✓
+x15        0x7225D000 0x7225D000   ✓
 
 === RISC-V Instruction 33 at PC 33 ===
-Instruction: 0x403100B3
+Instruction: 0x9431E1B7
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x1104
-Executing Bitty Instruction 1: 0x1200
-Executing Bitty Instruction 2: 0x1304
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x3304
+Bitty Instruction 1: 0x3941
+Bitty Instruction 2: 0x3155
+Bitty Instruction 3: 0x3041
+Bitty Instruction 4: 0x3155
+Bitty Instruction 5: 0x3441
+Bitty Instruction 6: 0x3115
+Bitty Instruction 7: 0x3381
+Bitty Instruction 8: 0x3315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFFFEC 0x026C   ✗
-x2         0x00000000 0x0280   ✗
-x3         0x00000014 0x0014   ✓
-x4         0x00000000 0x0000   ✓
-x5         0xFFFFD800 0xD800   ✓
-x6         0x00000000 0x0280   ✗
-x7         0x00000014 0x0014   ✓
-x8         0x00000000 0x0000   ✓
-x9         0xFFFFD800 0xD800   ✓
-x10        0x00000000 0x0280   ✗
-x11        0x00000014 0x0014   ✓
-x12        0x00000000 0x0000   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x7FDCE000 0x7FDCE000   ✓
+x2         0x88E37000 0x88E37000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x61FF8000 0x61FF8000   ✓
+x5         0xA4D58000 0xA4D58000   ✓
+x6         0x5C190000 0x5C190000   ✓
+x7         0x7FAED000 0x7FAED000   ✓
+x8         0x7310F000 0x7310F000   ✓
+x9         0xBA155000 0xBA155000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x3BC7A000 0x3BC7A000   ✓
+x12        0x2DEE7000 0x2DEE7000   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xD6A58000 0xD6A58000   ✓
+x15        0x7225D000 0x7225D000   ✓
 
 === RISC-V Instruction 34 at PC 34 ===
-Instruction: 0x0041D133
+Instruction: 0xE69A5737
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x2204
-Executing Bitty Instruction 1: 0x2300
-Executing Bitty Instruction 2: 0x2418
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0xEE04
+Bitty Instruction 1: 0xEE41
+Bitty Instruction 2: 0xE155
+Bitty Instruction 3: 0xE501
+Bitty Instruction 4: 0xE155
+Bitty Instruction 5: 0xE681
+Bitty Instruction 6: 0xE115
+Bitty Instruction 7: 0xE141
+Bitty Instruction 8: 0xE315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFFFEC 0x026C   ✗
-x2         0x00000014 0x0014   ✓
-x3         0x00000014 0x0014   ✓
-x4         0x00000000 0x0000   ✓
-x5         0xFFFFD800 0xD800   ✓
-x6         0x00000000 0x0280   ✗
-x7         0x00000014 0x0014   ✓
-x8         0x00000000 0x0000   ✓
-x9         0xFFFFD800 0xD800   ✓
-x10        0x00000000 0x0280   ✗
-x11        0x00000014 0x0014   ✓
-x12        0x00000000 0x0000   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x7FDCE000 0x7FDCE000   ✓
+x2         0x88E37000 0x88E37000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x61FF8000 0x61FF8000   ✓
+x5         0xA4D58000 0xA4D58000   ✓
+x6         0x5C190000 0x5C190000   ✓
+x7         0x7FAED000 0x7FAED000   ✓
+x8         0x7310F000 0x7310F000   ✓
+x9         0xBA155000 0xBA155000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x3BC7A000 0x3BC7A000   ✓
+x12        0x2DEE7000 0x2DEE7000   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xE69A5000 0xE69A5000   ✓
+x15        0x7225D000 0x7225D000   ✓
 
 === RISC-V Instruction 35 at PC 35 ===
-Instruction: 0x005211B3
+Instruction: 0xBA9422B7
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x3304
-Executing Bitty Instruction 1: 0x3400
-Executing Bitty Instruction 2: 0x3514
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x5504
+Bitty Instruction 1: 0x5B81
+Bitty Instruction 2: 0x5155
+Bitty Instruction 3: 0x5501
+Bitty Instruction 4: 0x5155
+Bitty Instruction 5: 0x5501
+Bitty Instruction 6: 0x5115
+Bitty Instruction 7: 0x5081
+Bitty Instruction 8: 0x5315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFFFEC 0x026C   ✗
-x2         0x00000014 0x0014   ✓
-x3         0x00000000 0x0000   ✓
-x4         0x00000000 0x0000   ✓
-x5         0xFFFFD800 0xD800   ✓
-x6         0x00000000 0x0280   ✗
-x7         0x00000014 0x0014   ✓
-x8         0x00000000 0x0000   ✓
-x9         0xFFFFD800 0xD800   ✓
-x10        0x00000000 0x0280   ✗
-x11        0x00000014 0x0014   ✓
-x12        0x00000000 0x0000   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x7FDCE000 0x7FDCE000   ✓
+x2         0x88E37000 0x88E37000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x61FF8000 0x61FF8000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0x5C190000 0x5C190000   ✓
+x7         0x7FAED000 0x7FAED000   ✓
+x8         0x7310F000 0x7310F000   ✓
+x9         0xBA155000 0xBA155000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x3BC7A000 0x3BC7A000   ✓
+x12        0x2DEE7000 0x2DEE7000   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xE69A5000 0xE69A5000   ✓
+x15        0x7225D000 0x7225D000   ✓
 
 === RISC-V Instruction 36 at PC 36 ===
-Instruction: 0x00628233
+Instruction: 0x296705B7
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x4404
-Executing Bitty Instruction 1: 0x4500
-Executing Bitty Instruction 2: 0x4600
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0xBB04
+Bitty Instruction 1: 0xB281
+Bitty Instruction 2: 0xB155
+Bitty Instruction 3: 0xB2C1
+Bitty Instruction 4: 0xB155
+Bitty Instruction 5: 0xB1C1
+Bitty Instruction 6: 0xB115
+Bitty Instruction 7: 0xB001
+Bitty Instruction 8: 0xB315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFFFEC 0x026C   ✗
-x2         0x00000014 0x0014   ✓
-x3         0x00000000 0x0000   ✓
-x4         0xFFFFD800 0xDA80   ✗
-x5         0xFFFFD800 0xD800   ✓
-x6         0x00000000 0x0280   ✗
-x7         0x00000014 0x0014   ✓
-x8         0x00000000 0x0000   ✓
-x9         0xFFFFD800 0xD800   ✓
-x10        0x00000000 0x0280   ✗
-x11        0x00000014 0x0014   ✓
-x12        0x00000000 0x0000   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x7FDCE000 0x7FDCE000   ✓
+x2         0x88E37000 0x88E37000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x61FF8000 0x61FF8000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0x5C190000 0x5C190000   ✓
+x7         0x7FAED000 0x7FAED000   ✓
+x8         0x7310F000 0x7310F000   ✓
+x9         0xBA155000 0xBA155000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x29670000 0x29670000   ✓
+x12        0x2DEE7000 0x2DEE7000   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xE69A5000 0xE69A5000   ✓
+x15        0x7225D000 0x7225D000   ✓
 
 === RISC-V Instruction 37 at PC 37 ===
-Instruction: 0x407302B3
+Instruction: 0xD1A60437
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x5504
-Executing Bitty Instruction 1: 0x5600
-Executing Bitty Instruction 2: 0x5704
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x8804
+Bitty Instruction 1: 0x8D01
+Bitty Instruction 2: 0x8155
+Bitty Instruction 3: 0x8341
+Bitty Instruction 4: 0x8155
+Bitty Instruction 5: 0x8181
+Bitty Instruction 6: 0x8115
+Bitty Instruction 7: 0x8001
+Bitty Instruction 8: 0x8315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFFFEC 0x026C   ✗
-x2         0x00000014 0x0014   ✓
-x3         0x00000000 0x0000   ✓
-x4         0xFFFFD800 0xDA80   ✗
-x5         0xFFFFFFEC 0x026C   ✗
-x6         0x00000000 0x0280   ✗
-x7         0x00000014 0x0014   ✓
-x8         0x00000000 0x0000   ✓
-x9         0xFFFFD800 0xD800   ✓
-x10        0x00000000 0x0280   ✗
-x11        0x00000014 0x0014   ✓
-x12        0x00000000 0x0000   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x7FDCE000 0x7FDCE000   ✓
+x2         0x88E37000 0x88E37000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x61FF8000 0x61FF8000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0x5C190000 0x5C190000   ✓
+x7         0x7FAED000 0x7FAED000   ✓
+x8         0xD1A60000 0xD1A60000   ✓
+x9         0xBA155000 0xBA155000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x29670000 0x29670000   ✓
+x12        0x2DEE7000 0x2DEE7000   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xE69A5000 0xE69A5000   ✓
+x15        0x7225D000 0x7225D000   ✓
 
 === RISC-V Instruction 38 at PC 38 ===
-Instruction: 0x0083D333
+Instruction: 0x9A44C3B7
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x6604
-Executing Bitty Instruction 1: 0x6700
-Executing Bitty Instruction 2: 0x6818
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x7704
+Bitty Instruction 1: 0x7981
+Bitty Instruction 2: 0x7155
+Bitty Instruction 3: 0x7481
+Bitty Instruction 4: 0x7155
+Bitty Instruction 5: 0x7101
+Bitty Instruction 6: 0x7115
+Bitty Instruction 7: 0x7301
+Bitty Instruction 8: 0x7315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFFFEC 0x026C   ✗
-x2         0x00000014 0x0014   ✓
-x3         0x00000000 0x0000   ✓
-x4         0xFFFFD800 0xDA80   ✗
-x5         0xFFFFFFEC 0x026C   ✗
-x6         0x00000014 0x0014   ✓
-x7         0x00000014 0x0014   ✓
-x8         0x00000000 0x0000   ✓
-x9         0xFFFFD800 0xD800   ✓
-x10        0x00000000 0x0280   ✗
-x11        0x00000014 0x0014   ✓
-x12        0x00000000 0x0000   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x7FDCE000 0x7FDCE000   ✓
+x2         0x88E37000 0x88E37000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x61FF8000 0x61FF8000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0x5C190000 0x5C190000   ✓
+x7         0x9A44C000 0x9A44C000   ✓
+x8         0xD1A60000 0xD1A60000   ✓
+x9         0xBA155000 0xBA155000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x29670000 0x29670000   ✓
+x12        0x2DEE7000 0x2DEE7000   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xE69A5000 0xE69A5000   ✓
+x15        0x7225D000 0x7225D000   ✓
 
 === RISC-V Instruction 39 at PC 39 ===
-Instruction: 0x009413B3
+Instruction: 0x09B50337
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x7704
-Executing Bitty Instruction 1: 0x7800
-Executing Bitty Instruction 2: 0x7914
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x6604
+Bitty Instruction 1: 0x6081
+Bitty Instruction 2: 0x6155
+Bitty Instruction 3: 0x6341
+Bitty Instruction 4: 0x6155
+Bitty Instruction 5: 0x6541
+Bitty Instruction 6: 0x6115
+Bitty Instruction 7: 0x6001
+Bitty Instruction 8: 0x6315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFFFEC 0x026C   ✗
-x2         0x00000014 0x0014   ✓
-x3         0x00000000 0x0000   ✓
-x4         0xFFFFD800 0xDA80   ✗
-x5         0xFFFFFFEC 0x026C   ✗
-x6         0x00000014 0x0014   ✓
-x7         0x00000000 0x0000   ✓
-x8         0x00000000 0x0000   ✓
-x9         0xFFFFD800 0xD800   ✓
-x10        0x00000000 0x0280   ✗
-x11        0x00000014 0x0014   ✓
-x12        0x00000000 0x0000   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x7FDCE000 0x7FDCE000   ✓
+x2         0x88E37000 0x88E37000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x61FF8000 0x61FF8000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0x09B50000 0x09B50000   ✓
+x7         0x9A44C000 0x9A44C000   ✓
+x8         0xD1A60000 0xD1A60000   ✓
+x9         0xBA155000 0xBA155000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x29670000 0x29670000   ✓
+x12        0x2DEE7000 0x2DEE7000   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xE69A5000 0xE69A5000   ✓
+x15        0x7225D000 0x7225D000   ✓
 
 === RISC-V Instruction 40 at PC 40 ===
-Instruction: 0x00A48433
+Instruction: 0x8006E237
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x8804
-Executing Bitty Instruction 1: 0x8900
-Executing Bitty Instruction 2: 0x8A00
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x4404
+Bitty Instruction 1: 0x4801
+Bitty Instruction 2: 0x4155
+Bitty Instruction 3: 0x4001
+Bitty Instruction 4: 0x4155
+Bitty Instruction 5: 0x4181
+Bitty Instruction 6: 0x4115
+Bitty Instruction 7: 0x4381
+Bitty Instruction 8: 0x4315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFFFEC 0x026C   ✗
-x2         0x00000014 0x0014   ✓
-x3         0x00000000 0x0000   ✓
-x4         0xFFFFD800 0xDA80   ✗
-x5         0xFFFFFFEC 0x026C   ✗
-x6         0x00000014 0x0014   ✓
-x7         0x00000000 0x0000   ✓
-x8         0xFFFFD800 0xDA80   ✗
-x9         0xFFFFD800 0xD800   ✓
-x10        0x00000000 0x0280   ✗
-x11        0x00000014 0x0014   ✓
-x12        0x00000000 0x0000   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x7FDCE000 0x7FDCE000   ✓
+x2         0x88E37000 0x88E37000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x8006E000 0x8006E000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0x09B50000 0x09B50000   ✓
+x7         0x9A44C000 0x9A44C000   ✓
+x8         0xD1A60000 0xD1A60000   ✓
+x9         0xBA155000 0xBA155000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x29670000 0x29670000   ✓
+x12        0x2DEE7000 0x2DEE7000   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xE69A5000 0xE69A5000   ✓
+x15        0x7225D000 0x7225D000   ✓
 
 === RISC-V Instruction 41 at PC 41 ===
-Instruction: 0x40B504B3
+Instruction: 0xF03A2637
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x9904
-Executing Bitty Instruction 1: 0x9A00
-Executing Bitty Instruction 2: 0x9B04
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0xCC04
+Bitty Instruction 1: 0xCF01
+Bitty Instruction 2: 0xC155
+Bitty Instruction 3: 0xC041
+Bitty Instruction 4: 0xC155
+Bitty Instruction 5: 0xC681
+Bitty Instruction 6: 0xC115
+Bitty Instruction 7: 0xC081
+Bitty Instruction 8: 0xC315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFFFEC 0x026C   ✗
-x2         0x00000014 0x0014   ✓
-x3         0x00000000 0x0000   ✓
-x4         0xFFFFD800 0xDA80   ✗
-x5         0xFFFFFFEC 0x026C   ✗
-x6         0x00000014 0x0014   ✓
-x7         0x00000000 0x0000   ✓
-x8         0xFFFFD800 0xDA80   ✗
-x9         0xFFFFFFEC 0x026C   ✗
-x10        0x00000000 0x0280   ✗
-x11        0x00000014 0x0014   ✓
-x12        0x00000000 0x0000   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x7FDCE000 0x7FDCE000   ✓
+x2         0x88E37000 0x88E37000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x8006E000 0x8006E000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0x09B50000 0x09B50000   ✓
+x7         0x9A44C000 0x9A44C000   ✓
+x8         0xD1A60000 0xD1A60000   ✓
+x9         0xBA155000 0xBA155000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x29670000 0x29670000   ✓
+x12        0xF03A2000 0xF03A2000   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xE69A5000 0xE69A5000   ✓
+x15        0x7225D000 0x7225D000   ✓
 
 === RISC-V Instruction 42 at PC 42 ===
-Instruction: 0x00C5D533
+Instruction: 0x7099A5B7
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xAA04
-Executing Bitty Instruction 1: 0xAB00
-Executing Bitty Instruction 2: 0xAC18
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0xBB04
+Bitty Instruction 1: 0xB701
+Bitty Instruction 2: 0xB155
+Bitty Instruction 3: 0xB101
+Bitty Instruction 4: 0xB155
+Bitty Instruction 5: 0xB641
+Bitty Instruction 6: 0xB115
+Bitty Instruction 7: 0xB281
+Bitty Instruction 8: 0xB315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFFFEC 0x026C   ✗
-x2         0x00000014 0x0014   ✓
-x3         0x00000000 0x0000   ✓
-x4         0xFFFFD800 0xDA80   ✗
-x5         0xFFFFFFEC 0x026C   ✗
-x6         0x00000014 0x0014   ✓
-x7         0x00000000 0x0000   ✓
-x8         0xFFFFD800 0xDA80   ✗
-x9         0xFFFFFFEC 0x026C   ✗
-x10        0x00000014 0x0014   ✓
-x11        0x00000014 0x0014   ✓
-x12        0x00000000 0x0000   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x7FDCE000 0x7FDCE000   ✓
+x2         0x88E37000 0x88E37000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x8006E000 0x8006E000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0x09B50000 0x09B50000   ✓
+x7         0x9A44C000 0x9A44C000   ✓
+x8         0xD1A60000 0xD1A60000   ✓
+x9         0xBA155000 0xBA155000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x7099A000 0x7099A000   ✓
+x12        0xF03A2000 0xF03A2000   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xE69A5000 0xE69A5000   ✓
+x15        0x7225D000 0x7225D000   ✓
 
 === RISC-V Instruction 43 at PC 43 ===
-Instruction: 0x00D615B3
+Instruction: 0xE7803437
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xBB04
-Executing Bitty Instruction 1: 0xBC00
-Executing Bitty Instruction 2: 0xBD14
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x8804
+Bitty Instruction 1: 0x8E41
+Bitty Instruction 2: 0x8155
+Bitty Instruction 3: 0x8701
+Bitty Instruction 4: 0x8155
+Bitty Instruction 5: 0x8001
+Bitty Instruction 6: 0x8115
+Bitty Instruction 7: 0x80C1
+Bitty Instruction 8: 0x8315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFFFEC 0x026C   ✗
-x2         0x00000014 0x0014   ✓
-x3         0x00000000 0x0000   ✓
-x4         0xFFFFD800 0xDA80   ✗
-x5         0xFFFFFFEC 0x026C   ✗
-x6         0x00000014 0x0014   ✓
-x7         0x00000000 0x0000   ✓
-x8         0xFFFFD800 0xDA80   ✗
-x9         0xFFFFFFEC 0x026C   ✗
-x10        0x00000014 0x0014   ✓
-x11        0x00000000 0x0000   ✓
-x12        0x00000000 0x0000   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x7FDCE000 0x7FDCE000   ✓
+x2         0x88E37000 0x88E37000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x8006E000 0x8006E000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0x09B50000 0x09B50000   ✓
+x7         0x9A44C000 0x9A44C000   ✓
+x8         0xE7803000 0xE7803000   ✓
+x9         0xBA155000 0xBA155000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x7099A000 0x7099A000   ✓
+x12        0xF03A2000 0xF03A2000   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xE69A5000 0xE69A5000   ✓
+x15        0x7225D000 0x7225D000   ✓
 
 === RISC-V Instruction 44 at PC 44 ===
-Instruction: 0x00E68633
+Instruction: 0x55E387B7
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xCC04
-Executing Bitty Instruction 1: 0xCD00
-Executing Bitty Instruction 2: 0xCE00
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0xFF04
+Bitty Instruction 1: 0xF541
+Bitty Instruction 2: 0xF155
+Bitty Instruction 3: 0xF3C1
+Bitty Instruction 4: 0xF155
+Bitty Instruction 5: 0xF0C1
+Bitty Instruction 6: 0xF115
+Bitty Instruction 7: 0xF201
+Bitty Instruction 8: 0xF315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFFFEC 0x026C   ✗
-x2         0x00000014 0x0014   ✓
-x3         0x00000000 0x0000   ✓
-x4         0xFFFFD800 0xDA80   ✗
-x5         0xFFFFFFEC 0x026C   ✗
-x6         0x00000014 0x0014   ✓
-x7         0x00000000 0x0000   ✓
-x8         0xFFFFD800 0xDA80   ✗
-x9         0xFFFFFFEC 0x026C   ✗
-x10        0x00000014 0x0014   ✓
-x11        0x00000000 0x0000   ✓
-x12        0xFFFFFFF6 0xFFF6   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x7FDCE000 0x7FDCE000   ✓
+x2         0x88E37000 0x88E37000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x8006E000 0x8006E000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0x09B50000 0x09B50000   ✓
+x7         0x9A44C000 0x9A44C000   ✓
+x8         0xE7803000 0xE7803000   ✓
+x9         0xBA155000 0xBA155000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x7099A000 0x7099A000   ✓
+x12        0xF03A2000 0xF03A2000   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xE69A5000 0xE69A5000   ✓
+x15        0x55E38000 0x55E38000   ✓
 
 === RISC-V Instruction 45 at PC 45 ===
-Instruction: 0x40F706B3
+Instruction: 0x311DA0B7
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xDD04
-Executing Bitty Instruction 1: 0xDE00
-Executing Bitty Instruction 2: 0xDF04
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x1104
+Bitty Instruction 1: 0x1301
+Bitty Instruction 2: 0x1155
+Bitty Instruction 3: 0x1201
+Bitty Instruction 4: 0x1155
+Bitty Instruction 5: 0x1741
+Bitty Instruction 6: 0x1115
+Bitty Instruction 7: 0x1281
+Bitty Instruction 8: 0x1315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFFFEC 0x026C   ✗
-x2         0x00000014 0x0014   ✓
-x3         0x00000000 0x0000   ✓
-x4         0xFFFFD800 0xDA80   ✗
-x5         0xFFFFFFEC 0x026C   ✗
-x6         0x00000014 0x0014   ✓
-x7         0x00000000 0x0000   ✓
-x8         0xFFFFD800 0xDA80   ✗
-x9         0xFFFFFFEC 0x026C   ✗
-x10        0x00000014 0x0014   ✓
-x11        0x00000000 0x0000   ✓
-x12        0xFFFFFFF6 0xFFF6   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x311DA000 0x311DA000   ✓
+x2         0x88E37000 0x88E37000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x8006E000 0x8006E000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0x09B50000 0x09B50000   ✓
+x7         0x9A44C000 0x9A44C000   ✓
+x8         0xE7803000 0xE7803000   ✓
+x9         0xBA155000 0xBA155000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x7099A000 0x7099A000   ✓
+x12        0xF03A2000 0xF03A2000   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xE69A5000 0xE69A5000   ✓
+x15        0x55E38000 0x55E38000   ✓
 
 === RISC-V Instruction 46 at PC 46 ===
-Instruction: 0x0007D733
+Instruction: 0x8FDBF337
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xEE04
-Executing Bitty Instruction 1: 0xEF00
-Executing Bitty Instruction 2: 0xE018
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x6604
+Bitty Instruction 1: 0x68C1
+Bitty Instruction 2: 0x6155
+Bitty Instruction 3: 0x6781
+Bitty Instruction 4: 0x6155
+Bitty Instruction 5: 0x66C1
+Bitty Instruction 6: 0x6115
+Bitty Instruction 7: 0x63C1
+Bitty Instruction 8: 0x6315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFFFEC 0x026C   ✗
-x2         0x00000014 0x0014   ✓
-x3         0x00000000 0x0000   ✓
-x4         0xFFFFD800 0xDA80   ✗
-x5         0xFFFFFFEC 0x026C   ✗
-x6         0x00000014 0x0014   ✓
-x7         0x00000000 0x0000   ✓
-x8         0xFFFFD800 0xDA80   ✗
-x9         0xFFFFFFEC 0x026C   ✗
-x10        0x00000014 0x0014   ✓
-x11        0x00000000 0x0000   ✓
-x12        0xFFFFFFF6 0xFFF6   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000000A 0x000A   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x311DA000 0x311DA000   ✓
+x2         0x88E37000 0x88E37000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x8006E000 0x8006E000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0x8FDBF000 0x8FDBF000   ✓
+x7         0x9A44C000 0x9A44C000   ✓
+x8         0xE7803000 0xE7803000   ✓
+x9         0xBA155000 0xBA155000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x7099A000 0x7099A000   ✓
+x12        0xF03A2000 0xF03A2000   ✓
+x13        0x01E7C000 0x01E7C000   ✓
+x14        0xE69A5000 0xE69A5000   ✓
+x15        0x55E38000 0x55E38000   ✓
 
 === RISC-V Instruction 47 at PC 47 ===
-Instruction: 0x001017B3
+Instruction: 0xF54F16B7
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0xFF04
-Executing Bitty Instruction 1: 0xF000
-Executing Bitty Instruction 2: 0xF114
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0xDD04
+Bitty Instruction 1: 0xDF41
+Bitty Instruction 2: 0xD155
+Bitty Instruction 3: 0xD281
+Bitty Instruction 4: 0xD155
+Bitty Instruction 5: 0xD3C1
+Bitty Instruction 6: 0xD115
+Bitty Instruction 7: 0xD041
+Bitty Instruction 8: 0xD315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0xFFFFFFEC 0x026C   ✗
-x2         0x00000014 0x0014   ✓
-x3         0x00000000 0x0000   ✓
-x4         0xFFFFD800 0xDA80   ✗
-x5         0xFFFFFFEC 0x026C   ✗
-x6         0x00000014 0x0014   ✓
-x7         0x00000000 0x0000   ✓
-x8         0xFFFFD800 0xDA80   ✗
-x9         0xFFFFFFEC 0x026C   ✗
-x10        0x00000014 0x0014   ✓
-x11        0x00000000 0x0000   ✓
-x12        0xFFFFFFF6 0xFFF6   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000A000 0xA000   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x311DA000 0x311DA000   ✓
+x2         0x88E37000 0x88E37000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x8006E000 0x8006E000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0x8FDBF000 0x8FDBF000   ✓
+x7         0x9A44C000 0x9A44C000   ✓
+x8         0xE7803000 0xE7803000   ✓
+x9         0xBA155000 0xBA155000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x7099A000 0x7099A000   ✓
+x12        0xF03A2000 0xF03A2000   ✓
+x13        0xF54F1000 0xF54F1000   ✓
+x14        0xE69A5000 0xE69A5000   ✓
+x15        0x55E38000 0x55E38000   ✓
 
 === RISC-V Instruction 48 at PC 48 ===
-Instruction: 0x002080B3
+Instruction: 0xE8432437
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x1104
-Executing Bitty Instruction 1: 0x1100
-Executing Bitty Instruction 2: 0x1200
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x8804
+Bitty Instruction 1: 0x8E81
+Bitty Instruction 2: 0x8155
+Bitty Instruction 3: 0x8081
+Bitty Instruction 4: 0x8155
+Bitty Instruction 5: 0x80C1
+Bitty Instruction 6: 0x8115
+Bitty Instruction 7: 0x8081
+Bitty Instruction 8: 0x8315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000000 0x0014   ✗
-x2         0x00000014 0x0014   ✓
-x3         0x00000000 0x0000   ✓
-x4         0xFFFFD800 0xDA80   ✗
-x5         0xFFFFFFEC 0x026C   ✗
-x6         0x00000014 0x0014   ✓
-x7         0x00000000 0x0000   ✓
-x8         0xFFFFD800 0xDA80   ✗
-x9         0xFFFFFFEC 0x026C   ✗
-x10        0x00000014 0x0014   ✓
-x11        0x00000000 0x0000   ✓
-x12        0xFFFFFFF6 0xFFF6   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000A000 0xA000   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x311DA000 0x311DA000   ✓
+x2         0x88E37000 0x88E37000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x8006E000 0x8006E000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0x8FDBF000 0x8FDBF000   ✓
+x7         0x9A44C000 0x9A44C000   ✓
+x8         0xE8432000 0xE8432000   ✓
+x9         0xBA155000 0xBA155000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x7099A000 0x7099A000   ✓
+x12        0xF03A2000 0xF03A2000   ✓
+x13        0xF54F1000 0xF54F1000   ✓
+x14        0xE69A5000 0xE69A5000   ✓
+x15        0x55E38000 0x55E38000   ✓
 
 === RISC-V Instruction 49 at PC 49 ===
-Instruction: 0x403100B3
+Instruction: 0x786F9437
 
-=== Executing 3 Bitty Instructions ===
-Executing Bitty Instruction 0: 0x1104
-Executing Bitty Instruction 1: 0x1200
-Executing Bitty Instruction 2: 0x1304
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x8804
+Bitty Instruction 1: 0x8781
+Bitty Instruction 2: 0x8155
+Bitty Instruction 3: 0x80C1
+Bitty Instruction 4: 0x8155
+Bitty Instruction 5: 0x83C1
+Bitty Instruction 6: 0x8115
+Bitty Instruction 7: 0x8241
+Bitty Instruction 8: 0x8315
 
 === Register Comparison ===
 Register   RISC-V     Bitty      Match 
 ----------------------------------------
-x0         0x0000000A 0x000A   ✓
-x1         0x00000014 0x0014   ✓
-x2         0x00000014 0x0014   ✓
-x3         0x00000000 0x0000   ✓
-x4         0xFFFFD800 0xDA80   ✗
-x5         0xFFFFFFEC 0x026C   ✗
-x6         0x00000014 0x0014   ✓
-x7         0x00000000 0x0000   ✓
-x8         0xFFFFD800 0xDA80   ✗
-x9         0xFFFFFFEC 0x026C   ✗
-x10        0x00000014 0x0014   ✓
-x11        0x00000000 0x0000   ✓
-x12        0xFFFFFFF6 0xFFF6   ✓
-x13        0xFFFFFFF6 0xFFF6   ✓
-x14        0x00000000 0x0000   ✓
-x15        0x0000A000 0xA000   ✓
+x0         0x00000000 0x00000000   ✓
+x1         0x311DA000 0x311DA000   ✓
+x2         0x88E37000 0x88E37000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x8006E000 0x8006E000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0x8FDBF000 0x8FDBF000   ✓
+x7         0x9A44C000 0x9A44C000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0xBA155000 0xBA155000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x7099A000 0x7099A000   ✓
+x12        0xF03A2000 0xF03A2000   ✓
+x13        0xF54F1000 0xF54F1000   ✓
+x14        0xE69A5000 0xE69A5000   ✓
+x15        0x55E38000 0x55E38000   ✓
+
+=== RISC-V Instruction 50 at PC 50 ===
+Instruction: 0x69C1A4B7
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x9904
+Bitty Instruction 1: 0x9681
+Bitty Instruction 2: 0x9155
+Bitty Instruction 3: 0x9381
+Bitty Instruction 4: 0x9155
+Bitty Instruction 5: 0x9041
+Bitty Instruction 6: 0x9115
+Bitty Instruction 7: 0x9281
+Bitty Instruction 8: 0x9315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x311DA000 0x311DA000   ✓
+x2         0x88E37000 0x88E37000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x8006E000 0x8006E000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0x8FDBF000 0x8FDBF000   ✓
+x7         0x9A44C000 0x9A44C000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0x69C1A000 0x69C1A000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x7099A000 0x7099A000   ✓
+x12        0xF03A2000 0xF03A2000   ✓
+x13        0xF54F1000 0xF54F1000   ✓
+x14        0xE69A5000 0xE69A5000   ✓
+x15        0x55E38000 0x55E38000   ✓
+
+=== RISC-V Instruction 51 at PC 51 ===
+Instruction: 0xEE95B737
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0xEE04
+Bitty Instruction 1: 0xEEC1
+Bitty Instruction 2: 0xE155
+Bitty Instruction 3: 0xE501
+Bitty Instruction 4: 0xE155
+Bitty Instruction 5: 0xE541
+Bitty Instruction 6: 0xE115
+Bitty Instruction 7: 0xE2C1
+Bitty Instruction 8: 0xE315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x311DA000 0x311DA000   ✓
+x2         0x88E37000 0x88E37000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x8006E000 0x8006E000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0x8FDBF000 0x8FDBF000   ✓
+x7         0x9A44C000 0x9A44C000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0x69C1A000 0x69C1A000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x7099A000 0x7099A000   ✓
+x12        0xF03A2000 0xF03A2000   ✓
+x13        0xF54F1000 0xF54F1000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0x55E38000 0x55E38000   ✓
+
+=== RISC-V Instruction 52 at PC 52 ===
+Instruction: 0x8E9F7137
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x2204
+Bitty Instruction 1: 0x28C1
+Bitty Instruction 2: 0x2155
+Bitty Instruction 3: 0x2501
+Bitty Instruction 4: 0x2155
+Bitty Instruction 5: 0x27C1
+Bitty Instruction 6: 0x2115
+Bitty Instruction 7: 0x21C1
+Bitty Instruction 8: 0x2315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x311DA000 0x311DA000   ✓
+x2         0x8E9F7000 0x8E9F7000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x8006E000 0x8006E000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0x8FDBF000 0x8FDBF000   ✓
+x7         0x9A44C000 0x9A44C000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0x69C1A000 0x69C1A000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x7099A000 0x7099A000   ✓
+x12        0xF03A2000 0xF03A2000   ✓
+x13        0xF54F1000 0xF54F1000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0x55E38000 0x55E38000   ✓
+
+=== RISC-V Instruction 53 at PC 53 ===
+Instruction: 0xA812B337
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x6604
+Bitty Instruction 1: 0x6A81
+Bitty Instruction 2: 0x6155
+Bitty Instruction 3: 0x6001
+Bitty Instruction 4: 0x6155
+Bitty Instruction 5: 0x6481
+Bitty Instruction 6: 0x6115
+Bitty Instruction 7: 0x62C1
+Bitty Instruction 8: 0x6315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x311DA000 0x311DA000   ✓
+x2         0x8E9F7000 0x8E9F7000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x8006E000 0x8006E000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0xA812B000 0xA812B000   ✓
+x7         0x9A44C000 0x9A44C000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0x69C1A000 0x69C1A000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x7099A000 0x7099A000   ✓
+x12        0xF03A2000 0xF03A2000   ✓
+x13        0xF54F1000 0xF54F1000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0x55E38000 0x55E38000   ✓
+
+=== RISC-V Instruction 54 at PC 54 ===
+Instruction: 0xC1FEF4B7
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x9904
+Bitty Instruction 1: 0x9C01
+Bitty Instruction 2: 0x9155
+Bitty Instruction 3: 0x93C1
+Bitty Instruction 4: 0x9155
+Bitty Instruction 5: 0x9781
+Bitty Instruction 6: 0x9115
+Bitty Instruction 7: 0x93C1
+Bitty Instruction 8: 0x9315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x311DA000 0x311DA000   ✓
+x2         0x8E9F7000 0x8E9F7000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x8006E000 0x8006E000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0xA812B000 0xA812B000   ✓
+x7         0x9A44C000 0x9A44C000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0xC1FEF000 0xC1FEF000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x7099A000 0x7099A000   ✓
+x12        0xF03A2000 0xF03A2000   ✓
+x13        0xF54F1000 0xF54F1000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0x55E38000 0x55E38000   ✓
+
+=== RISC-V Instruction 55 at PC 55 ===
+Instruction: 0x449C2237
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x4404
+Bitty Instruction 1: 0x4441
+Bitty Instruction 2: 0x4155
+Bitty Instruction 3: 0x4101
+Bitty Instruction 4: 0x4155
+Bitty Instruction 5: 0x4701
+Bitty Instruction 6: 0x4115
+Bitty Instruction 7: 0x4081
+Bitty Instruction 8: 0x4315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x311DA000 0x311DA000   ✓
+x2         0x8E9F7000 0x8E9F7000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x449C2000 0x449C2000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0xA812B000 0xA812B000   ✓
+x7         0x9A44C000 0x9A44C000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0xC1FEF000 0xC1FEF000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x7099A000 0x7099A000   ✓
+x12        0xF03A2000 0xF03A2000   ✓
+x13        0xF54F1000 0xF54F1000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0x55E38000 0x55E38000   ✓
+
+=== RISC-V Instruction 56 at PC 56 ===
+Instruction: 0xDDA6A7B7
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0xFF04
+Bitty Instruction 1: 0xFDC1
+Bitty Instruction 2: 0xF155
+Bitty Instruction 3: 0xF341
+Bitty Instruction 4: 0xF155
+Bitty Instruction 5: 0xF181
+Bitty Instruction 6: 0xF115
+Bitty Instruction 7: 0xF281
+Bitty Instruction 8: 0xF315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x311DA000 0x311DA000   ✓
+x2         0x8E9F7000 0x8E9F7000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x449C2000 0x449C2000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0xA812B000 0xA812B000   ✓
+x7         0x9A44C000 0x9A44C000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0xC1FEF000 0xC1FEF000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x7099A000 0x7099A000   ✓
+x12        0xF03A2000 0xF03A2000   ✓
+x13        0xF54F1000 0xF54F1000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0xDDA6A000 0xDDA6A000   ✓
+
+=== RISC-V Instruction 57 at PC 57 ===
+Instruction: 0xA98EE0B7
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x1104
+Bitty Instruction 1: 0x1A81
+Bitty Instruction 2: 0x1155
+Bitty Instruction 3: 0x1301
+Bitty Instruction 4: 0x1155
+Bitty Instruction 5: 0x1381
+Bitty Instruction 6: 0x1115
+Bitty Instruction 7: 0x1381
+Bitty Instruction 8: 0x1315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0xA98EE000 0xA98EE000   ✓
+x2         0x8E9F7000 0x8E9F7000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x449C2000 0x449C2000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0xA812B000 0xA812B000   ✓
+x7         0x9A44C000 0x9A44C000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0xC1FEF000 0xC1FEF000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x7099A000 0x7099A000   ✓
+x12        0xF03A2000 0xF03A2000   ✓
+x13        0xF54F1000 0xF54F1000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0xDDA6A000 0xDDA6A000   ✓
+
+=== RISC-V Instruction 58 at PC 58 ===
+Instruction: 0xBCC5A637
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0xCC04
+Bitty Instruction 1: 0xCBC1
+Bitty Instruction 2: 0xC155
+Bitty Instruction 3: 0xC181
+Bitty Instruction 4: 0xC155
+Bitty Instruction 5: 0xC141
+Bitty Instruction 6: 0xC115
+Bitty Instruction 7: 0xC281
+Bitty Instruction 8: 0xC315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0xA98EE000 0xA98EE000   ✓
+x2         0x8E9F7000 0x8E9F7000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x449C2000 0x449C2000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0xA812B000 0xA812B000   ✓
+x7         0x9A44C000 0x9A44C000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0xC1FEF000 0xC1FEF000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x7099A000 0x7099A000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0xF54F1000 0xF54F1000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0xDDA6A000 0xDDA6A000   ✓
+
+=== RISC-V Instruction 59 at PC 59 ===
+Instruction: 0x962280B7
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x1104
+Bitty Instruction 1: 0x1941
+Bitty Instruction 2: 0x1155
+Bitty Instruction 3: 0x1441
+Bitty Instruction 4: 0x1155
+Bitty Instruction 5: 0x1081
+Bitty Instruction 6: 0x1115
+Bitty Instruction 7: 0x1201
+Bitty Instruction 8: 0x1315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x96228000 0x96228000   ✓
+x2         0x8E9F7000 0x8E9F7000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x449C2000 0x449C2000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0xA812B000 0xA812B000   ✓
+x7         0x9A44C000 0x9A44C000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0xC1FEF000 0xC1FEF000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x7099A000 0x7099A000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0xF54F1000 0xF54F1000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0xDDA6A000 0xDDA6A000   ✓
+
+=== RISC-V Instruction 60 at PC 60 ===
+Instruction: 0x1AAAD237
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x4404
+Bitty Instruction 1: 0x4181
+Bitty Instruction 2: 0x4155
+Bitty Instruction 3: 0x4541
+Bitty Instruction 4: 0x4155
+Bitty Instruction 5: 0x4281
+Bitty Instruction 6: 0x4115
+Bitty Instruction 7: 0x4341
+Bitty Instruction 8: 0x4315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x96228000 0x96228000   ✓
+x2         0x8E9F7000 0x8E9F7000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x1AAAD000 0x1AAAD000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0xA812B000 0xA812B000   ✓
+x7         0x9A44C000 0x9A44C000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0xC1FEF000 0xC1FEF000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x7099A000 0x7099A000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0xF54F1000 0xF54F1000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0xDDA6A000 0xDDA6A000   ✓
+
+=== RISC-V Instruction 61 at PC 61 ===
+Instruction: 0x26AC26B7
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0xDD04
+Bitty Instruction 1: 0xD241
+Bitty Instruction 2: 0xD155
+Bitty Instruction 3: 0xD541
+Bitty Instruction 4: 0xD155
+Bitty Instruction 5: 0xD301
+Bitty Instruction 6: 0xD115
+Bitty Instruction 7: 0xD081
+Bitty Instruction 8: 0xD315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x96228000 0x96228000   ✓
+x2         0x8E9F7000 0x8E9F7000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x1AAAD000 0x1AAAD000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0xA812B000 0xA812B000   ✓
+x7         0x9A44C000 0x9A44C000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0xC1FEF000 0xC1FEF000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x7099A000 0x7099A000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0x26AC2000 0x26AC2000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0xDDA6A000 0xDDA6A000   ✓
+
+=== RISC-V Instruction 62 at PC 62 ===
+Instruction: 0x7E51A237
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x4404
+Bitty Instruction 1: 0x47C1
+Bitty Instruction 2: 0x4155
+Bitty Instruction 3: 0x4481
+Bitty Instruction 4: 0x4155
+Bitty Instruction 5: 0x4441
+Bitty Instruction 6: 0x4115
+Bitty Instruction 7: 0x4281
+Bitty Instruction 8: 0x4315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x96228000 0x96228000   ✓
+x2         0x8E9F7000 0x8E9F7000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x7E51A000 0x7E51A000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0xA812B000 0xA812B000   ✓
+x7         0x9A44C000 0x9A44C000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0xC1FEF000 0xC1FEF000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x7099A000 0x7099A000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0x26AC2000 0x26AC2000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0xDDA6A000 0xDDA6A000   ✓
+
+=== RISC-V Instruction 63 at PC 63 ===
+Instruction: 0xC56A43B7
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x7704
+Bitty Instruction 1: 0x7C41
+Bitty Instruction 2: 0x7155
+Bitty Instruction 3: 0x72C1
+Bitty Instruction 4: 0x7155
+Bitty Instruction 5: 0x7281
+Bitty Instruction 6: 0x7115
+Bitty Instruction 7: 0x7101
+Bitty Instruction 8: 0x7315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x96228000 0x96228000   ✓
+x2         0x8E9F7000 0x8E9F7000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x7E51A000 0x7E51A000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0xA812B000 0xA812B000   ✓
+x7         0xC56A4000 0xC56A4000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0xC1FEF000 0xC1FEF000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x7099A000 0x7099A000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0x26AC2000 0x26AC2000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0xDDA6A000 0xDDA6A000   ✓
+
+=== RISC-V Instruction 64 at PC 64 ===
+Instruction: 0x597F16B7
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0xDD04
+Bitty Instruction 1: 0xD581
+Bitty Instruction 2: 0xD155
+Bitty Instruction 3: 0xD2C1
+Bitty Instruction 4: 0xD155
+Bitty Instruction 5: 0xD7C1
+Bitty Instruction 6: 0xD115
+Bitty Instruction 7: 0xD041
+Bitty Instruction 8: 0xD315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x96228000 0x96228000   ✓
+x2         0x8E9F7000 0x8E9F7000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x7E51A000 0x7E51A000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0xA812B000 0xA812B000   ✓
+x7         0xC56A4000 0xC56A4000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0xC1FEF000 0xC1FEF000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x7099A000 0x7099A000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0x597F1000 0x597F1000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0xDDA6A000 0xDDA6A000   ✓
+
+=== RISC-V Instruction 65 at PC 65 ===
+Instruction: 0xDB1AE0B7
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x1104
+Bitty Instruction 1: 0x1D81
+Bitty Instruction 2: 0x1155
+Bitty Instruction 3: 0x1601
+Bitty Instruction 4: 0x1155
+Bitty Instruction 5: 0x1681
+Bitty Instruction 6: 0x1115
+Bitty Instruction 7: 0x1381
+Bitty Instruction 8: 0x1315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0xDB1AE000 0xDB1AE000   ✓
+x2         0x8E9F7000 0x8E9F7000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x7E51A000 0x7E51A000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0xA812B000 0xA812B000   ✓
+x7         0xC56A4000 0xC56A4000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0xC1FEF000 0xC1FEF000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x7099A000 0x7099A000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0x597F1000 0x597F1000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0xDDA6A000 0xDDA6A000   ✓
+
+=== RISC-V Instruction 66 at PC 66 ===
+Instruction: 0xA9198137
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x2204
+Bitty Instruction 1: 0x2A81
+Bitty Instruction 2: 0x2155
+Bitty Instruction 3: 0x2201
+Bitty Instruction 4: 0x2155
+Bitty Instruction 5: 0x2641
+Bitty Instruction 6: 0x2115
+Bitty Instruction 7: 0x2201
+Bitty Instruction 8: 0x2315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0xDB1AE000 0xDB1AE000   ✓
+x2         0xA9198000 0xA9198000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x7E51A000 0x7E51A000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0xA812B000 0xA812B000   ✓
+x7         0xC56A4000 0xC56A4000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0xC1FEF000 0xC1FEF000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x7099A000 0x7099A000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0x597F1000 0x597F1000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0xDDA6A000 0xDDA6A000   ✓
+
+=== RISC-V Instruction 67 at PC 67 ===
+Instruction: 0xFC1913B7
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x7704
+Bitty Instruction 1: 0x7FC1
+Bitty Instruction 2: 0x7155
+Bitty Instruction 3: 0x7001
+Bitty Instruction 4: 0x7155
+Bitty Instruction 5: 0x7641
+Bitty Instruction 6: 0x7115
+Bitty Instruction 7: 0x7041
+Bitty Instruction 8: 0x7315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0xDB1AE000 0xDB1AE000   ✓
+x2         0xA9198000 0xA9198000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x7E51A000 0x7E51A000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0xA812B000 0xA812B000   ✓
+x7         0xFC191000 0xFC191000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0xC1FEF000 0xC1FEF000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x7099A000 0x7099A000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0x597F1000 0x597F1000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0xDDA6A000 0xDDA6A000   ✓
+
+=== RISC-V Instruction 68 at PC 68 ===
+Instruction: 0x06B744B7
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x9904
+Bitty Instruction 1: 0x9041
+Bitty Instruction 2: 0x9155
+Bitty Instruction 3: 0x9541
+Bitty Instruction 4: 0x9155
+Bitty Instruction 5: 0x95C1
+Bitty Instruction 6: 0x9115
+Bitty Instruction 7: 0x9101
+Bitty Instruction 8: 0x9315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0xDB1AE000 0xDB1AE000   ✓
+x2         0xA9198000 0xA9198000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x7E51A000 0x7E51A000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0xA812B000 0xA812B000   ✓
+x7         0xFC191000 0xFC191000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0x06B74000 0x06B74000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x7099A000 0x7099A000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0x597F1000 0x597F1000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0xDDA6A000 0xDDA6A000   ✓
+
+=== RISC-V Instruction 69 at PC 69 ===
+Instruction: 0x9930A0B7
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x1104
+Bitty Instruction 1: 0x1981
+Bitty Instruction 2: 0x1155
+Bitty Instruction 3: 0x1241
+Bitty Instruction 4: 0x1155
+Bitty Instruction 5: 0x1401
+Bitty Instruction 6: 0x1115
+Bitty Instruction 7: 0x1281
+Bitty Instruction 8: 0x1315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x9930A000 0x9930A000   ✓
+x2         0xA9198000 0xA9198000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x7E51A000 0x7E51A000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0xA812B000 0xA812B000   ✓
+x7         0xFC191000 0xFC191000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0x06B74000 0x06B74000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x7099A000 0x7099A000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0x597F1000 0x597F1000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0xDDA6A000 0xDDA6A000   ✓
+
+=== RISC-V Instruction 70 at PC 70 ===
+Instruction: 0xFF0847B7
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0xFF04
+Bitty Instruction 1: 0xFFC1
+Bitty Instruction 2: 0xF155
+Bitty Instruction 3: 0xF601
+Bitty Instruction 4: 0xF155
+Bitty Instruction 5: 0xF201
+Bitty Instruction 6: 0xF115
+Bitty Instruction 7: 0xF101
+Bitty Instruction 8: 0xF315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x9930A000 0x9930A000   ✓
+x2         0xA9198000 0xA9198000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x7E51A000 0x7E51A000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0xA812B000 0xA812B000   ✓
+x7         0xFC191000 0xFC191000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0x06B74000 0x06B74000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x7099A000 0x7099A000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0x597F1000 0x597F1000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0xFF084000 0xFF084000   ✓
+
+=== RISC-V Instruction 71 at PC 71 ===
+Instruction: 0x6F36A237
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x4404
+Bitty Instruction 1: 0x46C1
+Bitty Instruction 2: 0x4155
+Bitty Instruction 3: 0x4641
+Bitty Instruction 4: 0x4155
+Bitty Instruction 5: 0x4581
+Bitty Instruction 6: 0x4115
+Bitty Instruction 7: 0x4281
+Bitty Instruction 8: 0x4315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x9930A000 0x9930A000   ✓
+x2         0xA9198000 0xA9198000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x6F36A000 0x6F36A000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0xA812B000 0xA812B000   ✓
+x7         0xFC191000 0xFC191000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0x06B74000 0x06B74000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x7099A000 0x7099A000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0x597F1000 0x597F1000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0xFF084000 0xFF084000   ✓
+
+=== RISC-V Instruction 72 at PC 72 ===
+Instruction: 0xEEC527B7
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0xFF04
+Bitty Instruction 1: 0xFEC1
+Bitty Instruction 2: 0xF155
+Bitty Instruction 3: 0xF581
+Bitty Instruction 4: 0xF155
+Bitty Instruction 5: 0xF141
+Bitty Instruction 6: 0xF115
+Bitty Instruction 7: 0xF081
+Bitty Instruction 8: 0xF315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x9930A000 0x9930A000   ✓
+x2         0xA9198000 0xA9198000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x6F36A000 0x6F36A000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0xA812B000 0xA812B000   ✓
+x7         0xFC191000 0xFC191000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0x06B74000 0x06B74000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x7099A000 0x7099A000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0x597F1000 0x597F1000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0xEEC52000 0xEEC52000   ✓
+
+=== RISC-V Instruction 73 at PC 73 ===
+Instruction: 0x37E335B7
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0xBB04
+Bitty Instruction 1: 0xB341
+Bitty Instruction 2: 0xB155
+Bitty Instruction 3: 0xB7C1
+Bitty Instruction 4: 0xB155
+Bitty Instruction 5: 0xB0C1
+Bitty Instruction 6: 0xB115
+Bitty Instruction 7: 0xB0C1
+Bitty Instruction 8: 0xB315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x9930A000 0x9930A000   ✓
+x2         0xA9198000 0xA9198000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x6F36A000 0x6F36A000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0xA812B000 0xA812B000   ✓
+x7         0xFC191000 0xFC191000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0x06B74000 0x06B74000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x37E33000 0x37E33000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0x597F1000 0x597F1000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0xEEC52000 0xEEC52000   ✓
+
+=== RISC-V Instruction 74 at PC 74 ===
+Instruction: 0x35BAD237
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x4404
+Bitty Instruction 1: 0x4341
+Bitty Instruction 2: 0x4155
+Bitty Instruction 3: 0x4341
+Bitty Instruction 4: 0x4155
+Bitty Instruction 5: 0x4681
+Bitty Instruction 6: 0x4115
+Bitty Instruction 7: 0x4341
+Bitty Instruction 8: 0x4315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x9930A000 0x9930A000   ✓
+x2         0xA9198000 0xA9198000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x35BAD000 0x35BAD000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0xA812B000 0xA812B000   ✓
+x7         0xFC191000 0xFC191000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0x06B74000 0x06B74000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x37E33000 0x37E33000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0x597F1000 0x597F1000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0xEEC52000 0xEEC52000   ✓
+
+=== RISC-V Instruction 75 at PC 75 ===
+Instruction: 0xC3BFF337
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x6604
+Bitty Instruction 1: 0x6C01
+Bitty Instruction 2: 0x6155
+Bitty Instruction 3: 0x6741
+Bitty Instruction 4: 0x6155
+Bitty Instruction 5: 0x67C1
+Bitty Instruction 6: 0x6115
+Bitty Instruction 7: 0x63C1
+Bitty Instruction 8: 0x6315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x9930A000 0x9930A000   ✓
+x2         0xA9198000 0xA9198000   ✓
+x3         0x9431E000 0x9431E000   ✓
+x4         0x35BAD000 0x35BAD000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0xC3BFF000 0xC3BFF000   ✓
+x7         0xFC191000 0xFC191000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0x06B74000 0x06B74000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x37E33000 0x37E33000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0x597F1000 0x597F1000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0xEEC52000 0xEEC52000   ✓
+
+=== RISC-V Instruction 76 at PC 76 ===
+Instruction: 0x157861B7
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x3304
+Bitty Instruction 1: 0x3141
+Bitty Instruction 2: 0x3155
+Bitty Instruction 3: 0x32C1
+Bitty Instruction 4: 0x3155
+Bitty Instruction 5: 0x3601
+Bitty Instruction 6: 0x3115
+Bitty Instruction 7: 0x3181
+Bitty Instruction 8: 0x3315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x9930A000 0x9930A000   ✓
+x2         0xA9198000 0xA9198000   ✓
+x3         0x15786000 0x15786000   ✓
+x4         0x35BAD000 0x35BAD000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0xC3BFF000 0xC3BFF000   ✓
+x7         0xFC191000 0xFC191000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0x06B74000 0x06B74000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x37E33000 0x37E33000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0x597F1000 0x597F1000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0xEEC52000 0xEEC52000   ✓
+
+=== RISC-V Instruction 77 at PC 77 ===
+Instruction: 0xBC61B337
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x6604
+Bitty Instruction 1: 0x6BC1
+Bitty Instruction 2: 0x6155
+Bitty Instruction 3: 0x60C1
+Bitty Instruction 4: 0x6155
+Bitty Instruction 5: 0x6041
+Bitty Instruction 6: 0x6115
+Bitty Instruction 7: 0x62C1
+Bitty Instruction 8: 0x6315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x9930A000 0x9930A000   ✓
+x2         0xA9198000 0xA9198000   ✓
+x3         0x15786000 0x15786000   ✓
+x4         0x35BAD000 0x35BAD000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0xBC61B000 0xBC61B000   ✓
+x7         0xFC191000 0xFC191000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0x06B74000 0x06B74000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x37E33000 0x37E33000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0x597F1000 0x597F1000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0xEEC52000 0xEEC52000   ✓
+
+=== RISC-V Instruction 78 at PC 78 ===
+Instruction: 0x5EB8F3B7
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x7704
+Bitty Instruction 1: 0x75C1
+Bitty Instruction 2: 0x7155
+Bitty Instruction 3: 0x7541
+Bitty Instruction 4: 0x7155
+Bitty Instruction 5: 0x7601
+Bitty Instruction 6: 0x7115
+Bitty Instruction 7: 0x73C1
+Bitty Instruction 8: 0x7315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x9930A000 0x9930A000   ✓
+x2         0xA9198000 0xA9198000   ✓
+x3         0x15786000 0x15786000   ✓
+x4         0x35BAD000 0x35BAD000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0xBC61B000 0xBC61B000   ✓
+x7         0x5EB8F000 0x5EB8F000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0x06B74000 0x06B74000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x37E33000 0x37E33000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0x597F1000 0x597F1000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0xEEC52000 0xEEC52000   ✓
+
+=== RISC-V Instruction 79 at PC 79 ===
+Instruction: 0x2BA957B7
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0xFF04
+Bitty Instruction 1: 0xF281
+Bitty Instruction 2: 0xF155
+Bitty Instruction 3: 0xF741
+Bitty Instruction 4: 0xF155
+Bitty Instruction 5: 0xF241
+Bitty Instruction 6: 0xF115
+Bitty Instruction 7: 0xF141
+Bitty Instruction 8: 0xF315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x9930A000 0x9930A000   ✓
+x2         0xA9198000 0xA9198000   ✓
+x3         0x15786000 0x15786000   ✓
+x4         0x35BAD000 0x35BAD000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0xBC61B000 0xBC61B000   ✓
+x7         0x5EB8F000 0x5EB8F000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0x06B74000 0x06B74000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x37E33000 0x37E33000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0x597F1000 0x597F1000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0x2BA95000 0x2BA95000   ✓
+
+=== RISC-V Instruction 80 at PC 80 ===
+Instruction: 0x7BD6A137
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x2204
+Bitty Instruction 1: 0x2781
+Bitty Instruction 2: 0x2155
+Bitty Instruction 3: 0x2781
+Bitty Instruction 4: 0x2155
+Bitty Instruction 5: 0x2581
+Bitty Instruction 6: 0x2115
+Bitty Instruction 7: 0x2281
+Bitty Instruction 8: 0x2315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x9930A000 0x9930A000   ✓
+x2         0x7BD6A000 0x7BD6A000   ✓
+x3         0x15786000 0x15786000   ✓
+x4         0x35BAD000 0x35BAD000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0xBC61B000 0xBC61B000   ✓
+x7         0x5EB8F000 0x5EB8F000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0x06B74000 0x06B74000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x37E33000 0x37E33000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0x597F1000 0x597F1000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0x2BA95000 0x2BA95000   ✓
+
+=== RISC-V Instruction 81 at PC 81 ===
+Instruction: 0x04C95237
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x4404
+Bitty Instruction 1: 0x4041
+Bitty Instruction 2: 0x4155
+Bitty Instruction 3: 0x4181
+Bitty Instruction 4: 0x4155
+Bitty Instruction 5: 0x4241
+Bitty Instruction 6: 0x4115
+Bitty Instruction 7: 0x4141
+Bitty Instruction 8: 0x4315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x9930A000 0x9930A000   ✓
+x2         0x7BD6A000 0x7BD6A000   ✓
+x3         0x15786000 0x15786000   ✓
+x4         0x04C95000 0x04C95000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0xBC61B000 0xBC61B000   ✓
+x7         0x5EB8F000 0x5EB8F000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0x06B74000 0x06B74000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x37E33000 0x37E33000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0x597F1000 0x597F1000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0x2BA95000 0x2BA95000   ✓
+
+=== RISC-V Instruction 82 at PC 82 ===
+Instruction: 0x19DD4237
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x4404
+Bitty Instruction 1: 0x4181
+Bitty Instruction 2: 0x4155
+Bitty Instruction 3: 0x4381
+Bitty Instruction 4: 0x4155
+Bitty Instruction 5: 0x4741
+Bitty Instruction 6: 0x4115
+Bitty Instruction 7: 0x4101
+Bitty Instruction 8: 0x4315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x9930A000 0x9930A000   ✓
+x2         0x7BD6A000 0x7BD6A000   ✓
+x3         0x15786000 0x15786000   ✓
+x4         0x19DD4000 0x19DD4000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0xBC61B000 0xBC61B000   ✓
+x7         0x5EB8F000 0x5EB8F000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0x06B74000 0x06B74000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x37E33000 0x37E33000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0x597F1000 0x597F1000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0x2BA95000 0x2BA95000   ✓
+
+=== RISC-V Instruction 83 at PC 83 ===
+Instruction: 0x82E291B7
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x3304
+Bitty Instruction 1: 0x3801
+Bitty Instruction 2: 0x3155
+Bitty Instruction 3: 0x35C1
+Bitty Instruction 4: 0x3155
+Bitty Instruction 5: 0x3081
+Bitty Instruction 6: 0x3115
+Bitty Instruction 7: 0x3241
+Bitty Instruction 8: 0x3315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x9930A000 0x9930A000   ✓
+x2         0x7BD6A000 0x7BD6A000   ✓
+x3         0x82E29000 0x82E29000   ✓
+x4         0x19DD4000 0x19DD4000   ✓
+x5         0xBA942000 0xBA942000   ✓
+x6         0xBC61B000 0xBC61B000   ✓
+x7         0x5EB8F000 0x5EB8F000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0x06B74000 0x06B74000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x37E33000 0x37E33000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0x597F1000 0x597F1000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0x2BA95000 0x2BA95000   ✓
+
+=== RISC-V Instruction 84 at PC 84 ===
+Instruction: 0x27F0E2B7
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x5504
+Bitty Instruction 1: 0x5241
+Bitty Instruction 2: 0x5155
+Bitty Instruction 3: 0x57C1
+Bitty Instruction 4: 0x5155
+Bitty Instruction 5: 0x5401
+Bitty Instruction 6: 0x5115
+Bitty Instruction 7: 0x5381
+Bitty Instruction 8: 0x5315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x9930A000 0x9930A000   ✓
+x2         0x7BD6A000 0x7BD6A000   ✓
+x3         0x82E29000 0x82E29000   ✓
+x4         0x19DD4000 0x19DD4000   ✓
+x5         0x27F0E000 0x27F0E000   ✓
+x6         0xBC61B000 0xBC61B000   ✓
+x7         0x5EB8F000 0x5EB8F000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0x06B74000 0x06B74000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x37E33000 0x37E33000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0x597F1000 0x597F1000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0x2BA95000 0x2BA95000   ✓
+
+=== RISC-V Instruction 85 at PC 85 ===
+Instruction: 0xF5F146B7
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0xDD04
+Bitty Instruction 1: 0xDF41
+Bitty Instruction 2: 0xD155
+Bitty Instruction 3: 0xD3C1
+Bitty Instruction 4: 0xD155
+Bitty Instruction 5: 0xD441
+Bitty Instruction 6: 0xD115
+Bitty Instruction 7: 0xD101
+Bitty Instruction 8: 0xD315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x9930A000 0x9930A000   ✓
+x2         0x7BD6A000 0x7BD6A000   ✓
+x3         0x82E29000 0x82E29000   ✓
+x4         0x19DD4000 0x19DD4000   ✓
+x5         0x27F0E000 0x27F0E000   ✓
+x6         0xBC61B000 0xBC61B000   ✓
+x7         0x5EB8F000 0x5EB8F000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0x06B74000 0x06B74000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x37E33000 0x37E33000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0xF5F14000 0xF5F14000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0x2BA95000 0x2BA95000   ✓
+
+=== RISC-V Instruction 86 at PC 86 ===
+Instruction: 0x172A6337
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x6604
+Bitty Instruction 1: 0x6141
+Bitty Instruction 2: 0x6155
+Bitty Instruction 3: 0x6641
+Bitty Instruction 4: 0x6155
+Bitty Instruction 5: 0x6281
+Bitty Instruction 6: 0x6115
+Bitty Instruction 7: 0x6181
+Bitty Instruction 8: 0x6315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x9930A000 0x9930A000   ✓
+x2         0x7BD6A000 0x7BD6A000   ✓
+x3         0x82E29000 0x82E29000   ✓
+x4         0x19DD4000 0x19DD4000   ✓
+x5         0x27F0E000 0x27F0E000   ✓
+x6         0x172A6000 0x172A6000   ✓
+x7         0x5EB8F000 0x5EB8F000   ✓
+x8         0x786F9000 0x786F9000   ✓
+x9         0x06B74000 0x06B74000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x37E33000 0x37E33000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0xF5F14000 0xF5F14000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0x2BA95000 0x2BA95000   ✓
+
+=== RISC-V Instruction 87 at PC 87 ===
+Instruction: 0x3D90A437
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x8804
+Bitty Instruction 1: 0x83C1
+Bitty Instruction 2: 0x8155
+Bitty Instruction 3: 0x8301
+Bitty Instruction 4: 0x8155
+Bitty Instruction 5: 0x8401
+Bitty Instruction 6: 0x8115
+Bitty Instruction 7: 0x8281
+Bitty Instruction 8: 0x8315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x9930A000 0x9930A000   ✓
+x2         0x7BD6A000 0x7BD6A000   ✓
+x3         0x82E29000 0x82E29000   ✓
+x4         0x19DD4000 0x19DD4000   ✓
+x5         0x27F0E000 0x27F0E000   ✓
+x6         0x172A6000 0x172A6000   ✓
+x7         0x5EB8F000 0x5EB8F000   ✓
+x8         0x3D90A000 0x3D90A000   ✓
+x9         0x06B74000 0x06B74000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x37E33000 0x37E33000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0xF5F14000 0xF5F14000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0x2BA95000 0x2BA95000   ✓
+
+=== RISC-V Instruction 88 at PC 88 ===
+Instruction: 0x5AE014B7
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x9904
+Bitty Instruction 1: 0x9581
+Bitty Instruction 2: 0x9155
+Bitty Instruction 3: 0x95C1
+Bitty Instruction 4: 0x9155
+Bitty Instruction 5: 0x9001
+Bitty Instruction 6: 0x9115
+Bitty Instruction 7: 0x9041
+Bitty Instruction 8: 0x9315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x9930A000 0x9930A000   ✓
+x2         0x7BD6A000 0x7BD6A000   ✓
+x3         0x82E29000 0x82E29000   ✓
+x4         0x19DD4000 0x19DD4000   ✓
+x5         0x27F0E000 0x27F0E000   ✓
+x6         0x172A6000 0x172A6000   ✓
+x7         0x5EB8F000 0x5EB8F000   ✓
+x8         0x3D90A000 0x3D90A000   ✓
+x9         0x5AE01000 0x5AE01000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x37E33000 0x37E33000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0xF5F14000 0xF5F14000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0x2BA95000 0x2BA95000   ✓
+
+=== RISC-V Instruction 89 at PC 89 ===
+Instruction: 0xA5F54337
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x6604
+Bitty Instruction 1: 0x6A41
+Bitty Instruction 2: 0x6155
+Bitty Instruction 3: 0x63C1
+Bitty Instruction 4: 0x6155
+Bitty Instruction 5: 0x6541
+Bitty Instruction 6: 0x6115
+Bitty Instruction 7: 0x6101
+Bitty Instruction 8: 0x6315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x9930A000 0x9930A000   ✓
+x2         0x7BD6A000 0x7BD6A000   ✓
+x3         0x82E29000 0x82E29000   ✓
+x4         0x19DD4000 0x19DD4000   ✓
+x5         0x27F0E000 0x27F0E000   ✓
+x6         0xA5F54000 0xA5F54000   ✓
+x7         0x5EB8F000 0x5EB8F000   ✓
+x8         0x3D90A000 0x3D90A000   ✓
+x9         0x5AE01000 0x5AE01000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x37E33000 0x37E33000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0xF5F14000 0xF5F14000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0x2BA95000 0x2BA95000   ✓
+
+=== RISC-V Instruction 90 at PC 90 ===
+Instruction: 0xF8C3B4B7
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x9904
+Bitty Instruction 1: 0x9F81
+Bitty Instruction 2: 0x9155
+Bitty Instruction 3: 0x9181
+Bitty Instruction 4: 0x9155
+Bitty Instruction 5: 0x90C1
+Bitty Instruction 6: 0x9115
+Bitty Instruction 7: 0x92C1
+Bitty Instruction 8: 0x9315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x9930A000 0x9930A000   ✓
+x2         0x7BD6A000 0x7BD6A000   ✓
+x3         0x82E29000 0x82E29000   ✓
+x4         0x19DD4000 0x19DD4000   ✓
+x5         0x27F0E000 0x27F0E000   ✓
+x6         0xA5F54000 0xA5F54000   ✓
+x7         0x5EB8F000 0x5EB8F000   ✓
+x8         0x3D90A000 0x3D90A000   ✓
+x9         0xF8C3B000 0xF8C3B000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x37E33000 0x37E33000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0xF5F14000 0xF5F14000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0x2BA95000 0x2BA95000   ✓
+
+=== RISC-V Instruction 91 at PC 91 ===
+Instruction: 0x8FD96237
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x4404
+Bitty Instruction 1: 0x48C1
+Bitty Instruction 2: 0x4155
+Bitty Instruction 3: 0x4781
+Bitty Instruction 4: 0x4155
+Bitty Instruction 5: 0x4641
+Bitty Instruction 6: 0x4115
+Bitty Instruction 7: 0x4181
+Bitty Instruction 8: 0x4315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x9930A000 0x9930A000   ✓
+x2         0x7BD6A000 0x7BD6A000   ✓
+x3         0x82E29000 0x82E29000   ✓
+x4         0x8FD96000 0x8FD96000   ✓
+x5         0x27F0E000 0x27F0E000   ✓
+x6         0xA5F54000 0xA5F54000   ✓
+x7         0x5EB8F000 0x5EB8F000   ✓
+x8         0x3D90A000 0x3D90A000   ✓
+x9         0xF8C3B000 0xF8C3B000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x37E33000 0x37E33000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0xF5F14000 0xF5F14000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0x2BA95000 0x2BA95000   ✓
+
+=== RISC-V Instruction 92 at PC 92 ===
+Instruction: 0x93D70337
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x6604
+Bitty Instruction 1: 0x6901
+Bitty Instruction 2: 0x6155
+Bitty Instruction 3: 0x6781
+Bitty Instruction 4: 0x6155
+Bitty Instruction 5: 0x65C1
+Bitty Instruction 6: 0x6115
+Bitty Instruction 7: 0x6001
+Bitty Instruction 8: 0x6315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x9930A000 0x9930A000   ✓
+x2         0x7BD6A000 0x7BD6A000   ✓
+x3         0x82E29000 0x82E29000   ✓
+x4         0x8FD96000 0x8FD96000   ✓
+x5         0x27F0E000 0x27F0E000   ✓
+x6         0x93D70000 0x93D70000   ✓
+x7         0x5EB8F000 0x5EB8F000   ✓
+x8         0x3D90A000 0x3D90A000   ✓
+x9         0xF8C3B000 0xF8C3B000   ✓
+x10        0xCBBA5000 0xCBBA5000   ✓
+x11        0x37E33000 0x37E33000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0xF5F14000 0xF5F14000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0x2BA95000 0x2BA95000   ✓
+
+=== RISC-V Instruction 93 at PC 93 ===
+Instruction: 0x59C6C537
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0xAA04
+Bitty Instruction 1: 0xA581
+Bitty Instruction 2: 0xA155
+Bitty Instruction 3: 0xA381
+Bitty Instruction 4: 0xA155
+Bitty Instruction 5: 0xA181
+Bitty Instruction 6: 0xA115
+Bitty Instruction 7: 0xA301
+Bitty Instruction 8: 0xA315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x9930A000 0x9930A000   ✓
+x2         0x7BD6A000 0x7BD6A000   ✓
+x3         0x82E29000 0x82E29000   ✓
+x4         0x8FD96000 0x8FD96000   ✓
+x5         0x27F0E000 0x27F0E000   ✓
+x6         0x93D70000 0x93D70000   ✓
+x7         0x5EB8F000 0x5EB8F000   ✓
+x8         0x3D90A000 0x3D90A000   ✓
+x9         0xF8C3B000 0xF8C3B000   ✓
+x10        0x59C6C000 0x59C6C000   ✓
+x11        0x37E33000 0x37E33000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0xF5F14000 0xF5F14000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0x2BA95000 0x2BA95000   ✓
+
+=== RISC-V Instruction 94 at PC 94 ===
+Instruction: 0x6978A5B7
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0xBB04
+Bitty Instruction 1: 0xB681
+Bitty Instruction 2: 0xB155
+Bitty Instruction 3: 0xB2C1
+Bitty Instruction 4: 0xB155
+Bitty Instruction 5: 0xB601
+Bitty Instruction 6: 0xB115
+Bitty Instruction 7: 0xB281
+Bitty Instruction 8: 0xB315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x9930A000 0x9930A000   ✓
+x2         0x7BD6A000 0x7BD6A000   ✓
+x3         0x82E29000 0x82E29000   ✓
+x4         0x8FD96000 0x8FD96000   ✓
+x5         0x27F0E000 0x27F0E000   ✓
+x6         0x93D70000 0x93D70000   ✓
+x7         0x5EB8F000 0x5EB8F000   ✓
+x8         0x3D90A000 0x3D90A000   ✓
+x9         0xF8C3B000 0xF8C3B000   ✓
+x10        0x59C6C000 0x59C6C000   ✓
+x11        0x6978A000 0x6978A000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0xF5F14000 0xF5F14000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0x2BA95000 0x2BA95000   ✓
+
+=== RISC-V Instruction 95 at PC 95 ===
+Instruction: 0x6E9F6537
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0xAA04
+Bitty Instruction 1: 0xA6C1
+Bitty Instruction 2: 0xA155
+Bitty Instruction 3: 0xA501
+Bitty Instruction 4: 0xA155
+Bitty Instruction 5: 0xA7C1
+Bitty Instruction 6: 0xA115
+Bitty Instruction 7: 0xA181
+Bitty Instruction 8: 0xA315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x9930A000 0x9930A000   ✓
+x2         0x7BD6A000 0x7BD6A000   ✓
+x3         0x82E29000 0x82E29000   ✓
+x4         0x8FD96000 0x8FD96000   ✓
+x5         0x27F0E000 0x27F0E000   ✓
+x6         0x93D70000 0x93D70000   ✓
+x7         0x5EB8F000 0x5EB8F000   ✓
+x8         0x3D90A000 0x3D90A000   ✓
+x9         0xF8C3B000 0xF8C3B000   ✓
+x10        0x6E9F6000 0x6E9F6000   ✓
+x11        0x6978A000 0x6978A000   ✓
+x12        0xBCC5A000 0xBCC5A000   ✓
+x13        0xF5F14000 0xF5F14000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0x2BA95000 0x2BA95000   ✓
+
+=== RISC-V Instruction 96 at PC 96 ===
+Instruction: 0x3AB28637
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0xCC04
+Bitty Instruction 1: 0xC381
+Bitty Instruction 2: 0xC155
+Bitty Instruction 3: 0xC541
+Bitty Instruction 4: 0xC155
+Bitty Instruction 5: 0xC481
+Bitty Instruction 6: 0xC115
+Bitty Instruction 7: 0xC201
+Bitty Instruction 8: 0xC315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x9930A000 0x9930A000   ✓
+x2         0x7BD6A000 0x7BD6A000   ✓
+x3         0x82E29000 0x82E29000   ✓
+x4         0x8FD96000 0x8FD96000   ✓
+x5         0x27F0E000 0x27F0E000   ✓
+x6         0x93D70000 0x93D70000   ✓
+x7         0x5EB8F000 0x5EB8F000   ✓
+x8         0x3D90A000 0x3D90A000   ✓
+x9         0xF8C3B000 0xF8C3B000   ✓
+x10        0x6E9F6000 0x6E9F6000   ✓
+x11        0x6978A000 0x6978A000   ✓
+x12        0x3AB28000 0x3AB28000   ✓
+x13        0xF5F14000 0xF5F14000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0x2BA95000 0x2BA95000   ✓
+
+=== RISC-V Instruction 97 at PC 97 ===
+Instruction: 0x578CD0B7
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0x1104
+Bitty Instruction 1: 0x1541
+Bitty Instruction 2: 0x1155
+Bitty Instruction 3: 0x1701
+Bitty Instruction 4: 0x1155
+Bitty Instruction 5: 0x1301
+Bitty Instruction 6: 0x1115
+Bitty Instruction 7: 0x1341
+Bitty Instruction 8: 0x1315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x578CD000 0x578CD000   ✓
+x2         0x7BD6A000 0x7BD6A000   ✓
+x3         0x82E29000 0x82E29000   ✓
+x4         0x8FD96000 0x8FD96000   ✓
+x5         0x27F0E000 0x27F0E000   ✓
+x6         0x93D70000 0x93D70000   ✓
+x7         0x5EB8F000 0x5EB8F000   ✓
+x8         0x3D90A000 0x3D90A000   ✓
+x9         0xF8C3B000 0xF8C3B000   ✓
+x10        0x6E9F6000 0x6E9F6000   ✓
+x11        0x6978A000 0x6978A000   ✓
+x12        0x3AB28000 0x3AB28000   ✓
+x13        0xF5F14000 0xF5F14000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0x2BA95000 0x2BA95000   ✓
+
+=== RISC-V Instruction 98 at PC 98 ===
+Instruction: 0x133E16B7
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0xDD04
+Bitty Instruction 1: 0xD101
+Bitty Instruction 2: 0xD155
+Bitty Instruction 3: 0xD641
+Bitty Instruction 4: 0xD155
+Bitty Instruction 5: 0xD781
+Bitty Instruction 6: 0xD115
+Bitty Instruction 7: 0xD041
+Bitty Instruction 8: 0xD315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x578CD000 0x578CD000   ✓
+x2         0x7BD6A000 0x7BD6A000   ✓
+x3         0x82E29000 0x82E29000   ✓
+x4         0x8FD96000 0x8FD96000   ✓
+x5         0x27F0E000 0x27F0E000   ✓
+x6         0x93D70000 0x93D70000   ✓
+x7         0x5EB8F000 0x5EB8F000   ✓
+x8         0x3D90A000 0x3D90A000   ✓
+x9         0xF8C3B000 0xF8C3B000   ✓
+x10        0x6E9F6000 0x6E9F6000   ✓
+x11        0x6978A000 0x6978A000   ✓
+x12        0x3AB28000 0x3AB28000   ✓
+x13        0x133E1000 0x133E1000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0x2BA95000 0x2BA95000   ✓
+
+=== RISC-V Instruction 99 at PC 99 ===
+Instruction: 0x239DF6B7
+
+=== Executing 9 Bitty Instructions ===
+Bitty Instruction 0: 0xDD04
+Bitty Instruction 1: 0xD201
+Bitty Instruction 2: 0xD155
+Bitty Instruction 3: 0xD701
+Bitty Instruction 4: 0xD155
+Bitty Instruction 5: 0xD741
+Bitty Instruction 6: 0xD115
+Bitty Instruction 7: 0xD3C1
+Bitty Instruction 8: 0xD315
+
+=== Register Comparison ===
+Register   RISC-V     Bitty      Match 
+----------------------------------------
+x0         0x00000000 0x00000000   ✓
+x1         0x578CD000 0x578CD000   ✓
+x2         0x7BD6A000 0x7BD6A000   ✓
+x3         0x82E29000 0x82E29000   ✓
+x4         0x8FD96000 0x8FD96000   ✓
+x5         0x27F0E000 0x27F0E000   ✓
+x6         0x93D70000 0x93D70000   ✓
+x7         0x5EB8F000 0x5EB8F000   ✓
+x8         0x3D90A000 0x3D90A000   ✓
+x9         0xF8C3B000 0xF8C3B000   ✓
+x10        0x6E9F6000 0x6E9F6000   ✓
+x11        0x6978A000 0x6978A000   ✓
+x12        0x3AB28000 0x3AB28000   ✓
+x13        0x239DF000 0x239DF000   ✓
+x14        0xEE95B000 0xEE95B000   ✓
+x15        0x2BA95000 0x2BA95000   ✓
 
 === Comparison Complete ===
-Executed 50 RISC-V instructions and 150 Bitty instructions
+Executed 100 RISC-V instructions and 900 Bitty instructions

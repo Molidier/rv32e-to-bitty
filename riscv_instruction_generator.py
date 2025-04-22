@@ -32,6 +32,25 @@ def generate_instruction(op, rd, rs1, rs2):
     elif op == "sltu":
         funct7 = "0000000"
         funct3 = "011"
+    
+    # M-extension
+    elif op == "mul":
+        funct7, funct3 = "0000001", "000"
+    elif op == "mulh":
+        funct7, funct3 = "0000001", "001"
+    elif op == "mulhsu":
+        funct7, funct3 = "0000001", "010"
+    elif op == "mulhu":
+        funct7, funct3 = "0000001", "011"
+    elif op == "div":
+        funct7, funct3 = "0000001", "100"
+    elif op == "divu":
+        funct7, funct3 = "0000001", "101"
+    elif op == "rem":
+        funct7, funct3 = "0000001", "110"
+    elif op == "remu":
+        funct7, funct3 = "0000001", "111"
+
     else:
         raise ValueError("Operation not supported for R-type")
     
@@ -168,9 +187,11 @@ def generate_instruction_u(op, rd, imm):
     return instruction
 
 
-# Allowed R-type operations.
-r_operations = ["add", "sub", "sll", "srl", "sra", "slt", "sltu"]
-
+# Updated list of R-type operations to include M-extension:
+r_operations = [
+    "add", "sub", "sll", "srl", "sra", "slt", "sltu",
+    "mul", "mulh", "mulhsu", "mulhu", "div", "divu", "rem", "remu"
+]
 # Allowed I-type operations.
 i_operations = [
     # ALU immediate (non-shift)
@@ -181,65 +202,60 @@ i_operations = [
     "lb", "lh", "lw", "lbu", "lhu"
 ]
 
-# Generate R-type instructions.
-r_instructions = []
-number_of_r_instr = 0
-for i in range(number_of_r_instr):
-    op = r_operations[random.randint(0, len(r_operations)-1)]
-    rd = random.randint(1, 15)  # Destination register (avoiding x0)
-    rs1 = random.randint(0, 15)
-    rs2 = random.randint(0, 15)
-    instr_bin = generate_instruction(op, rd, rs1, rs2)
-    r_instructions.append(instr_bin)
+def generate(number_of_r_instr = 0, number_of_i_instr = 0, number_of_u_instr = 0):
 
-# Generate I-type instructions.
-i_instructions = []
-number_of_i_instr = 200
-for i in range(number_of_i_instr):
-    # Use all I-type operations, not just the first one
-    #op = i_operations[random.randint(0, len(i_operations)-1)]
-    op = i_operations[13]
-    rd = random.randint(1, 15)  # Destination register (avoiding x0)
-    rs1 = random.randint(0, 15)
-    
-    # Generate a random immediate within 12 bits
-    if op in ["lb", "lh", "lw", "lbu", "lhu"]:
-        # For load instructions, immediate is 12 bits
-        imm = 0x000
-    else:
-        imm = random.randint(0, 0xfff)
-    instr_bin = generate_instruction_i(op, rd, rs1, imm)
-    i_instructions.append(instr_bin)
+    # Generate R-type instructions.
+    r_instructions = []
 
-# # Save the generated instructions to files.
-# with open("riscv_instructions.txt", "w") as outfile:
-#     for instr in r_instructions:
-#         outfile.write(instr + "\n")
-# Example usage for generating U-type instructions
+    for i in range(number_of_r_instr):
+        op = "add"
+        #op = r_operations[random.randint(0, len(r_operations)-1)]
+        rd = random.randint(3, 15)  # Destination register (avoiding x0, x1, x2)
+        rs1 = random.randint(3, 15)
+        rs2 = random.randint(3, 15)
+        instr_bin = generate_instruction(op, rd, rs1, rs2)
+        r_instructions.append(instr_bin)
+        instructions.append(instr_bin)
 
-u_operations = ["lui", "auipc"]
+    # Generate I-type instructions.
+    i_instructions = []
+    for i in range(number_of_i_instr):
+        # Use all I-type operations, not just the first one
+        #op = i_operations[random.randint(0, len(i_operations)-1)]
+        op = i_operations[13]
+        rd = random.randint(3, 15)  # Destination register (avoiding x0, x1, x2)
 
-# Generate U-type instructions
-u_instructions = []
-number_of_u_instr = 200
-for i in range(number_of_u_instr):
-    #op = random.choice(u_operations)
-    op = u_operations[0]
-    rd = random.randint(1, 15)  # Destination register (avoiding x0)
-    imm = random.randint(0, 0xFFFFF)  # Random 20-bit immediate for U-type
-    instr_bin = generate_instruction_u(op, rd, imm)
-    u_instructions.append(instr_bin)
+        rs1 = random.randint(0, 15)
+        
+        # Generate a random immediate within 12 bits
+        if op in ["lb", "lh", "lw", "lbu", "lhu"]:
+            # For load instructions, immediate is 12 bits
+            imm = 0x000
+        else:
+            imm = random.randint(0, 0xfff)
+        instr_bin = generate_instruction_i(op, rd, rs1, imm)
+        i_instructions.append(instr_bin)
+        instructions.append(instr_bin)
 
-# Save the generated U-type instructions to a file
+    u_operations = ["lui", "auipc"]
+
+    u_instructions = []
+    for i in range(number_of_u_instr):
+        #op = random.choice(u_operations)
+        op = u_operations[1]
+        rd = random.randint(3, 15)  # Destination register (avoiding x0, x1, x2)
+
+        imm = random.randint(0, 0xFFFFF)  # Random 20-bit immediate for U-type
+        instr_bin = generate_instruction_u(op, rd, imm)
+        u_instructions.append(instr_bin)
+        instructions.append(instr_bin)
+
+
+instructions = []
+generate(number_of_r_instr=5)
+
+# Save the generated instructions to a file
 with open("riscv_instructions.txt", "w") as outfile:
-    for instr in u_instructions:
+    for instr in instructions:
         outfile.write(instr + "\n")
 
-
-
-# with open("riscv_instructions.txt", "w") as outfile:
-#     for instr in i_instructions:
-#         outfile.write(instr + "\n")
-print(f"{number_of_u_instr} U-type instructions have been generated and saved to riscv_u_instructions.txt")
-print(f"{number_of_r_instr} R-type instructions have been generated and saved to riscv_r_instructions.txt")
-print(f"{number_of_i_instr} I-type instructions have been generated and saved to riscv_i_instructions.txt")

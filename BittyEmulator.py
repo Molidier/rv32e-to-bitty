@@ -1,4 +1,7 @@
 class BittyEmulator:
+    # Static class variable to track overall instruction count
+    STATIC_PC_VALUE = 0
+    
     def __init__(self, memory):
         # Initialize 16 registers with dummy 32-bit values.
         self.memory = memory
@@ -19,6 +22,9 @@ class BittyEmulator:
         return self.pc
 
     def evaluate(self, instruction):
+        # Note: STATIC_PC_VALUE is now incremented in the EmulatorComparison.py file
+        # when RISC-V PC increments, not here
+        
         # Get the current PC value (for relative branches).
         current_pc = self.pc
         format_code = instruction & 0x0003
@@ -40,24 +46,42 @@ class BittyEmulator:
 
             print(f"Immediate format - rx: {rx}, immediate value (sign-extended): {in_b}")
 
-        elif format_code == 2:  # Branch format
-            branch_cond = (instruction & 0x000C) >> 2
-            branch_immediate = ((instruction & 0x0FF0) >> 4) // 2
-            print(f"Branch format - condition: {branch_cond}, immediate: {branch_immediate}")
-            
-            compare_value = self.d_out
-            print(f"Branch checking d_out value: {compare_value}")
-            
-            # Branch logic uses current PC for relative jumps.
-            if branch_cond == 0 and compare_value == 0:
-                return current_pc + branch_immediate
-            elif branch_cond == 1 and compare_value == 1:
-                return current_pc + branch_immediate
-            elif branch_cond == 2 and compare_value == 2:
-                return current_pc + branch_immediate
+        elif format_code == 2:  # Branch format (12‑bit signed offset)
+            branch_cond = (instruction >> 2) & 0x3
+            if branch_cond < 3:
+                # extract 12‑bit immediate from bits [15:4]
+                raw_imm = (instruction >> 4) & 0xFFF
+                # sign‑extend 12 bits to Python int
+                if raw_imm & 0x800:        # if bit11 is 1
+                    raw_imm -= 0x1000
+
+                # instructions are 2 bytes long, so lowest bit is always zero—
+                # shift right by 1 to get the word‐aligned offset
+                offset = raw_imm >> 1
+
+                print(f"Branch format – cond: {branch_cond}, imm12 (sign‑ext): {raw_imm}, offset: {offset}")
+
+                compare_value = self.d_out
+                print(f"Branch checks d_out = {compare_value}")
+
+                if branch_cond == 0 and compare_value == 0:
+                    return current_pc + offset
+                elif branch_cond == 1 and compare_value == 1:
+                    return current_pc + offset
+                elif branch_cond == 2 and compare_value == 2:
+                    return current_pc + offset
+                else:
+                    return current_pc + 1
+
             else:
-                #BittyEmulator.set_register_value(self, rx, STATIC_PC_VALUE)
-                return current_pc + 1
+                # PC‐get/set for cond >= 3
+                pc_g_or_s = (instruction >> 4) & 0x1
+                if pc_g_or_s == 1:
+                    self.set_register_value(rx, current_pc)
+                else:
+                    self.pc = self.get_register_value(rx)
+                return self.pc
+
         elif format_code == 3:  # Load/Store format
             ry_bin = (instruction >> 8) & 0xF
             ls_code = instruction & 0x0004

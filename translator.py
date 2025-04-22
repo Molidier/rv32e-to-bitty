@@ -1,12 +1,16 @@
 class RiscVConverter:
+    # Class variable to track the program counter
+    RISCV_PC = 0
+    Bitty_PC = 0
+    map_pc = {}
+
     opcodes = {
         0b0110011: "R",
         0b0000011: "I", #load instructions
         0b0010011: "I", #ALU immediate instructions
         0b1100011: "B", #branch instructions
-        0b0110111: "lui",
-        0b1101111: "jal",
-        0b1100111: "jalr",
+        0b1101111: "J",
+        0b1100111: "J",
         0b0010111: "U",
         0b0110111: "U"
 
@@ -39,8 +43,8 @@ class RiscVConverter:
         "big":   (0b01,   0b10),
         "bil":   (0b10,   0b10),
         #pc edition
-        "gtpc":  (0b11,  0b10), #get pc to rx
-        "stpc":  (0b11,  0b10), #set pc from rx
+        "gtpc":  (0b011,  0b10), #get pc to rx
+        "stpc":  (0b111,  0b10), #set pc from rx
         
         "ld":    (0b0,    0b11),
         "st":    (0b1,    0b11),
@@ -192,6 +196,21 @@ class RiscVConverter:
                 return instr_type, ("lui", rd, immediate, None)
             elif opcode == 0b0010111:
                 return instr_type, ("auipc", rd, immediate, None)
+        elif instr_type == "J":
+            if opcode == 0b1101111: # JAL instruction
+                # Extract the components of the immediate:
+                imm_20 = (instruction >> 20) & 0x1           # imm[20]
+                imm_10_1 = (instruction >> 1) & 0x3FF         # imm[10:1] (10 bits)
+                imm_11 = (instruction >> 11) & 0x1            # imm[11]
+                imm_19_12 = (instruction >> 12) & 0xFF        # imm[19:12] (8 bits)
+
+                # Concatenate the parts to form the full 20-bit immediate
+                immediate = (imm_20 << 19) | (imm_19_12 << 11) | (imm_11 << 10) | imm_10_1
+                
+                return instr_type, ("jal", rd, immediate, None)
+            elif opcode == 0b1100111: # JALR instruction:
+                immediate = (instruction >> 20) & 0xFFF 
+                return instr_type, ("jalr", rd, rs1, immediate)  
         else:
             return "unknown"
 
@@ -210,7 +229,7 @@ class RiscVConverter:
             rs2    = int(instr[3])
 
             #Handling the case when rd != rs1 != rs2
-            if rd != rs1 and rd != rs2:
+            if rd != rs1 and rd != rs2 and opcode not in ["mul", "mulh", "mulhsu", "mulhu", "div", "rem", "divu", "remu"]:
                 result.append(("sub", rd, rd))
                 result.append(("add", rd, rs1))
             #Handling the case when rd == rs2
@@ -245,6 +264,119 @@ class RiscVConverter:
                     result.append(("cmpi", rd, 1))
                     result.append(("bie",  4,  None))
                     result.append(("sub",  rd, rd))
+
+                #M instrucutions
+                # elif opcode == 'mul':
+                #     result.append(("mul", rd, rs2))
+                # elif opcode == 'mulh':
+                #     result.append(("mulh", rd, rs2))
+                # elif opcode == 'mulhsu':
+                #     result.append(("mulhsu", rd, rs2))
+                # elif opcode == 'mulhu':
+                #     result.append(("mulhu", rd, rs2))
+
+                elif opcode == 'div':
+                    rd_init = rd
+                    if rd != rs1 and rd != rs2:
+                        result.append(("sub", rd,   rd)) 
+                    elif rd == rs1 and rd != rs2:
+                        rd = 0b0000 # use x0 as rd
+
+                    result.append(("cmp", rs2, 0))
+                    result.append(("big", 10, None)) #not_zero
+                    #to handle cases when rs2 = 0 -> res should be all F's
+                    result.append(("sub", rd, rd)) 
+                    result.append(("subi",  rd,  1))
+                    result.append(("cmpsi", rd, -1))
+                    result.append(("bie", 26, None)) 
+
+                    #handle base cases
+                    result.append(("cmp", rs1,  rs2)) #def not_zero
+                    result.append(("bil", 70,   None)) #rs1 <  rs2 -> rd = 0 -> branch to the end
+                    result.append(("bie", 66,   None)) #rs1 == rs2 -> rd = 1 -> branch to last instruction
+                    
+                    result.append(("cmps", rs1, 0)) #is rs1 positive or negative
+                    result.append(("big", 8, None)) # to check rs2
+                    result.append(("addi", rd, 1))
+                    result.append(("xor", rs1, 0))
+                    result.append(("addi", rs1, 1))
+                    result.append(("cmp", rs2, 0)) # def check_rs2
+                    result.append(("big", 8, None)) #to xor_check
+                    result.append(("addi", rd, 1))
+                    result.append(("xor", rs2, 0))
+                    result.append(("addi", rs2, 1))
+                    result.append(("cmpi", rd, 1)) # def xor_check
+                    result.append(("bie", 4, None)) #to save_one
+                    result.append(("st", 0, 2)) 
+                    result.append(("st", rd, 2)) # def save_one: st rd R2
+                    result.append(("sub", rd, rd))
+                    result.append(("subi", 2, 4)) # R2 = R2 - 4
+                    result.append(("st", rs1, 2)) # st rs1 R2
+                    result.append(("addi", rd, 1)) # def div_loop:
+                    result.append(("sub", rs1, rs2)) 
+                    result.append(("cmp", rs1, rs2))
+                    result.append(("big", -6, None)) # div_loop
+                    result.append(("bie", -8, None)) # div_loop
+                    result.append(("addi", 2, 4)) 
+                    result.append(("ld", rs1, 2))
+                    result.append(("cmp", rs1, 0)) 
+                    result.append(("bie", 6, None)) 
+                    result.append(("xor", rd, 0)) 
+                    result.append(("addi", rd, 1))
+                    result.append(("subi", 2, 4)) #def end
+                    result.append(("ld", rs1, 2)) 
+                    result.append(("addi", 2, 4)) # move stack pлointer back
+                    result.append(("addi", rd, -1)) #to remove the effect of the last line
+                    result.append(("addi", rd,  1)) #to handle cases when rs1 == rs2
+
+                
+                    if rd_init == rs1 and rd_init != rs2:
+                        result.append(("sub", rs1, rs1))
+                        result.append(("add", rs1, rd)) #rs1 == R0
+                        result.append(("sub", rd, rd)) #rd == R0
+                    elif rd_init == rs2 and rd_init != rs1:
+                        result.append(("sub", rs2, rs2))
+                        result.append(("add", rs2, rd)) #rs2 == R0
+                        result.append(("sub", rd, rd)) #rd == R0
+
+                elif opcode == 'divu':
+                    rd_init = rd
+                    if rd != rs1 and rd != rs2:
+                        result.append(("sub", rd,   rd)) 
+                    elif rd == rs1 and rd != rs2:
+                        rd = 0b0000 # use x0 as rd
+                    
+                    result.append(("cmp", rs2, 0))
+                    result.append(("big", 10, None)) #not_zero
+                    #to handle cases when rs2 = 0 -> res should be all F's
+                    result.append(("sub", rd, rd)) 
+                    result.append(("subi", rd, 1))
+                    result.append(("cmpsi", rd, -1))
+                    result.append(("bie", 26, None)) 
+
+                    result.append(("cmp", rs1,  rs2)) #def not_zero
+                    result.append(("bil", 22,   None)) #rs1 <  rs2 -> rd = 0 -> branch to the end
+                    result.append(("bie", 18,   None)) #rs1 == rs2 -> rd = 1 -> branch to last instruction
+                    result.append(("st",  rs1,  2)) 
+
+                    result.append(("addi",  rd, 1))  
+                    result.append(("sub",  rs1, rs2))
+                    result.append(("cmp",  rs1, rs2))
+                    result.append(("big",  -6,  None))
+                    result.append(("bie", 4, None))
+                    result.append(("addi", rd, -1))
+                    result.append(("ld",   rs1, 2))   
+                    result.append(("addi", rd,  1))  
+
+                    if rd_init == rs1 and rd_init != rs2:
+                        result.append(("sub", rs1, rs1))
+                        result.append(("add", rs1, rd)) #rs1 == R0
+                        result.append(("sub", rd, rd)) #rd == R0
+                    elif rd_init == rs2 and rd_init != rs1:
+                        result.append(("sub", rs2, rs2))
+                        result.append(("add", rs2, rd)) #rs2 == R0
+                        result.append(("sub", rd, rd)) #rd == R0
+
                 else:
                     return "unknown"
             if rd_is_R0:
@@ -378,15 +510,70 @@ class RiscVConverter:
                 result.append(("gtpc", 0, None)) #get pc to R0
                 result.append(("add", rd, 0)) #rd = pc + upper 20 bits
                 result.append(("sub", 0, 0)) #make R0 = 0
+        elif instr_type == "J":
+            opcode = instr[0]
+            rd     = int(instr[1])
+            if opcode == "jal":
+                immediate = int(instr[2]) & 0xFFFFFF
+                # Extract imm[11:6] (upper 6 bits)
+                imm_upper = (immediate >> 6) & 0x3F  # 0x3F = 0b111111
+
+                # Extract imm[5:3] (middle 3 bits)
+                imm_mid = (immediate >> 3) & 0x7     # 0x7 = 0b111
+
+                # Extract imm[2:0] (lower 3 bits)j
+                imm_lower = immediate & 0x7          # 0x7 = 0b111
+
+                result.append(("gtpc", rd, None)) #get pc to rd
+                result.append(("addi", rd, 4)) #rd = pc + 4
+                result.append(("addi", 0, imm_upper))
+                result.append(("shli", 0, 3))
+                result.append(("addi", 0, imm_mid))
+                result.append(("shli", 0, 3))
+                result.append(("addi", 0, imm_lower))
+                result.append(("add", 0, rd)) #R0 = pc + imm + 4
+                result.append(("sub", 0, 4)) #R0 = pc + imm
+                result.append(("stpc", 0, None)) #pc = R0 = pc + imm
+                result.append(("sub", 0, 0)) #make R0 = 0
+            elif opcode == "jalr":
+                                # Extract imm[11:6] (upper 6 bits)
+                imm_upper = (immediate >> 6) & 0x3F  # 0x3F = 0b111111
+
+                # Extract imm[5:3] (middle 3 bits)
+                imm_mid = (immediate >> 3) & 0x7     # 0x7 = 0b111
+
+                # Extract imm[2:0] (lower 3 bits)j
+                imm_lower = immediate & 0x7          # 0x7 = 0b111
+
+                result.append(("gtpc", rd, None)) #get pc to rd
+                result.append(("addi", rd, 4)) #rd = pc + 4
+                result.append(("addi", 0, imm_upper))
+                result.append(("shli", 0, 3))
+                result.append(("addi", 0, imm_mid))
+                result.append(("shli", 0, 3))
+                result.append(("addi", 0, imm_lower))
+                result.append(("add", 0, rs1)) #R0 = imm + rs1
+                result.append(("stpc", 0, None)) #pc = R0 = imm + rs1
+                result.append(("sub", 0, 0)) #make R0 = 0
+                
+            else:
+                rs1 = int(instr[2])
+                # Extract the 12-bit immediate value from the instruction
+                immediate = int(instr[3]) & 0xFFF
+            
             
             
 
-
+        RiscVConverter.map_pc[RiscVConverter.RISCV_PC] = RiscVConverter.Bitty_PC
+        RiscVConverter.RISCV_PC += 1
+        RiscVConverter.Bitty_PC += len(result)
         print(result)
         return result
 
     @staticmethod
     def bitty_to_binary(init_instr):
+        # Increment the program counter each time this method is called
+
         instructions = RiscVConverter.riscV_to_bitty(init_instr)
         print("Bitty to binary START")
         final_instructions = []
@@ -397,7 +584,7 @@ class RiscVConverter:
             mapping_value = RiscVConverter.bitty_alu_instr.get(opcode)
             if mapping_value is None:
                 raise KeyError(f"Opcode {opcode} not found in bitty_alu_instr mapping.")
-            alu, fmt = mapping_value
+            operation, fmt = mapping_value
 
             instruction = 0
 
@@ -415,7 +602,7 @@ class RiscVConverter:
                 instruction |= (reserved & 0b11) << 6
 
                 # Place alu in bits [5:2]
-                instruction |= (alu & 0b1111) << 2
+                instruction |= (operation & 0b1111) << 2
 
                 # Place format in bits [1:0]
                 instruction |= (fmt & 0b11)
@@ -426,18 +613,23 @@ class RiscVConverter:
                 # Place immid at bits [11:6]
                 instruction |= (immid & 0x3F) << 6
                 # Place alu at bits [5:2]
-                instruction |= (alu & 0xF) << 2
+                instruction |= (operation & 0xF) << 2
                 # Place format at bits [1:0]
                 instruction |= (fmt & 0x3)
             elif fmt == 2:
-                immid = rx
-                cond = alu
+                cond = operation
 
-                # Place immid in bits [15:4]
-                instruction |= (immid & 0xFFF) << 4  # mask immid to 12 bits
+                if cond < 3:
+                    immid = rx
+
+                    # Place immid in bits [15:4]
+                    instruction |= (immid & 0xFFF) << 4  # mask immid to 12 bits
+                else:
+                    #set bits [15:12] to rx and rest are zeros
+                    instruction |= (rx & 0xF) << 5
 
                 # Place cond in bits [3:2]
-                instruction |= (cond & 0b11) << 2    # mask cond to 2 bits
+                instruction |= (cond) << 2    # mask cond to 2 bits
 
                 # Place the fixed pattern 0b10 in bits [1:0]
                 instruction |= 0b10  # decimal 2, binary 10
@@ -458,7 +650,7 @@ class RiscVConverter:
                 instruction |= (reserved & 0x1F) << 3
 
                 # Place L/S in bit [2]
-                instruction |= (alu & 0x1) << 2
+                instruction |= (operation & 0x1) << 2
 
                 # Place the fixed pattern 0b11 in bits [1:0]
                 instruction |= 0b11
@@ -466,7 +658,12 @@ class RiscVConverter:
 
 
             final_instructions.append(instruction)
+
             #print(final_instructions)
         
         return final_instructions
+    
+    def print_map():
+        for pc, bitty_pc in RiscVConverter.map_pc.items():
+            print(f"PC: {pc}, Bitty PC: {bitty_pc}")
 

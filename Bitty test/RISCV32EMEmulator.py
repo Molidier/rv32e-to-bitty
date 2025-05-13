@@ -1,5 +1,3 @@
-# RISCV32EMEmulator.py
-
 class RISCV32EMEmulator:
     def __init__(self, memory_array):
         # RISC-V has 32 registers (x0–x31), but RV32E uses only x0–x15
@@ -9,15 +7,15 @@ class RISCV32EMEmulator:
         self.instruction_array = []
         self.memory_array = memory_array
 
-        # Load hex‐encoded instructions from file
+        # Load hex‐encoded instructions from riscv_instructions.txt file
         try:
-            with open("instructions_for_em.txt", "r") as infile:
+            with open("riscv_instructions.txt", "r") as infile:
                 for line in infile:
                     instr = int(line.strip(), 16)
                     print(f"Instruction read and stored: {instr:08x}")
                     self.instruction_array.append(instr)
         except FileNotFoundError:
-            print("Error opening file")
+            print("Error opening file: riscv_instructions.txt")
 
     def fetch_instruction(self):
         if 0 <= self.pc < len(self.instruction_array):
@@ -321,6 +319,7 @@ class RISCV32EMEmulator:
                 w = self.registers[rs2]
                 self.memory_array[addr] = w
                 print(f"SW x{rs2}, {imm}(x{rs1})")
+                print(f"Stored {w:08X} at address {addr:08X}")
             else:
                 print(f"Unknown funct3 for store: {funct3}")
                 return self.pc + 1
@@ -332,16 +331,37 @@ class RISCV32EMEmulator:
             funct3 = (instruction >> 12) & 0x7
             rs1    = (instruction >> 15) & 0x1F
             rs2    = (instruction >> 20) & 0x1F
-            bit7   = (instruction >> 31) & 0x1
-            bit11  = (instruction >> 7)  & 0x1
-            bits4_1  = (instruction >> 8)  & 0xF
-            bits10_5 = (instruction >> 25) & 0x3F
-            imm = (bit7 << 12) | (bit11 << 11) | (bits10_5 << 5) | (bits4_1 << 1)
-            if imm & 0x1000: imm |= 0xFFFFE000
 
-            if rs1 > 15 or rs2 > 15:
+            # --- Correct Immediate Decoding and Sign Extension ---
+            # Extract bits for the 13-bit immediate (imm[12:1] with implicit imm[0]=0)
+            imm12   = (instruction >> 31) & 0x1      # bit 31 of instruction is imm[12]
+            imm11   = (instruction >> 7)  & 0x1      # bit 7 of instruction is imm[11]
+            imm10_5 = (instruction >> 25) & 0x3F   # bits 30:25 of instruction are imm[10:5]
+            imm4_1  = (instruction >> 8)  & 0xF    # bits 11:8 of instruction are imm[4:1]
+
+            # Reconstruct the 13-bit pattern for the byte offset
+            # This pattern represents values from 0 to 8191 (2^13 - 1)
+            imm_pattern_13bit = (imm12 << 12) | \
+                                (imm11 << 11) | \
+                                (imm10_5 << 5) | \
+                                (imm4_1 << 1) # The last bit (imm[0]) is implicitly 0
+
+            # Sign-extend this 13-bit pattern to get a Python signed integer
+            # This will be the actual signed byte offset for the branch.
+            signed_imm = imm_pattern_13bit
+            if imm_pattern_13bit & (1 << 12):  # Check sign bit (bit 12 of the 13-bit pattern)
+                signed_imm = imm_pattern_13bit - (1 << 13) # Convert to negative if MSB is 1
+
+            # --- Register Access and RV32E Check ---
+            if rs1 > 15 or rs2 > 15: # RV32E has only x0-x15
                 print("Error: Register number exceeds 15 in RV32E mode")
-                return self.pc + 1
+                # Assuming self.pc is the address of the current instruction.
+                # For an error, you might want to halt or raise an exception.
+                # Incrementing PC by 1 here seems unusual if instructions are 4 bytes.
+                # If self.pc is an index, then +1 is fine.
+                # Let's assume self.pc is an index into an instruction array for now.
+                return self.pc + 1 # Or handle error appropriately
+            
 
             a = self.registers[rs1]
             b = self.registers[rs2]
@@ -351,6 +371,7 @@ class RISCV32EMEmulator:
             elif funct3 == 0x1: # BNE
                 take = (a != b)
             elif funct3 == 0x4: # BLT
+                
                 sa = a if a < 0x80000000 else a - 0x100000000
                 sb = b if b < 0x80000000 else b - 0x100000000
                 take = (sa < sb)
@@ -358,6 +379,8 @@ class RISCV32EMEmulator:
                 sa = a if a < 0x80000000 else a - 0x100000000
                 sb = b if b < 0x80000000 else b - 0x100000000
                 take = (sa >= sb)
+                print("BGE", sa, sb)
+
             elif funct3 == 0x6: # BLTU
                 take = (a & 0xFFFFFFFF) < (b & 0xFFFFFFFF)
             elif funct3 == 0x7: # BGEU
@@ -366,10 +389,15 @@ class RISCV32EMEmulator:
                 print(f"Unknown branch funct3: {funct3}")
                 return self.pc + 1
             
-            imm = imm // 4
+            # Calculate branch target directly using imm instead of dividing by 4
+            # This allows each line to be treated as an individual instruction
+            target = (self.pc + (signed_imm//4))
+            if target < 0:
+                target = abs(target) % len(self.instruction_array)
+                target = len(self.instruction_array) - target
 
-            print(f"{'TAKE' if take else 'NO'} BRANCH {funct3} imm={imm}")
-            return self.pc + (imm >> 1) if take else self.pc + 1
+            print(f"{'TAKE' if take else 'NO'} BRANCH {funct3} imm={signed_imm} target={target}")
+            return target if take else self.pc + 1
 
         # --- 6) U‑type (LUI/AUIPC) ---
         elif opcode in (0b0110111, 0b0010111):
@@ -403,9 +431,16 @@ class RISCV32EMEmulator:
 
             if rd <= 15 and rd != 0:
                 self.registers[rd] = (self.pc + 1) & 0xFFFFFFFF
-            next_pc = (self.pc + (imm >> 1)) & 0xFFFFFFFF
-            print(f"JAL x{rd}, imm={imm} -> PC={next_pc}")
-            return next_pc
+                
+            # Calculate jump target directly using imm
+            # This allows each line to be treated as an individual instruction starting from 0
+            target = imm
+            if target < 0:
+                target = abs(target) % len(self.instruction_array)
+                target = len(self.instruction_array) - target
+                
+            print(f"JAL x{rd}, imm={imm} -> PC={target}")
+            return target
 
         # --- 8) I‑type JALR ---
         elif opcode == 0b1100111:
@@ -420,12 +455,30 @@ class RISCV32EMEmulator:
                 return self.pc + 1
 
             ret = (self.pc + 1) & 0xFFFFFFFF
-            next_pc = (self.registers[rs1] + imm) & 0xFFFFFFFE
+            
+            # Calculate jump target directly using register + imm
+            target = (self.registers[rs1] + imm) & 0xFFFFFFFE
+            # Make sure target is within bounds of instruction array
+            target = target % len(self.instruction_array)
+            
             if rd != 0:
                 self.registers[rd] = ret
-            print(f"JALR x{rd}, x{rs1}, {imm}: -> PC={next_pc}")
-            return next_pc
+            print(f"JALR x{rd}, x{rs1}, {imm}: -> PC={target}")
+            return target
 
         else:
             print(f"Unknown opcode: {opcode:02b}")
             return self.pc + 1
+    
+    def print_registers(self):
+        """Write the current state of all registers to a file."""
+        with open("riscv_registers_output.txt", "w") as f:
+            f.write("\nRegister Values:\n")
+            for i in range(16):
+                # write each register in hex, padded to 8 digits
+                f.write(f"R{i}: {self.registers[i]:08X}  ")
+                if (i + 1) % 4 == 0:
+                    f.write("\n")
+            # write PC and data output
+            f.write(f"PC: {self.pc}\n")
+            #f.write(f"D_OUT: {self.d_out:08X}\n\n")

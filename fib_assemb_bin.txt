@@ -1,0 +1,59 @@
+# Fibonacci Sequence in RISC-V 32EM - Corrected Version
+# No mv, ecall, or system calls - pure computation
+# The program stores results in memory
+
+# Instruction format: 0b[funct7]_[rs2]_[rs1]_[funct3]_[rd]_[opcode]
+
+# Initialization:
+# addi a0, zero, 1   # a0(x10) = F_1 = 1
+0b0000000_00001_00000_000_01010_0010011    # addi a0(x10), x0, 1
+
+# addi a1, zero, 0   # a1(x11) = F_0 = 0
+0b0000000_00000_00000_000_01011_0010011    # addi a1(x11), x0, 0
+    
+# addi a3, zero, 1   # a3(x13) = loop counter = 1
+0b0000000_00001_00000_000_01101_0010011    # addi a3(x13), x0, 1
+
+# addi a4, zero, 30  # a4(x14) = limit = 30
+0b0000000_11110_00000_000_01110_0010011    # addi a4(x14), x0, 30
+
+# addi a5, zero, 0   # a5(x15) = memory pointer = 0 (base address)
+0b0000000_00000_00000_000_01111_0010011    # addi a5(x15), x0, 0
+
+# Store F_0 to memory
+# sw a1, 0(a5)      # Store F_0 at base address
+0b0000000_01011_01111_010_00000_0100011    # sw a1(x11), 0(a5)
+
+# addi a5, a5, 4    # Increment memory pointer by 4 bytes
+0b0000000_00100_01111_000_01111_0010011    # addi a5(x15), a5(x15), 4
+
+# Loop:
+# Store current Fibonacci number F_n to memory
+# sw a0, 0(a5)      # Store current Fib number at memory location
+0b0000000_01010_01111_010_00000_0100011    # sw a0(x10), 0(a5)
+
+# addi a5, a5, 4    # Increment memory pointer by 4 bytes
+0b0000000_00100_01111_000_01111_0010011    # addi a5(x15), a5(x15), 4
+    
+# Calculate next Fibonacci number: F_n+1 = F_n + F_n-1
+# add a2, a0, a1    # a2 = F_n + F_n-1
+0b0000000_01011_01010_000_01100_0110011    # add a2(x12), a0(x10), a1(x11)
+    
+# addi a1, a0, 0    # a1 = a0 (a1 = F_n)
+0b0000000_00000_01010_000_01011_0010011    # addi a1(x11), a0(x10), 0
+    
+# addi a0, a2, 0    # a0 = a2 (a0 = F_n+1)
+0b0000000_00000_01100_000_01010_0010011    # addi a0(x10), a2(x12), 0
+    
+# addi a3, a3, 1    # Increment loop counter
+0b0000000_00001_01101_000_01101_0010011    # addi a3(x13), a3(x13), 1
+    
+# Branch if loop counter <= limit
+# Check if a3 <= a4 (continue loop if true)
+# Implement as: branch if a4 >= a3
+# bge a4, a3, loop_start
+0b1??????_01101_01110_101_?????_1100011    # bge a4(x14), a3(x13), loop_start (-7 instructions * 4 bytes)
+
+# Infinite loop at end of program (halt)
+# addi zero, zero, 0  # NOP/Halt
+0b0000000_00000_00000_000_00000_0010011    # addi x0, x0, 0

@@ -86,7 +86,7 @@ def main():
        
         # Process the instruction in bitty_to_binary and get equivalent Bitty instructions
         try:
-            bitty_binary_instructions = translator.bitty_to_binary(instruction)
+            bitty_binary_instructions = translator.translator(instruction)
         except Exception as e:
             write_to_file(f"Error in translation: {e}")
             bitty_binary_instructions = []
@@ -135,6 +135,12 @@ def main():
        
     write_to_file(f"Final STATIC_PC_VALUE: {BittyEmulator.STATIC_PC_VALUE}")
     RiscVConverter.print_map()
+    RiscVConverter.change_branch_offsets()
+    RiscVConverter.print_assembly()
+    RiscVConverter.print_binary()
+    for i in range(20, 50):
+        print(f"Memory[{i}]:(0x{memory[i]:04X})")
+
 
 if __name__ == "__main__":
     main()

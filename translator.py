@@ -2,7 +2,34 @@ class RiscVConverter:
     # Class variable to track the program counter
     RISCV_PC = 0
     Bitty_PC = 0
-    map_pc = {}
+    map_pc = {} #RiscV PC to Bitty PC mapping
+    branch_pc = {} #Branch instrcutions PC -> PC + offset mapping
+    instr_of_bitty_assembly = [] #List of instructions to be executed -> each element is tuple of three elements
+    instr_of_bitty_binary = []
+
+    def change_branch_offsets():
+        for branch_bitty_pc, pc in RiscVConverter.branch_pc.items():
+            #(BittyPC - branch_pc) * 2
+            new_offset = (RiscVConverter.map_pc[pc] - branch_bitty_pc) * 2
+            branch, _, placeholder = RiscVConverter.instr_of_bitty_assembly[branch_bitty_pc]
+            new_instr = (branch, new_offset, placeholder)
+            new_binary = RiscVConverter.bitty_to_binary(new_instr)
+            print("Branch instruction:", branch, "New offset:", new_offset, )
+            #add new instrucitons to the list of instructions
+            RiscVConverter.instr_of_bitty_assembly[branch_bitty_pc] = new_instr
+            RiscVConverter.instr_of_bitty_binary[branch_bitty_pc] = new_binary
+    
+    def print_assembly():
+        for i, instr in enumerate(RiscVConverter.instr_of_bitty_assembly):
+            print(f"Instruction {i}: {instr}")
+    
+    def print_binary():
+        with open("bitty_binary.txt", "w") as f:
+            for i, instr in enumerate(RiscVConverter.instr_of_bitty_binary):
+                f.write(f"0b{instr:016b}\n")
+
+
+
 
     opcodes = {
         0b0110011: "R",
@@ -12,7 +39,8 @@ class RiscVConverter:
         0b1101111: "J",
         0b1100111: "J",
         0b0010111: "U",
-        0b0110111: "U"
+        0b0110111: "U",
+        0b0100011: "S", #store instructions
 
     }
 
@@ -189,6 +217,7 @@ class RiscVConverter:
                     | (imm_11   << 11) \
                     | (imm_10_5 <<  5) \
                     | (imm_4_1  <<  1)
+            #Saving branch information for the future usage
             return instr_type, (RiscVConverter.b_instr[funct3], rs1, rs2, immediate)
         elif instr_type == "U":
             immediate = (instruction >> 12) & 0xFFFFF # instruction[31:12]
@@ -211,8 +240,20 @@ class RiscVConverter:
             elif opcode == 0b1100111: # JALR instruction:
                 immediate = (instruction >> 20) & 0xFFF 
                 return instr_type, ("jalr", rd, rs1, immediate)  
-        else:
-            return "unknown"
+        elif instr_type == "S":
+            imm_11_5 = (instruction >> 25) & 0x7F
+            imm_4_0  = (instruction >> 7)  & 0x1F
+            funct3 = (instruction >> 12) & 0b111
+            immediate = (imm_11_5 << 5) | imm_4_0           # combine into imm[11:0]
+            # sign-extend the 12-bit value:
+            if immediate & (1 << 11):
+                immediate |= - (1 << 12)
+
+            if funct3 in RiscVConverter.s_instr:
+                immediate = (imm_11_5 << 5) | imm_4_0
+                return instr_type, (RiscVConverter.s_instr[funct3], rs1, rs2, immediate)
+        
+        return "unknown"
 
     @staticmethod
     def riscV_to_bitty(instruction):
@@ -405,7 +446,7 @@ class RiscVConverter:
                 if opcode not in ["lb", "lh", "lw", "lbu", "lhu"]:
                     rd = 0b0000 # use x0 as rd
                     rd_is_R0 = True
-                    print("rd == rs1")
+                    #print("rd == rs1")
             #when rd != rs1
             else:
                 result.append(("sub", rd, rd))
@@ -455,20 +496,26 @@ class RiscVConverter:
                     result.append(("bie",   4,  None))
                     result.append(("sub",   rd, rd))
                 #load instructions handler
-                elif opcode == 'lb':
+                # i hope that accessing memory 
+                # that is not %4==0 is not a problem
+                elif opcode == 'lb': 
+                    result.append(('ld', rd, rs1))
                     result.append(("shli",  rd, 24))
                     result.append(("shrsi", rd, 24))
                 elif opcode == 'lh':
+                    result.append(('ld', rd, rs1))
                     result.append(("shli",  rd, 16))
                     result.append(("shrsi", rd, 16))
                 elif opcode == 'lbu':
+                    result.append(('ld', rd, rs1))
                     result.append(("shli",  rd, 24))
                     result.append(("shri",  rd, 24))
                 elif opcode == 'lhu':
+                    result.append(('ld', rd, rs1))
                     result.append(("shli",  rd, 16))
                     result.append(("shri",  rd, 16))
                 elif opcode == 'lw':
-                    print("everything is up to date")
+                    result.append(('ld', rd, rs1))
                 else:
                     return "unknown"
             if rd_is_R0 == True:
@@ -480,7 +527,39 @@ class RiscVConverter:
             opcode = instr[0]
             rs1    = int(instr[1])
             rs2    = int(instr[2])
-            immediate = int(instr[3]) & 0xFFF
+            # grab low 12 bits
+            imm12  = int(instr[3]) & 0xFFF
+            # sign-extend 12-bit value to Python int
+            if imm12 & 0x800:
+                immediate = imm12 - 0x1000
+            else:
+                immediate = imm12
+
+            if opcode == "beq":
+                result.append(("cmps", rs1, rs2))
+                result.append(("bie", immediate, None))
+            elif opcode =="bge":
+                result.append(("cmps", rs1, rs2))
+                # result.append(("big", immediate, None)) #0 and 1 will be masked to 0
+                # pc_key   = RiscVConverter.Bitty_PC + len(result) - 1
+
+                # now immediate is signed, so offset calculation will be correct for backwards branches
+                pc_target = RiscVConverter.RISCV_PC + (immediate // 4)
+                print("Branch PC:", pc_key + 1, "offset:", pc_target)
+                RiscVConverter.branch_pc[pc_key] = pc_target
+                
+                result.append(("bie", immediate, None)) #0 and 1 will be masked to 0
+                #to save the current pc value of branch instruction to use it for recalculation
+                pc_key   = RiscVConverter.Bitty_PC + len(result) - 1
+                
+
+
+
+            # now immediate is signed, so offset calculation will be correct for backwards branches
+            pc_target = RiscVConverter.RISCV_PC + (immediate // 4)
+            print("Branch PC:", pc_key + 1, "offset:", pc_target)
+            RiscVConverter.branch_pc[pc_key] = pc_target
+
         #U type instruction binary to Bitty assembly conversion
         elif instr_type == "U":
             opcode = instr[0]
@@ -559,109 +638,140 @@ class RiscVConverter:
             else:
                 rs1 = int(instr[2])
                 # Extract the 12-bit immediate value from the instruction
-                immediate = int(instr[3]) & 0xFFF
-            
-            
-            
+                immediate = int(instr[3]) & 0xFFF    
+        elif instr_type == "S":
+            opcode = instr[0]
+            rs1    = int(instr[1])
+            rs2     = int(instr[2])
+            immediate = int(instr[3]) & 0xFFF
+
+            #need to be implemented everywhere
+            result.append(("add",   0, rs2)) #R0 = rs2
+
+            #load instructions handler
+            if opcode == 'sb':
+                result.append(("shli",  0, 24))  
+                result.append(("shrsi", 0, 24)) 
+            elif opcode == 'sh':
+                result.append(("shli",  0, 16))
+                result.append(("shrsi", 0, 16))
+            elif opcode == 'sw':
+                print("everything is up to date")
+            else:
+                return "unknown"
+            #need to be implemented everywhere
+            result.append(("st",    0, rs1)) #mem[rs1] = rs2
+            result.append(("sub",   0, 0)) #make R0 = 0
 
         RiscVConverter.map_pc[RiscVConverter.RISCV_PC] = RiscVConverter.Bitty_PC
         RiscVConverter.RISCV_PC += 1
         RiscVConverter.Bitty_PC += len(result)
         print(result)
+        #add assembly instructions to the list of instructions
+        RiscVConverter.instr_of_bitty_assembly.extend(result)
         return result
 
     @staticmethod
-    def bitty_to_binary(init_instr):
+    def bitty_to_binary(instr):
+
+        opcode, rx, ry = instr
+
+        mapping_value = RiscVConverter.bitty_alu_instr.get(opcode)
+        if mapping_value is None:
+            raise KeyError(f"Opcode {opcode} not found in bitty_alu_instr mapping.")
+        operation, fmt = mapping_value
+
+        instruction = 0
+
+        if fmt == 0:
+            # Construct the instruction
+            reserved = 0b00
+
+            # Place rx in bits [15:12]
+            instruction |= (rx & 0b1111) << 12
+
+            # Place ry in bits [11:8]
+            instruction |= (ry & 0b1111) << 8
+
+            # Place reserved in bits [7:6]
+            instruction |= (reserved & 0b11) << 6
+
+            # Place alu in bits [5:2]
+            instruction |= (operation & 0b1111) << 2
+
+            # Place format in bits [1:0]
+            instruction |= (fmt & 0b11)
+        elif fmt == 1:
+            immid = ry
+            # Place rx at bits [15:12]
+            instruction |= (rx & 0xF) << 12
+            # Place immid at bits [11:6]
+            instruction |= (immid & 0x3F) << 6
+            # Place alu at bits [5:2]
+            instruction |= (operation & 0xF) << 2
+            # Place format at bits [1:0]
+            instruction |= (fmt & 0x3)
+        elif fmt == 2:
+            cond = operation
+
+            if cond < 3:
+                immid = rx
+
+                # Place immid in bits [15:4]
+                instruction |= (immid & 0xFFF) << 4  # mask immid to 12 bits
+            else:
+                #set bits [15:12] to rx and rest are zeros
+                instruction |= (rx & 0xF) << 5
+
+            # Place cond in bits [3:2]
+            instruction |= (cond) << 2    # mask cond to 2 bits
+
+            # Place the fixed pattern 0b10 in bits [1:0]
+            instruction |= 0b10  # decimal 2, binary 10
+        elif fmt == 3:
+            # We'll assume you have variables:
+            #   rx (4-bit), ry (4-bit), reserved (5-bit), ls (1-bit)
+            # that you want to place into this instruction.
+            reserved = 0
+            instruction = 0
+
+            # Place rx in bits [15:12]
+            instruction |= (rx & 0xF) << 12
+
+            # Place ry in bits [11:8]
+            instruction |= (ry & 0xF) << 8
+
+            # Place reserved in bits [7:3]
+            instruction |= (reserved & 0x1F) << 3
+
+            # Place L/S in bit [2]
+            instruction |= (operation & 0x1) << 2
+
+            # Place the fixed pattern 0b11 in bits [1:0]
+            instruction |= 0b11
+            #print("Bitty instruction:", format(instruction, '04X'))
+
+
+
+            #print(final_instructions)
+        
+        return instruction
+    
+    @staticmethod
+    def translator(init_instr):
         # Increment the program counter each time this method is called
 
         instructions = RiscVConverter.riscV_to_bitty(init_instr)
         print("Bitty to binary START")
         final_instructions = []
-        # Convert the instruction to binary format
         for instr in instructions:
-            opcode, rx, ry = instr
-
-            mapping_value = RiscVConverter.bitty_alu_instr.get(opcode)
-            if mapping_value is None:
-                raise KeyError(f"Opcode {opcode} not found in bitty_alu_instr mapping.")
-            operation, fmt = mapping_value
-
-            instruction = 0
-
-            if fmt == 0:
-                # Construct the instruction
-                reserved = 0b00
-
-                # Place rx in bits [15:12]
-                instruction |= (rx & 0b1111) << 12
-
-                # Place ry in bits [11:8]
-                instruction |= (ry & 0b1111) << 8
-
-                # Place reserved in bits [7:6]
-                instruction |= (reserved & 0b11) << 6
-
-                # Place alu in bits [5:2]
-                instruction |= (operation & 0b1111) << 2
-
-                # Place format in bits [1:0]
-                instruction |= (fmt & 0b11)
-            elif fmt == 1:
-                immid = ry
-                # Place rx at bits [15:12]
-                instruction |= (rx & 0xF) << 12
-                # Place immid at bits [11:6]
-                instruction |= (immid & 0x3F) << 6
-                # Place alu at bits [5:2]
-                instruction |= (operation & 0xF) << 2
-                # Place format at bits [1:0]
-                instruction |= (fmt & 0x3)
-            elif fmt == 2:
-                cond = operation
-
-                if cond < 3:
-                    immid = rx
-
-                    # Place immid in bits [15:4]
-                    instruction |= (immid & 0xFFF) << 4  # mask immid to 12 bits
-                else:
-                    #set bits [15:12] to rx and rest are zeros
-                    instruction |= (rx & 0xF) << 5
-
-                # Place cond in bits [3:2]
-                instruction |= (cond) << 2    # mask cond to 2 bits
-
-                # Place the fixed pattern 0b10 in bits [1:0]
-                instruction |= 0b10  # decimal 2, binary 10
-            elif fmt == 3:
-                # We'll assume you have variables:
-                #   rx (4-bit), ry (4-bit), reserved (5-bit), ls (1-bit)
-                # that you want to place into this instruction.
-                reserved = 0
-                instruction = 0
-
-                # Place rx in bits [15:12]
-                instruction |= (rx & 0xF) << 12
-
-                # Place ry in bits [11:8]
-                instruction |= (ry & 0xF) << 8
-
-                # Place reserved in bits [7:3]
-                instruction |= (reserved & 0x1F) << 3
-
-                # Place L/S in bit [2]
-                instruction |= (operation & 0x1) << 2
-
-                # Place the fixed pattern 0b11 in bits [1:0]
-                instruction |= 0b11
-                #print("Bitty instruction:", format(instruction, '04X'))
-
-
+            instruction = RiscVConverter.bitty_to_binary(instr)
             final_instructions.append(instruction)
-
-            #print(final_instructions)
+            #append the instruction to the list of instructionsS
+            RiscVConverter.instr_of_bitty_binary.append(instruction)
         
         return final_instructions
+        
     
     def print_map():
         for pc, bitty_pc in RiscVConverter.map_pc.items():

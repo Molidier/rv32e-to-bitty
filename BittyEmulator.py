@@ -63,15 +63,16 @@ class BittyEmulator:
 
                 compare_value = self.d_out
                 print(f"Branch checks d_out = {compare_value}")
+                
 
-                if branch_cond == 0 and compare_value == 0:
-                    return current_pc + offset
-                elif branch_cond == 1 and compare_value == 1:
-                    return current_pc + offset
-                elif branch_cond == 2 and compare_value == 2:
-                    return current_pc + offset
-                else:
-                    return current_pc + 1
+                # if branch_cond == 0 and compare_value == 0:
+                #     return current_pc + offset
+                # elif branch_cond == 1 and compare_value == 1:
+                #     return current_pc + offset
+                # elif branch_cond == 2 and compare_value == 2:
+                #     return current_pc + offset
+
+                return current_pc + 1
 
             else:
                 # PC‐get/set for cond >= 3

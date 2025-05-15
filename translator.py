@@ -29,8 +29,6 @@ class RiscVConverter:
                 f.write(f"0b{instr:016b}\n")
 
 
-
-
     opcodes = {
         0b0110011: "R",
         0b0000011: "I", #load instructions
@@ -534,27 +532,48 @@ class RiscVConverter:
                 immediate = imm12 - 0x1000
             else:
                 immediate = imm12
+            
+            
 
             if opcode == "beq":
                 result.append(("cmps", rs1, rs2))
-                result.append(("bie", immediate, None))
-            elif opcode =="bge":
-                result.append(("cmps", rs1, rs2))
-                # result.append(("big", immediate, None)) #0 and 1 will be masked to 0
-                # pc_key   = RiscVConverter.Bitty_PC + len(result) - 1
 
-                # now immediate is signed, so offset calculation will be correct for backwards branches
+                result.append(("bie", immediate, None))
+            elif opcode =="bge" or opcode == "bgeu":
+                if opcode == "bge":
+                    result.append(("cmps", rs1, rs2))
+                else: 
+                    result.append(("cmp", rs1, rs2))
+
+                result.append(("big", immediate, None)) #0 and 1 will be masked to 0
+                pc_key   = RiscVConverter.Bitty_PC + len(result) - 1
                 pc_target = RiscVConverter.RISCV_PC + (immediate // 4)
                 print("Branch PC:", pc_key + 1, "offset:", pc_target)
                 RiscVConverter.branch_pc[pc_key] = pc_target
                 
                 result.append(("bie", immediate, None)) #0 and 1 will be masked to 0
-                #to save the current pc value of branch instruction to use it for recalculation
+            elif opcode == "bne":
+                result.append(("cmps", rs1, rs2))
+
+                result.append(("bil", immediate, None))
                 pc_key   = RiscVConverter.Bitty_PC + len(result) - 1
-                
+                pc_target = RiscVConverter.RISCV_PC + (immediate // 4)
+                print("Branch PC:", pc_key + 1, "offset:", pc_target)
+                RiscVConverter.branch_pc[pc_key] = pc_target
+
+                result.append(("big", immediate, None))
+            elif opcode == "blt" or opcode == "bltu":
+                if opcode == "blt":
+                    result.append(("cmps", rs1, rs2))
+                else: 
+                    result.append(("cmp", rs1, rs2))
+                    
+
+                result.append(("bil", immediate, None))
 
 
-
+            #to save the current pc value of branch instruction to use it for recalculation
+            pc_key   = RiscVConverter.Bitty_PC + len(result) - 1
             # now immediate is signed, so offset calculation will be correct for backwards branches
             pc_target = RiscVConverter.RISCV_PC + (immediate // 4)
             print("Branch PC:", pc_key + 1, "offset:", pc_target)
@@ -773,7 +792,11 @@ class RiscVConverter:
         return final_instructions
         
     
-    def print_map():
-        for pc, bitty_pc in RiscVConverter.map_pc.items():
-            print(f"PC: {pc}, Bitty PC: {bitty_pc}")
+    def print_map(out_filename="pc_map_output.txt"):
+        with open(out_filename, "w") as f:
+
+            for pc, bitty_pc in RiscVConverter.map_pc.items():
+                line = f"{bitty_pc}"
+                print(line)
+                f.write(line + "\n")
 

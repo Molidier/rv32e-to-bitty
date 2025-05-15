@@ -1,8 +1,8 @@
 # EmulatorComparison.py
-from BittyEmulator import BittyEmulator
-from RISCV32EMEmulator import RISCV32EMEmulator
-from shared_memory import generate_shared_memory  # Import shared memory generator
-
+from Bitty_test.BittyEmulator import BittyEmulator
+from Bitty_test.RISCV32EMEmulator import RISCV32EMEmulator
+from Bitty_test.shared_memory import generate_shared_memory  # Import shared memory generator
+from run_parralel import EmulatorComparison
 
 def load_instructions_from_file(filename, base=0):
     """
@@ -51,6 +51,15 @@ def run_bitty(bitty, instructions):
 
 
 def main():
+    #to get the the PC mapping of RV to Bitty
+    comparer = EmulatorComparison(max_instr=1000,
+                                  output_file="comparison_output.txt")
+    comparer.run()
+
+
+    map_pc = comparer.run_parallel
+    
+
     # Reset output
     write_to_file("=== Emulator Comparison ===", mode="w")
 

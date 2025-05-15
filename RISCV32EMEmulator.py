@@ -308,16 +308,18 @@ class RISCV32EMEmulator:
                 self.memory_array[addr] = (self.memory_array[addr] & 0xFFFFFF00) | b
                 print(f"SB x{rs2}, {imm}(x{rs1})")
             elif funct3 == 0x1: # SH
-                if addr % 2 != 0:
-                    print(f"Misaligned SH at {addr}")
-                    return self.pc + 1
+                #JUST FOR TESTING
+                # if addr % 2 != 0:
+                #     print(f"Misaligned SH at {addr}")
+                #     return self.pc + 1
                 h = self.registers[rs2] & 0xFFFF
                 self.memory_array[addr] = (self.memory_array[addr] & 0xFFFF0000) | h
                 print(f"SH x{rs2}, {imm}(x{rs1})")
             elif funct3 == 0x2: # SW
-                if addr % 4 != 0:
-                    print(f"Misaligned SW at {addr}")
-                    return self.pc + 1
+                #JUST FOR TESTING
+                # if addr % 4 != 0:
+                #     print(f"Misaligned SW at {addr}")
+                #     return self.pc + 1
                 w = self.registers[rs2]
                 self.memory_array[addr] = w
                 print(f"SW x{rs2}, {imm}(x{rs1})")
@@ -369,8 +371,10 @@ class RISCV32EMEmulator:
             imm = imm // 4
 
             print(f"{'TAKE' if take else 'NO'} BRANCH {funct3} imm={imm}")
-            return self.pc + (imm >> 1) if take else self.pc + 1
-
+            #TEMPORARY CHANGE
+            #return self.pc + (imm >> 1) if take else self.pc + 1
+            return self.pc + 1
+        
         # --- 6) U‑type (LUI/AUIPC) ---
         elif opcode in (0b0110111, 0b0010111):
             rd  = (instruction >> 7) & 0x1F

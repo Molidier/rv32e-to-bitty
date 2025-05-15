@@ -4,6 +4,40 @@ def reg5(n):
     """Return a 5-bit binary string for register number n (0–31)."""
     return format(n % 32, '05b')
 
+def generate_instruction_s(op, rs2, rs1, imm):
+    """
+    Generate a 32-bit S-type instruction literal as a binary string with underscores.
+    Format: imm[11:5] | rs2 | rs1 | funct3 | imm[4:0] | opcode (0100011)
+    Supported ops: sb, sh, sw
+    """
+    opcode = "0100011"
+    # mask to 12 bits
+    imm12 = imm & 0xfff
+    imm_str = format(imm12, '012b')
+    imm_hi = imm_str[:7]   # bits 11:5
+    imm_lo = imm_str[7:]   # bits 4:0
+
+    if op == "sb":
+        funct3 = "000"
+    elif op == "sh":
+        funct3 = "001"
+    elif op == "sw":
+        funct3 = "010"
+    else:
+        raise ValueError(f"Operation {op} not supported for S-type")
+
+    instruction = (
+        "0b" +
+        imm_hi + "_" +
+        reg5(rs2) + "_" +
+        reg5(rs1) + "_" +
+        funct3 + "_" +
+        imm_lo + "_" +
+        opcode
+    )
+    return instruction
+
+
 def generate_instruction(op, rd, rs1, rs2):
     """
     Generate a 32-bit R-type instruction literal as a binary string with underscores,
@@ -202,7 +236,10 @@ i_operations = [
     "lb", "lh", "lw", "lbu", "lhu"
 ]
 
-def generate(number_of_r_instr = 0, number_of_i_instr = 0, number_of_u_instr = 0):
+# add S-type ops
+s_operations = ["sb", "sh", "sw"]
+
+def generate(number_of_r_instr = 0, number_of_i_instr = 0, number_of_s_instr = 0, number_of_u_instr = 0):
 
     # Generate R-type instructions.
     r_instructions = []
@@ -249,13 +286,38 @@ def generate(number_of_r_instr = 0, number_of_i_instr = 0, number_of_u_instr = 0
         instr_bin = generate_instruction_u(op, rd, imm)
         u_instructions.append(instr_bin)
         instructions.append(instr_bin)
+    
+        # S-type (store)
+    for _ in range(number_of_s_instr):
+        op  = random.choice(s_operations)
+        rs1 = random.randint(0, 15)   # base register
+        rs2 = random.randint(3, 15)   # source register to store
+        imm = random.randint(0, 0xfff)
+        instructions.append(generate_instruction_s(op, rs2, rs1, imm))
 
 
 instructions = []
-generate(number_of_r_instr=5)
+generate(number_of_s_instr=5, number_of_r_instr=50, number_of_i_instr=20)
 
 # Save the generated instructions to a file
 with open("riscv_instructions.txt", "w") as outfile:
     for instr in instructions:
         outfile.write(instr + "\n")
 
+# +4 -> stack pointer
+
+# +4 -> orig code
+# -4 -> value
+# +4 -> bitty buffer 
+
+# reg2 -> addr: 20 -> orig code
+# 24 -> orig
+# -4 -> 20 -> get value 
+
+# SP -> reg2 -> 
+
+# x0 -> addr: 150 -> custom SP ->
+
+#buffer -> можно ли ограничить память ->  <2^32
+
+#ошибка -> script -> ld/st -> mem[rs1] -> value of ther rs1

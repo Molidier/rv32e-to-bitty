@@ -2,21 +2,21 @@ class BittyEmulator:
     # Static class variable to track overall instruction count
     STATIC_PC_VALUE = 0 # This seems unused within this class, consider if needed
 
-    def __init__(self, data_memory_size=1024, initial_data_memory=None): # Added data_memory_size
+    def __init__(self, data_memory_size=1024, memory=None): # Added data_memory_size
         # self.memory is now for DATA only
-        if initial_data_memory is not None:
-            self.memory = initial_data_memory
+        if memory is not None:
+            self.data_memory = memory
         else:
-            self.memory = [0] * data_memory_size # Initialize data memory with zeros
+            self.data_memory = [0] * data_memory_size # Initialize data memory with zeros
 
         self.instruction_array = [] # For Bitty's program instructions
 
         self.d_out = 0
-        self.registers = [0] * 16 # Initialize all to 0 initially
-        # self.registers = [i * 10 for i in range(16)] # Original initialization
+        #self.registers = [0] * 16 # Initialize all to 0 initially
+        self.registers = [i * 10 for i in range(16)] # Original initialization
         # self.registers[0] = 0  # Register 0 is always 0 - ensured by [0]*16 and set_register_value
         self.pc = 0  # Program counter (index into instruction_array)
-        print(f"BittyEmulator initialized. Data memory size: {len(self.memory)}")
+        print(f"BittyEmulator initialized. Data memory size: {len(self.data_memory)}")
 
     def load_instructions_from_file(self, file_path): # Renamed for clarity in original, kept here
         """
@@ -64,8 +64,8 @@ class BittyEmulator:
 
     def load_data_memory(self, data_list):
         """Allows pre-loading the data memory."""
-        self.memory = list(data_list) # Make a copy
-        print(f"Data memory pre-loaded with {len(self.memory)} values.")
+        self.data_memory = list(data_list) # Make a copy
+        print(f"Data memory pre-loaded with {len(self.data_memory)} values.")
 
     def run_program(self, max_instructions=10000): # Renamed for clarity
         """Evaluate the loaded program from self.instruction_array."""
@@ -159,12 +159,12 @@ class BittyEmulator:
                 print(f"Error: L/S address register index {ry_reg_idx} out of bounds. Instruction: 0x{instruction:04X}")
                 return current_pc + 1
 
-            # 'address_index' is the INDEX into self.memory (data memory)
+            # 'address_index' is the INDEX into self.data_memory (data memory)
             # Bitty's instructions are 16-bit. If registers hold byte addresses,
-            # and self.memory stores 16-bit words, an address from a register
+            # and self.data_memory stores 16-bit words, an address from a register
             # needs to be treated as a byte address then converted to a word index.
             # Original code used `ry = self.registers[ry_bin]` directly as an index.
-            # Let's assume registers hold WORD INDICES for self.memory for Bitty for now.
+            # Let's assume registers hold WORD INDICES for self.data_memory for Bitty for now.
             address_index = self.registers[ry_reg_idx]
 
             # The original alignment check `if ry % 2 != 0` and `ry = ry - 1`
@@ -175,20 +175,20 @@ class BittyEmulator:
 
             ls_code = (instruction & 0x0004) >> 2 # Shifted to get 0 for Load, 1 for Store
 
-            if not (0 <= address_index < len(self.memory)):
-                print(f"Data Memory access out of bounds: index {address_index}, memory size {len(self.memory)}. Instr: 0x{instruction:04X}")
+            if not (0 <= address_index < len(self.data_memory)):
+                print(f"Data Memory access out of bounds: index {address_index}, memory size {len(self.data_memory)}. Instr: 0x{instruction:04X}")
                 # Handle error: skip, trap, or wrap (wrapping not typical for general memory)
                 # For now, let's make it a no-op and continue.
                 return current_pc + 1
 
-            if ls_code == 0:  # Load from self.memory (data memory)
-                value_loaded = self.memory[address_index]
+            if ls_code == 0:  # Load from self.data_memory (data memory)
+                value_loaded = self.data_memory[address_index]
                 self.set_register_value(rx, value_loaded)
                 # print(f"Load: R{rx} <- M_data[{address_index}] (0x{value_loaded:04X})")
-            else:  # Store to self.memory (data memory)
+            else:  # Store to self.data_memory (data memory)
                 value_to_store = self.get_register_value(rx)
-                self.memory[address_index] = value_to_store & 0xFFFF # Bitty memory stores 16-bit words
-                # print(f"Store: M_data[{address_index}] <- R{rx} (0x{value_to_store:04X})")
+                self.data_memory[address_index] = value_to_store & 0xFFFFFFFF # Bitty memory stores 32-bit words
+                print(f"Store: M_data[{address_index}] <- R{rx} (0x{value_to_store:04X})")
 
             return current_pc + 1
 
@@ -260,9 +260,6 @@ class BittyEmulator:
         return self.registers[reg_num]
 
     def set_register_value(self, reg_num, value):
-        if reg_num == 0:  # Register 0 is always 0
-            self.registers[0] = 0 # Ensure it, though it should already be
-            return
         if not (0 <= reg_num <= 15):
             print(f"Error: Attempt to set invalid register r{reg_num}")
             return
@@ -282,6 +279,15 @@ class BittyEmulator:
         except Exception as e:
             print(f"Error writing Bitty registers to file: {e}")
 
+    # Property for backward compatibility
+    @property
+    def memory(self):
+        return self.data_memory
+    
+    @memory.setter
+    def memory(self, value):
+        self.data_memory = value
+    
 # Example usage (if run directly)
 if __name__ == "__main__":
     # Initialize BittyEmulator with a data memory size
@@ -300,5 +306,5 @@ if __name__ == "__main__":
 
         # Optionally, print some data memory
         print("\nBitty Data Memory (first few words):")
-        for i in range(min(10, len(bitty_emu.memory))):
-            print(f"M_data[{i}]: 0x{bitty_emu.memory[i]:04X}")
+        for i in range(min(10, len(bitty_emu.data_memory))):
+            print(f"M_data[{i}]: 0x{bitty_emu.data_memory[i]:04X}")

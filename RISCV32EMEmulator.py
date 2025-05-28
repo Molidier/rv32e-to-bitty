@@ -1,6 +1,7 @@
 # RISCV32EMEmulator.py
 
 class RISCV32EMEmulator:
+    STATIC_PC_VALUE = 0x00000000  # Static PC value for RV32E
     def __init__(self, memory_array):
         # RISC-V has 32 registers (x0–x31), but RV32E uses only x0–x15
         self.registers = [i * 10 for i in range(16)]
@@ -27,6 +28,7 @@ class RISCV32EMEmulator:
             return 0  # treat as NOP
 
     def decode_and_execute(self, instruction):
+        self.STATIC_PC_VALUE = self.pc + 1
         opcode = instruction & 0x7F
         print(f"Instruction @ PC={self.pc}: {instruction:08X}")
 
@@ -389,7 +391,7 @@ class RISCV32EMEmulator:
                 self.registers[rd] = imm
                 print(f"LUI x{rd}, 0x{imm>>12:X}")
             else:                    # AUIPC
-                self.registers[rd] = (self.pc + imm) & 0xFFFFFFFF
+                self.registers[rd] = (self.STATIC_PC_VALUE + imm) & 0xFFFFFFFF
                 print(f"AUIPC x{rd}, 0x{imm>>12:X}")
 
             return self.pc + 1
@@ -409,6 +411,7 @@ class RISCV32EMEmulator:
                 self.registers[rd] = (self.pc + 1) & 0xFFFFFFFF
             next_pc = (self.pc + (imm >> 1)) & 0xFFFFFFFF
             print(f"JAL x{rd}, imm={imm} -> PC={next_pc}")
+            self.STATIC_PC_VALUE = next_pc
             return next_pc
 
         # --- 8) I‑type JALR ---
@@ -428,8 +431,10 @@ class RISCV32EMEmulator:
             if rd != 0:
                 self.registers[rd] = ret
             print(f"JALR x{rd}, x{rs1}, {imm}: -> PC={next_pc}")
+            self.STATIC_PC_VALUE = next_pc
             return next_pc
 
         else:
             print(f"Unknown opcode: {opcode:02b}")
+            self.STATIC_PC_VALUE = self.pc + 1
             return self.pc + 1

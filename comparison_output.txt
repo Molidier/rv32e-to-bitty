@@ -1,140 +1,12 @@
 === Starting Emulator Comparison ===
 
 === RISC-V Instr 0 @ PC 0 ===
-Instruction: 0x00100513
---- Executing 7 Bitty Instrs ---
-Bitty #0: 0xAA04
-Bitty #1: 0xA001
-Bitty #2: 0xA0D5
-Bitty #3: 0xA001
-Bitty #4: 0xA0D5
-Bitty #5: 0xA041
-Bitty #6: 0xA000
-
-=== Register Comparison ===
-Reg   RISC-V      Bitty       Match
-----------------------------------------
-x0    0x00000000  0x00000000   ✓
-x1    0x0000000A  0x0000000A   ✓
-x2    0x00000014  0x00000014   ✓
-x3    0x0000001E  0x0000001E   ✓
-x4    0x00000028  0x00000028   ✓
-x5    0x00000032  0x00000032   ✓
-x6    0x0000003C  0x0000003C   ✓
-x7    0x00000046  0x00000046   ✓
-x8    0x00000050  0x00000050   ✓
-x9    0x0000005A  0x0000005A   ✓
-x10   0x00000001  0x00000001   ✓
-x11   0x0000006E  0x0000006E   ✓
-x12   0x00000078  0x00000078   ✓
-x13   0x00000082  0x00000082   ✓
-x14   0x0000008C  0x0000008C   ✓
-x15   0x00000096  0x00000096   ✓
-STATIC_PC_VALUE -> 1
-
-=== RISC-V Instr 1 @ PC 1 ===
-Instruction: 0x00000593
---- Executing 7 Bitty Instrs ---
-Bitty #0: 0xBB04
-Bitty #1: 0xB001
-Bitty #2: 0xB0D5
-Bitty #3: 0xB001
-Bitty #4: 0xB0D5
-Bitty #5: 0xB001
-Bitty #6: 0xB000
-
-=== Register Comparison ===
-Reg   RISC-V      Bitty       Match
-----------------------------------------
-x0    0x00000000  0x00000000   ✓
-x1    0x0000000A  0x0000000A   ✓
-x2    0x00000014  0x00000014   ✓
-x3    0x0000001E  0x0000001E   ✓
-x4    0x00000028  0x00000028   ✓
-x5    0x00000032  0x00000032   ✓
-x6    0x0000003C  0x0000003C   ✓
-x7    0x00000046  0x00000046   ✓
-x8    0x00000050  0x00000050   ✓
-x9    0x0000005A  0x0000005A   ✓
-x10   0x00000001  0x00000001   ✓
-x11   0x00000000  0x00000000   ✓
-x12   0x00000078  0x00000078   ✓
-x13   0x00000082  0x00000082   ✓
-x14   0x0000008C  0x0000008C   ✓
-x15   0x00000096  0x00000096   ✓
-STATIC_PC_VALUE -> 2
-
-=== RISC-V Instr 2 @ PC 2 ===
-Instruction: 0x00100693
---- Executing 7 Bitty Instrs ---
-Bitty #0: 0xDD04
-Bitty #1: 0xD001
-Bitty #2: 0xD0D5
-Bitty #3: 0xD001
-Bitty #4: 0xD0D5
-Bitty #5: 0xD041
-Bitty #6: 0xD000
-
-=== Register Comparison ===
-Reg   RISC-V      Bitty       Match
-----------------------------------------
-x0    0x00000000  0x00000000   ✓
-x1    0x0000000A  0x0000000A   ✓
-x2    0x00000014  0x00000014   ✓
-x3    0x0000001E  0x0000001E   ✓
-x4    0x00000028  0x00000028   ✓
-x5    0x00000032  0x00000032   ✓
-x6    0x0000003C  0x0000003C   ✓
-x7    0x00000046  0x00000046   ✓
-x8    0x00000050  0x00000050   ✓
-x9    0x0000005A  0x0000005A   ✓
-x10   0x00000001  0x00000001   ✓
-x11   0x00000000  0x00000000   ✓
-x12   0x00000078  0x00000078   ✓
-x13   0x00000001  0x00000001   ✓
-x14   0x0000008C  0x0000008C   ✓
-x15   0x00000096  0x00000096   ✓
-STATIC_PC_VALUE -> 3
-
-=== RISC-V Instr 3 @ PC 3 ===
-Instruction: 0x01E00713
---- Executing 7 Bitty Instrs ---
-Bitty #0: 0xEE04
-Bitty #1: 0xE001
-Bitty #2: 0xE0D5
-Bitty #3: 0xE0C1
-Bitty #4: 0xE0D5
-Bitty #5: 0xE181
-Bitty #6: 0xE000
-
-=== Register Comparison ===
-Reg   RISC-V      Bitty       Match
-----------------------------------------
-x0    0x00000000  0x00000000   ✓
-x1    0x0000000A  0x0000000A   ✓
-x2    0x00000014  0x00000014   ✓
-x3    0x0000001E  0x0000001E   ✓
-x4    0x00000028  0x00000028   ✓
-x5    0x00000032  0x00000032   ✓
-x6    0x0000003C  0x0000003C   ✓
-x7    0x00000046  0x00000046   ✓
-x8    0x00000050  0x00000050   ✓
-x9    0x0000005A  0x0000005A   ✓
-x10   0x00000001  0x00000001   ✓
-x11   0x00000000  0x00000000   ✓
-x12   0x00000078  0x00000078   ✓
-x13   0x00000001  0x00000001   ✓
-x14   0x0000001E  0x0000001E   ✓
-x15   0x00000096  0x00000096   ✓
-STATIC_PC_VALUE -> 4
-
-=== RISC-V Instr 4 @ PC 4 ===
-Instruction: 0x00000113
+Instruction: 0x01000113
 --- Executing 7 Bitty Instrs ---
 Bitty #0: 0x2204
 Bitty #1: 0x2001
 Bitty #2: 0x20D5
-Bitty #3: 0x2001
+Bitty #3: 0x2081
 Bitty #4: 0x20D5
 Bitty #5: 0x2001
 Bitty #6: 0x2000
@@ -144,7 +16,7 @@ Reg   RISC-V      Bitty       Match
 ----------------------------------------
 x0    0x00000000  0x00000000   ✓
 x1    0x0000000A  0x0000000A   ✓
-x2    0x00000000  0x00000000   ✓
+x2    0x00000010  0x00000010   ✓
 x3    0x0000001E  0x0000001E   ✓
 x4    0x00000028  0x00000028   ✓
 x5    0x00000032  0x00000032   ✓
@@ -152,27 +24,35 @@ x6    0x0000003C  0x0000003C   ✓
 x7    0x00000046  0x00000046   ✓
 x8    0x00000050  0x00000050   ✓
 x9    0x0000005A  0x0000005A   ✓
-x10   0x00000001  0x00000001   ✓
-x11   0x00000000  0x00000000   ✓
+x10   0x00000064  0x00000064   ✓
+x11   0x0000006E  0x0000006E   ✓
 x12   0x00000078  0x00000078   ✓
-x13   0x00000001  0x00000001   ✓
-x14   0x0000001E  0x0000001E   ✓
+x13   0x00000082  0x00000082   ✓
+x14   0x0000008C  0x0000008C   ✓
 x15   0x00000096  0x00000096   ✓
-STATIC_PC_VALUE -> 5
+STATIC_PC_VALUE -> 1
 
-=== RISC-V Instr 5 @ PC 5 ===
-Instruction: 0x00B12023
---- Executing 3 Bitty Instrs ---
-Bitty #0: 0x0B00
-Bitty #1: 0x0207
-Bitty #2: 0x0004
+=== RISC-V Instr 1 @ PC 1 ===
+Instruction: 0x000100E7
+--- Executing 11 Bitty Instrs ---
+Bitty #0: 0x1104
+Bitty #1: 0x002E
+Bitty #2: 0x1101
+Bitty #3: 0x0001
+Bitty #4: 0x00D5
+Bitty #5: 0x0001
+Bitty #6: 0x00D5
+Bitty #7: 0x0001
+Bitty #8: 0x0200
+Bitty #9: 0x001E
+Bitty #10: 0x0004
 
 === Register Comparison ===
 Reg   RISC-V      Bitty       Match
 ----------------------------------------
 x0    0x00000000  0x00000000   ✓
-x1    0x0000000A  0x0000000A   ✓
-x2    0x00000000  0x00000000   ✓
+x1    0x00000002  0x00000004   ✗
+x2    0x00000010  0x00000010   ✓
 x3    0x0000001E  0x0000001E   ✓
 x4    0x00000028  0x00000028   ✓
 x5    0x00000032  0x00000032   ✓
@@ -180,264 +60,14 @@ x6    0x0000003C  0x0000003C   ✓
 x7    0x00000046  0x00000046   ✓
 x8    0x00000050  0x00000050   ✓
 x9    0x0000005A  0x0000005A   ✓
-x10   0x00000001  0x00000001   ✓
-x11   0x00000000  0x00000000   ✓
+x10   0x00000064  0x00000064   ✓
+x11   0x0000006E  0x0000006E   ✓
 x12   0x00000078  0x00000078   ✓
-x13   0x00000001  0x00000001   ✓
-x14   0x0000001E  0x0000001E   ✓
+x13   0x00000082  0x00000082   ✓
+x14   0x0000008C  0x0000008C   ✓
 x15   0x00000096  0x00000096   ✓
-STATIC_PC_VALUE -> 6
-
-=== RISC-V Instr 6 @ PC 6 ===
-Instruction: 0x00410113
---- Executing 9 Bitty Instrs ---
-Bitty #0: 0x0001
-Bitty #1: 0x00D5
-Bitty #2: 0x0001
-Bitty #3: 0x00D5
-Bitty #4: 0x0101
-Bitty #5: 0x0200
-Bitty #6: 0x2204
-Bitty #7: 0x2000
-Bitty #8: 0x0004
-
-=== Register Comparison ===
-Reg   RISC-V      Bitty       Match
-----------------------------------------
-x0    0x00000000  0x00000000   ✓
-x1    0x0000000A  0x0000000A   ✓
-x2    0x00000004  0x00000004   ✓
-x3    0x0000001E  0x0000001E   ✓
-x4    0x00000028  0x00000028   ✓
-x5    0x00000032  0x00000032   ✓
-x6    0x0000003C  0x0000003C   ✓
-x7    0x00000046  0x00000046   ✓
-x8    0x00000050  0x00000050   ✓
-x9    0x0000005A  0x0000005A   ✓
-x10   0x00000001  0x00000001   ✓
-x11   0x00000000  0x00000000   ✓
-x12   0x00000078  0x00000078   ✓
-x13   0x00000001  0x00000001   ✓
-x14   0x0000001E  0x0000001E   ✓
-x15   0x00000096  0x00000096   ✓
-STATIC_PC_VALUE -> 7
-
-=== RISC-V Instr 7 @ PC 7 ===
-Instruction: 0x00A12023
---- Executing 3 Bitty Instrs ---
-Bitty #0: 0x0A00
-Bitty #1: 0x0207
-Bitty #2: 0x0004
-
-=== Register Comparison ===
-Reg   RISC-V      Bitty       Match
-----------------------------------------
-x0    0x00000000  0x00000000   ✓
-x1    0x0000000A  0x0000000A   ✓
-x2    0x00000004  0x00000004   ✓
-x3    0x0000001E  0x0000001E   ✓
-x4    0x00000028  0x00000028   ✓
-x5    0x00000032  0x00000032   ✓
-x6    0x0000003C  0x0000003C   ✓
-x7    0x00000046  0x00000046   ✓
-x8    0x00000050  0x00000050   ✓
-x9    0x0000005A  0x0000005A   ✓
-x10   0x00000001  0x00000001   ✓
-x11   0x00000000  0x00000000   ✓
-x12   0x00000078  0x00000078   ✓
-x13   0x00000001  0x00000001   ✓
-x14   0x0000001E  0x0000001E   ✓
-x15   0x00000096  0x00000096   ✓
-STATIC_PC_VALUE -> 8
-
-=== RISC-V Instr 8 @ PC 8 ===
-Instruction: 0x00410113
---- Executing 9 Bitty Instrs ---
-Bitty #0: 0x0001
-Bitty #1: 0x00D5
-Bitty #2: 0x0001
-Bitty #3: 0x00D5
-Bitty #4: 0x0101
-Bitty #5: 0x0200
-Bitty #6: 0x2204
-Bitty #7: 0x2000
-Bitty #8: 0x0004
-
-=== Register Comparison ===
-Reg   RISC-V      Bitty       Match
-----------------------------------------
-x0    0x00000000  0x00000000   ✓
-x1    0x0000000A  0x0000000A   ✓
-x2    0x00000008  0x00000008   ✓
-x3    0x0000001E  0x0000001E   ✓
-x4    0x00000028  0x00000028   ✓
-x5    0x00000032  0x00000032   ✓
-x6    0x0000003C  0x0000003C   ✓
-x7    0x00000046  0x00000046   ✓
-x8    0x00000050  0x00000050   ✓
-x9    0x0000005A  0x0000005A   ✓
-x10   0x00000001  0x00000001   ✓
-x11   0x00000000  0x00000000   ✓
-x12   0x00000078  0x00000078   ✓
-x13   0x00000001  0x00000001   ✓
-x14   0x0000001E  0x0000001E   ✓
-x15   0x00000096  0x00000096   ✓
-STATIC_PC_VALUE -> 9
-
-=== RISC-V Instr 9 @ PC 9 ===
-Instruction: 0x00B50633
---- Executing 3 Bitty Instrs ---
-Bitty #0: 0xCC04
-Bitty #1: 0xCA00
-Bitty #2: 0xCB00
-
-=== Register Comparison ===
-Reg   RISC-V      Bitty       Match
-----------------------------------------
-x0    0x00000000  0x00000000   ✓
-x1    0x0000000A  0x0000000A   ✓
-x2    0x00000008  0x00000008   ✓
-x3    0x0000001E  0x0000001E   ✓
-x4    0x00000028  0x00000028   ✓
-x5    0x00000032  0x00000032   ✓
-x6    0x0000003C  0x0000003C   ✓
-x7    0x00000046  0x00000046   ✓
-x8    0x00000050  0x00000050   ✓
-x9    0x0000005A  0x0000005A   ✓
-x10   0x00000001  0x00000001   ✓
-x11   0x00000000  0x00000000   ✓
-x12   0x00000001  0x00000001   ✓
-x13   0x00000001  0x00000001   ✓
-x14   0x0000001E  0x0000001E   ✓
-x15   0x00000096  0x00000096   ✓
-STATIC_PC_VALUE -> 10
-
-=== RISC-V Instr 10 @ PC 10 ===
-Instruction: 0x00050593
---- Executing 7 Bitty Instrs ---
-Bitty #0: 0xBB04
-Bitty #1: 0xB001
-Bitty #2: 0xB0D5
-Bitty #3: 0xB001
-Bitty #4: 0xB0D5
-Bitty #5: 0xB001
-Bitty #6: 0xBA00
-
-=== Register Comparison ===
-Reg   RISC-V      Bitty       Match
-----------------------------------------
-x0    0x00000000  0x00000000   ✓
-x1    0x0000000A  0x0000000A   ✓
-x2    0x00000008  0x00000008   ✓
-x3    0x0000001E  0x0000001E   ✓
-x4    0x00000028  0x00000028   ✓
-x5    0x00000032  0x00000032   ✓
-x6    0x0000003C  0x0000003C   ✓
-x7    0x00000046  0x00000046   ✓
-x8    0x00000050  0x00000050   ✓
-x9    0x0000005A  0x0000005A   ✓
-x10   0x00000001  0x00000001   ✓
-x11   0x00000001  0x00000001   ✓
-x12   0x00000001  0x00000001   ✓
-x13   0x00000001  0x00000001   ✓
-x14   0x0000001E  0x0000001E   ✓
-x15   0x00000096  0x00000096   ✓
-STATIC_PC_VALUE -> 11
-
-=== RISC-V Instr 11 @ PC 11 ===
-Instruction: 0x00060513
---- Executing 7 Bitty Instrs ---
-Bitty #0: 0xAA04
-Bitty #1: 0xA001
-Bitty #2: 0xA0D5
-Bitty #3: 0xA001
-Bitty #4: 0xA0D5
-Bitty #5: 0xA001
-Bitty #6: 0xAC00
-
-=== Register Comparison ===
-Reg   RISC-V      Bitty       Match
-----------------------------------------
-x0    0x00000000  0x00000000   ✓
-x1    0x0000000A  0x0000000A   ✓
-x2    0x00000008  0x00000008   ✓
-x3    0x0000001E  0x0000001E   ✓
-x4    0x00000028  0x00000028   ✓
-x5    0x00000032  0x00000032   ✓
-x6    0x0000003C  0x0000003C   ✓
-x7    0x00000046  0x00000046   ✓
-x8    0x00000050  0x00000050   ✓
-x9    0x0000005A  0x0000005A   ✓
-x10   0x00000001  0x00000001   ✓
-x11   0x00000001  0x00000001   ✓
-x12   0x00000001  0x00000001   ✓
-x13   0x00000001  0x00000001   ✓
-x14   0x0000001E  0x0000001E   ✓
-x15   0x00000096  0x00000096   ✓
-STATIC_PC_VALUE -> 12
-
-=== RISC-V Instr 12 @ PC 12 ===
-Instruction: 0x00168693
---- Executing 9 Bitty Instrs ---
-Bitty #0: 0x0001
-Bitty #1: 0x00D5
-Bitty #2: 0x0001
-Bitty #3: 0x00D5
-Bitty #4: 0x0041
-Bitty #5: 0x0D00
-Bitty #6: 0xDD04
-Bitty #7: 0xD000
-Bitty #8: 0x0004
-
-=== Register Comparison ===
-Reg   RISC-V      Bitty       Match
-----------------------------------------
-x0    0x00000000  0x00000000   ✓
-x1    0x0000000A  0x0000000A   ✓
-x2    0x00000008  0x00000008   ✓
-x3    0x0000001E  0x0000001E   ✓
-x4    0x00000028  0x00000028   ✓
-x5    0x00000032  0x00000032   ✓
-x6    0x0000003C  0x0000003C   ✓
-x7    0x00000046  0x00000046   ✓
-x8    0x00000050  0x00000050   ✓
-x9    0x0000005A  0x0000005A   ✓
-x10   0x00000001  0x00000001   ✓
-x11   0x00000001  0x00000001   ✓
-x12   0x00000001  0x00000001   ✓
-x13   0x00000002  0x00000002   ✓
-x14   0x0000001E  0x0000001E   ✓
-x15   0x00000096  0x00000096   ✓
-STATIC_PC_VALUE -> 13
-
-=== RISC-V Instr 13 @ PC 13 ===
-Instruction: 0xFED772E3
---- Executing 3 Bitty Instrs ---
-Bitty #0: 0xED1C
-Bitty #1: 0xFE46
-Bitty #2: 0xFE42
-
-=== Register Comparison ===
-Reg   RISC-V      Bitty       Match
-----------------------------------------
-x0    0x00000000  0x00000000   ✓
-x1    0x0000000A  0x0000000A   ✓
-x2    0x00000008  0x00000008   ✓
-x3    0x0000001E  0x0000001E   ✓
-x4    0x00000028  0x00000028   ✓
-x5    0x00000032  0x00000032   ✓
-x6    0x0000003C  0x0000003C   ✓
-x7    0x00000046  0x00000046   ✓
-x8    0x00000050  0x00000050   ✓
-x9    0x0000005A  0x0000005A   ✓
-x10   0x00000001  0x00000001   ✓
-x11   0x00000001  0x00000001   ✓
-x12   0x00000001  0x00000001   ✓
-x13   0x00000002  0x00000002   ✓
-x14   0x0000001E  0x0000001E   ✓
-x15   0x00000096  0x00000096   ✓
-STATIC_PC_VALUE -> 14
+STATIC_PC_VALUE -> 2
 
 === Comparison Complete ===
-RISC-V instrs: 14, Bitty instrs: 88
-Final STATIC_PC_VALUE: 14
+RISC-V instrs: 2, Bitty instrs: 18
+Final STATIC_PC_VALUE: 2

@@ -11,25 +11,28 @@ class BittyEmulator:
         self.pc = 0  # Program counter.
         print("BittyEmulator initialized with default 32-bit register values")
     
-    def evaluate_instructions_array(self, instructions):
+    def evaluate_instructions_array(self, instructions,  RISCV_PC):
         self.pc = 0
         while self.pc < len(instructions):
             instruction = instructions[self.pc]
             print(f"Evaluating instruction: {instruction:04X}")
-            next_pc = self.evaluate(instruction)
+            next_pc = self.evaluate(instruction, RISCV_PC)
             print(f"Next PC: {next_pc:04X}")
             self.pc = next_pc
         return self.pc
 
-    def evaluate(self, instruction):
+    def evaluate(self, instruction, RISCV_PC):
         # Note: STATIC_PC_VALUE is now incremented in the EmulatorComparison.py file
         # when RISC-V PC increments, not here
+        
         
         # Get the current PC value (for relative branches).
         current_pc = self.pc
         format_code = instruction & 0x0003
         rx = (instruction >> 12) & 0xF
         ry, in_b = None, None
+
+        self.STATIC_PC_VALUE = current_pc + 1
 
         if format_code == 0:  # Normal format (R-type)
             ry = (instruction >> 8) & 0xF
@@ -77,11 +80,12 @@ class BittyEmulator:
             else:
                 # PC‐get/set for cond >= 3
                 pc_g_or_s = (instruction >> 4) & 0x1
-                if pc_g_or_s == 1:
-                    self.set_register_value(rx, current_pc)
+                if pc_g_or_s == 0:
+                    self.set_register_value(rx, RISCV_PC)
+                    return current_pc + 1
                 else:
                     self.pc = self.get_register_value(rx)
-                return self.pc
+                return current_pc + 1
 
         elif format_code == 3:  # Load/Store format
             ry_bin = (instruction >> 8) & 0xF

@@ -83,7 +83,7 @@ class EmulatorComparison:
 
             if bitty_bins:
                 self.bitty.pc = 0
-                end_pc = self.bitty.evaluate_instructions_array(bitty_bins)
+                end_pc = self.bitty.evaluate_instructions_array(bitty_bins, riscv_count)
                 if end_pc != len(bitty_bins):
                     self.write_to_file(f"Branch taken in Bitty, ended at PC {end_pc}")
                 bitty_count += len(bitty_bins)

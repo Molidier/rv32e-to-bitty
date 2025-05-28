@@ -100,83 +100,41 @@ def generate_instruction(op, rd, rs1, rs2):
     )
     return instruction
 
+# I-type generator, extended to support JALR
 def generate_instruction_i(op, rd, rs1, imm):
-    """
-    Generate a 32-bit I-type instruction literal as a binary string with underscores.
-    
-    For I-type instructions, the format is:
-      imm[11:0] | rs1 | funct3 | rd | opcode
-      
-    Supported instructions in RISCV32EM:
-      - ALU immediate (non-shift): addi, slti, sltiu, xori, ori, andi (opcode = 0010011)
-      - Shift immediate: slli, srli, srai (opcode = 0010011)
-        For these, the 12-bit immediate is split:
-          imm[11:5] (7 bits) is funct7,
-          imm[4:0] (5 bits) is the shift amount.
-      - Load instructions: lb, lh, lw, lbu, lhu (opcode = 0000011)
-    """
-    # Ensure imm is within 12 bits for non-shift instructions
-    imm &= 0xfff
+    # Ensure imm is within 12 bits
+    imm12 = imm & 0xfff
+    imm_str = format(imm12, '012b')
 
-    # ALU immediate instructions (non-shift), opcode 0010011.
     if op in ["addi", "slti", "sltiu", "xori", "ori", "andi"]:
         opcode = "0010011"
-        if op == "addi":
-            funct3 = "000"
-        elif op == "slti":
-            funct3 = "010"
-        elif op == "sltiu":
-            funct3 = "011"
-        elif op == "xori":
-            funct3 = "100"
-        elif op == "ori":
-            funct3 = "110"
-        elif op == "andi":
-            funct3 = "111"
-        # Format immediate as a 12-bit binary string.
-        imm_str = format(imm, '012b')
-    
-    # Shift immediate instructions, opcode 0010011.
+        funct3_map = {"addi":"000","slti":"010","sltiu":"011",
+                      "xori":"100","ori":"110","andi":"111"}
+        funct3 = funct3_map[op]
+
     elif op in ["slli", "srli", "srai"]:
         opcode = "0010011"
-        # For shift instructions:
-        # - Extract shamt (shift amount): the lower 5 bits of immediate
-        # - Set funct7: the upper 7 bits based on instruction type
-        shamt = imm & 0x1F  # Extract lower 5 bits for shift amount
-        
-        if op == "slli":
-            funct3 = "001"
-            funct7 = "0000000"  # slli uses 0000000 as funct7
-        elif op == "srli":
-            funct3 = "101"
-            funct7 = "0000000"  # srli uses 0000000 as funct7
-        elif op == "srai":
-            funct3 = "101"
-            funct7 = "0100000"  # srai uses 0100000 as funct7
-        
-        # Build immediate string: funct7 + shamt
-        imm_str = funct7 + "_" + format(shamt, '05b')
-    
-    # Load instructions, opcode 0000011.
-    elif op in ["lb", "lh", "lw", "lbu", "lhu"]:
+        shamt = imm & 0x1F
+        if op == "slli": funct3, funct7 = "001", "0000000"
+        elif op == "srli": funct3, funct7 = "101", "0000000"
+        else:           funct3, funct7 = "101", "0100000"
+        imm_str = funct7 + format(shamt, '05b')
+
+    elif op in ["lb","lh","lw","lbu","lhu"]:
         opcode = "0000011"
-        if op == "lb":
-            funct3 = "000"
-        elif op == "lh":
-            funct3 = "001"
-        elif op == "lw":
-            funct3 = "010"
-        elif op == "lbu":
-            funct3 = "100"
-        elif op == "lhu":
-            funct3 = "101"
-        # Full 12-bit immediate.
-        imm_str = format(imm, '012b')
-    
+        funct3_map = {"lb":"000","lh":"001","lw":"010",
+                      "lbu":"100","lhu":"101"}
+        funct3 = funct3_map[op]
+
+    elif op == "jalr":
+        # JALR: opcode=1100111, funct3=000, target = rs1 + imm
+        opcode = "1100111"
+        funct3 = "000"
+        # format imm and register fields as for I-type
+
     else:
-        raise ValueError("Operation not supported for I-type")
-    
-    # Build the instruction: imm, rs1, funct3, rd, opcode.
+        raise ValueError(f"Unsupported I-type op: {op}")
+
     instruction = (
         "0b" +
         imm_str + "_" +
@@ -219,6 +177,25 @@ def generate_instruction_u(op, rd, imm):
         opcode                  # opcode (LUI or AUIPC)
     )
     return instruction
+# J-type generator for JAL
+def generate_instruction_j(op, rd, imm):
+    if op != 'jal':
+        raise ValueError(f"Unsupported J-type op: {op}")
+    opcode = '1101111'
+    # 20-bit immediate for J-type
+    imm20 = imm & 0xFFFFF
+    bin20 = format(imm20, '020b')  # imm[19]...imm[0]
+    # J-format splits: imm[20]=bit19, imm[10:1]=bits9-18, imm[11]=bit8, imm[19:12]=bits0-7
+    i20 = bin20[0]               # imm[19]
+    i10_1 = bin20[10:20]         # imm[9:0]
+    i11 = bin20[9]               # imm[10]
+    i19_12 = bin20[1:9]          # imm[18:11]
+    instruction = (
+        "0b" +
+        i20 + "_" + i10_1 + "_" + i11 + "_" + i19_12 + "_" +
+        reg5(rd) + "_" + opcode
+    )
+    return instruction
 
 
 # Updated list of R-type operations to include M-extension:
@@ -233,13 +210,13 @@ i_operations = [
     # Shift immediate
     "slli", "srli", "srai",
     # Loads
-    "lb", "lh", "lw", "lbu", "lhu"
+    "lb", "lh", "lw", "lbu", "lhu", "jalr",
 ]
 
 # add S-type ops
 s_operations = ["sb", "sh", "sw"]
 
-def generate(number_of_r_instr = 0, number_of_i_instr = 0, number_of_s_instr = 0, number_of_u_instr = 0):
+def generate(number_of_r_instr = 0, number_of_i_instr = 0, number_of_s_instr = 0, number_of_u_instr = 0, number_of_j_instr = 0):
 
     # Generate R-type instructions.
     r_instructions = []
@@ -259,7 +236,7 @@ def generate(number_of_r_instr = 0, number_of_i_instr = 0, number_of_s_instr = 0
     for i in range(number_of_i_instr):
         # Use all I-type operations, not just the first one
         #op = i_operations[random.randint(0, len(i_operations)-1)]
-        op = i_operations[13]
+        op = i_operations[14]
         rd = random.randint(3, 15)  # Destination register (avoiding x0, x1, x2)
 
         rs1 = random.randint(0, 15)
@@ -294,10 +271,22 @@ def generate(number_of_r_instr = 0, number_of_i_instr = 0, number_of_s_instr = 0
         rs2 = random.randint(3, 15)   # source register to store
         imm = random.randint(0, 0xfff)
         instructions.append(generate_instruction_s(op, rs2, rs1, imm))
+    
+    # Generate J-type (jal)
+    for _ in range(number_of_j_instr):
+        rd = random.randint(1, 15)        # typically x1..x15 (avoid x0 if you need link)
+        imm = random.randint(-0x80000, 0x7FFFF)  # +-1 MiB range in halfwords
+        instr = generate_instruction_j('jal', rd, imm)
+        instructions.append(instr)
+
+    # Add jalr examples
+    # e.g., jalr x1,0(x5)
+    instr = generate_instruction_i('jalr', rd=1, rs1=5, imm=0)
+    instructions.append(instr)
 
 
 instructions = []
-generate(number_of_s_instr=5, number_of_r_instr=50, number_of_i_instr=20)
+generate(number_of_i_instr = 5, number_of_j_instr=5)
 
 # Save the generated instructions to a file
 with open("riscv_instructions.txt", "w") as outfile:

@@ -35,7 +35,7 @@ class RiscVConverter:
         0b0010011: "I", #ALU immediate instructions
         0b1100011: "B", #branch instructions
         0b1101111: "J",
-        0b1100111: "J",
+        0b1100111: "I",
         0b0010111: "U",
         0b0110111: "U",
         0b0100011: "S", #store instructions
@@ -203,8 +203,30 @@ class RiscVConverter:
             elif opcode == 0b0000011 and funct3 in RiscVConverter.l_instr: # Load instructions
                 immediate = (instruction >> 20) & 0b111111111111
                 return instr_type, (RiscVConverter.l_instr[funct3], rd, rs1, immediate)
+            elif opcode == 0b1100111: # JALR instruction
+                immediate = (instruction >> 20) & 0b111111111111
+                return instr_type, ("jalr", rd, rs1, immediate)
             else:
                 print("Unknown instruction type")
+        #-------------------------------------
+        #----- S type instruction decoding ---
+        #-------------------------------------
+        elif instr_type == "S":
+            imm_11_5 = (instruction >> 25) & 0x7F
+            imm_4_0  = (instruction >> 7)  & 0x1F
+            funct3 = (instruction >> 12) & 0b111
+            immediate = (imm_11_5 << 5) | imm_4_0           # combine into imm[11:0]
+            # sign-extend the 12-bit value:
+            if immediate & (1 << 11):
+                immediate |= - (1 << 12)
+
+            if funct3 in RiscVConverter.s_instr:
+                immediate = (imm_11_5 << 5) | imm_4_0
+                return instr_type, (RiscVConverter.s_instr[funct3], rs1, rs2, immediate)
+        
+        #-------------------------------------
+        #----- B type instruction decoding ---
+        #-------------------------------------
         elif instr_type == "B":
             funct3 = (instruction >> 12) & 0b111
             imm_12   = (instruction >> 31) & 0x1      # instruction[31]
@@ -217,12 +239,20 @@ class RiscVConverter:
                     | (imm_4_1  <<  1)
             #Saving branch information for the future usage
             return instr_type, (RiscVConverter.b_instr[funct3], rs1, rs2, immediate)
+        
+        #-------------------------------------
+        #----- U type instruction decoding ---
+        #-------------------------------------
         elif instr_type == "U":
             immediate = (instruction >> 12) & 0xFFFFF # instruction[31:12]
             if opcode == 0b0110111:
                 return instr_type, ("lui", rd, immediate, None)
             elif opcode == 0b0010111:
                 return instr_type, ("auipc", rd, immediate, None)
+        
+        #-------------------------------------
+        #----- J type instruction decoding ---
+        #-------------------------------------
         elif instr_type == "J":
             if opcode == 0b1101111: # JAL instruction
                 # Extract the components of the immediate:
@@ -238,19 +268,7 @@ class RiscVConverter:
             elif opcode == 0b1100111: # JALR instruction:
                 immediate = (instruction >> 20) & 0xFFF 
                 return instr_type, ("jalr", rd, rs1, immediate)  
-        elif instr_type == "S":
-            imm_11_5 = (instruction >> 25) & 0x7F
-            imm_4_0  = (instruction >> 7)  & 0x1F
-            funct3 = (instruction >> 12) & 0b111
-            immediate = (imm_11_5 << 5) | imm_4_0           # combine into imm[11:0]
-            # sign-extend the 12-bit value:
-            if immediate & (1 << 11):
-                immediate |= - (1 << 12)
 
-            if funct3 in RiscVConverter.s_instr:
-                immediate = (imm_11_5 << 5) | imm_4_0
-                return instr_type, (RiscVConverter.s_instr[funct3], rs1, rs2, immediate)
-        
         return "unknown"
 
     @staticmethod
@@ -421,8 +439,7 @@ class RiscVConverter:
             if rd_is_R0:
                 result.append(("sub", rs2, rs2))
                 result.append(("add", rs2, rd))
-                result.append(("sub", rd, rd)) #rd == R0
-            
+                result.append(("sub", rd, rd)) #rd == R0        
         #I type instruction binary to Bitty assembly conversion
         elif instr_type == "I":
             opcode    =     instr[0]
@@ -496,13 +513,34 @@ class RiscVConverter:
                 #load instructions handler
                 # i hope that accessing memory 
                 # that is not %4==0 is not a problem
+                elif opcode == "jalr":
+                    # Extract imm[11:6] (upper 6 bits)
+                    imm_upper = (immediate >> 6) & 0x3F  # 0x3F = 0b111111
+
+                    # Extract imm[5:3] (middle 3 bits)
+                    imm_mid = (immediate >> 3) & 0x7     # 0x7 = 0b111
+
+                    # Extract imm[2:0] (lower 3 bits)j
+                    imm_lower = immediate & 0x7          # 0x7 = 0b111
+
+                    result.append(("gtpc", rd, None)) #get pc to rd
+                    result.append(("addi", rd, 4)) #rd = pc + 4
+                    result.append(("addi", 0, imm_upper))
+                    result.append(("shli", 0, 3))
+                    result.append(("addi", 0, imm_mid))
+                    result.append(("shli", 0, 3))
+                    result.append(("addi", 0, imm_lower))
+                    result.append(("add", 0, rs1)) #R0 = imm + rs1
+                    result.append(("stpc", 0, None)) #pc = R0 = imm + rs1
+                    result.append(("sub", 0, 0)) #make R0 = 0
+                    
                 elif opcode == 'lb': 
                     result.append(('ld', rd, rs1))
                     result.append(("shli",  rd, 24))
                     result.append(("shrsi", rd, 24))
                 elif opcode == 'lh':
                     result.append(('ld', rd, rs1))
-                    result.append(("shli",  rd, 16))
+                    result.append(("shli", rd, 16))
                     result.append(("shrsi", rd, 16))
                 elif opcode == 'lbu':
                     result.append(('ld', rd, rs1))
@@ -521,6 +559,31 @@ class RiscVConverter:
                 result.append(("add", rs1, rd))
                 result.append(("sub", rd, rd))
             #print(result)
+            
+        elif instr_type == "S":
+            opcode = instr[0]
+            rs1    = int(instr[1])
+            rs2     = int(instr[2])
+            immediate = int(instr[3]) & 0xFFF
+
+            #need to be implemented everywhere
+            result.append(("add",   0, rs2)) #R0 = rs2
+
+            #load instructions handler
+            if opcode == 'sb':
+                result.append(("shli",  0, 24))  
+                result.append(("shrsi", 0, 24)) 
+            elif opcode == 'sh':
+                result.append(("shli",  0, 16))
+                result.append(("shrsi", 0, 16))
+            elif opcode == 'sw':
+                print("everything is up to date")
+            else:
+                return "unknown"
+            #need to be implemented everywhere
+            result.append(("st",    0, rs1)) #mem[rs1] = rs2
+            result.append(("sub",   0, 0)) #make R0 = 0
+
         elif instr_type == "B":
             opcode = instr[0]
             rs1    = int(instr[1])
@@ -567,7 +630,7 @@ class RiscVConverter:
                     result.append(("cmps", rs1, rs2))
                 else: 
                     result.append(("cmp", rs1, rs2))
-                    
+
 
                 result.append(("bil", immediate, None))
 
@@ -595,6 +658,9 @@ class RiscVConverter:
 
             # Extract the last 4 bits (bits 3:0)
             last_4 = immediate & 0xF
+
+            #for lui and auipc
+            #lui -> x[rd] = sext(immediate[31:12] << 12)
             result.append(("sub", rd, rd))
             result.append(("addi", rd, upper_6))
             result.append(("shli", rd, 5))
@@ -604,6 +670,9 @@ class RiscVConverter:
             result.append(("shli", rd, 4))
             result.append(("addi", rd, last_4))
             result.append(("shli", rd, 12)) #fill the last 12 bits with 0s
+
+            #for auipc
+            #auipc -> x[rd] = pc + sext(immediate[31:12] << 12)
             if opcode == "auipc":
                 result.append(("gtpc", 0, None)) #get pc to R0
                 result.append(("add", rd, 0)) #rd = pc + upper 20 bits
@@ -611,7 +680,8 @@ class RiscVConverter:
         elif instr_type == "J":
             opcode = instr[0]
             rd     = int(instr[1])
-            if opcode == "jal":
+            if opcode == "jal": #jal -> x[rd] = pc + 4
+                # pc += sext(offset)
                 immediate = int(instr[2]) & 0xFFFFFF
                 # Extract imm[11:6] (upper 6 bits)
                 imm_upper = (immediate >> 6) & 0x3F  # 0x3F = 0b111111
@@ -633,54 +703,11 @@ class RiscVConverter:
                 result.append(("sub", 0, 4)) #R0 = pc + imm
                 result.append(("stpc", 0, None)) #pc = R0 = pc + imm
                 result.append(("sub", 0, 0)) #make R0 = 0
-            elif opcode == "jalr":
-                                # Extract imm[11:6] (upper 6 bits)
-                imm_upper = (immediate >> 6) & 0x3F  # 0x3F = 0b111111
 
-                # Extract imm[5:3] (middle 3 bits)
-                imm_mid = (immediate >> 3) & 0x7     # 0x7 = 0b111
-
-                # Extract imm[2:0] (lower 3 bits)j
-                imm_lower = immediate & 0x7          # 0x7 = 0b111
-
-                result.append(("gtpc", rd, None)) #get pc to rd
-                result.append(("addi", rd, 4)) #rd = pc + 4
-                result.append(("addi", 0, imm_upper))
-                result.append(("shli", 0, 3))
-                result.append(("addi", 0, imm_mid))
-                result.append(("shli", 0, 3))
-                result.append(("addi", 0, imm_lower))
-                result.append(("add", 0, rs1)) #R0 = imm + rs1
-                result.append(("stpc", 0, None)) #pc = R0 = imm + rs1
-                result.append(("sub", 0, 0)) #make R0 = 0
-                
             else:
                 rs1 = int(instr[2])
                 # Extract the 12-bit immediate value from the instruction
                 immediate = int(instr[3]) & 0xFFF    
-        elif instr_type == "S":
-            opcode = instr[0]
-            rs1    = int(instr[1])
-            rs2     = int(instr[2])
-            immediate = int(instr[3]) & 0xFFF
-
-            #need to be implemented everywhere
-            result.append(("add",   0, rs2)) #R0 = rs2
-
-            #load instructions handler
-            if opcode == 'sb':
-                result.append(("shli",  0, 24))  
-                result.append(("shrsi", 0, 24)) 
-            elif opcode == 'sh':
-                result.append(("shli",  0, 16))
-                result.append(("shrsi", 0, 16))
-            elif opcode == 'sw':
-                print("everything is up to date")
-            else:
-                return "unknown"
-            #need to be implemented everywhere
-            result.append(("st",    0, rs1)) #mem[rs1] = rs2
-            result.append(("sub",   0, 0)) #make R0 = 0
 
         RiscVConverter.map_pc[RiscVConverter.RISCV_PC] = RiscVConverter.Bitty_PC
         RiscVConverter.RISCV_PC += 1
